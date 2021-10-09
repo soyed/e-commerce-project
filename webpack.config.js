@@ -6,7 +6,7 @@ const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 module.exports = {
-  entry: path.resolve(__dirname, '.src/index.tsx'),
+  entry: path.resolve(__dirname, '/src/index.tsx'),
   mode: mode,
   resolve: { extensions: ['.tsx', '.ts', '.js'] },
   module: {
