@@ -28,8 +28,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css/i,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
+        test: /\.(css|scss|sass)/i,
+        use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
       },
     ],
   },
