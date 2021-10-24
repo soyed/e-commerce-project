@@ -1,8 +1,15 @@
 import React from 'react';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 require('./App.scss');
 
 const App = () => {
-  return <div className='text-center text-5xl'>New React project</div>;
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  );
 };
 
 export default App;
