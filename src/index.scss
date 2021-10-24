@@ -2,14 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Reset DOM */
-*,
-*::before,
-*::after {
-  margin: 0;
-  border: 0;
-  box-sizing: border-box;
-}
+@import 'reset';
 
 :root {
   font-size: 62.5%;
