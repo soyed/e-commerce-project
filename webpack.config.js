@@ -28,17 +28,21 @@ module.exports = {
         },
       },
       {
-        test: /\.(css|scss|sass)/i,
-        use: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader'],
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          { loader: 'css-loader', options: { sourceMap: true } },
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
     }),
-  ],
+  ].concat(mode === 'development' ? [] : [new MiniCssExtractPlugin()]),
   devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
