@@ -1,21 +1,18 @@
 import React from 'react';
 import { Switch, Redirect, Route } from 'react-router-dom';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
+
+import HomePage from './components/HomePage/Homepage';
 import { LinkPath } from './routes/utilS';
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Footer />
-
       {/* Routes => temp location */}
       <Switch>
         <Route path='/' exact>
           <Redirect to='/home' />
         </Route>
-        <Route path={LinkPath.HOME} exact component={Header} />
+        <Route path={LinkPath.HOME} exact component={HomePage} />
 
         {/* Information Route */}
         <Route path={LinkPath.FAQ} />
