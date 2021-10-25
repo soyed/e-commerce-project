@@ -1,11 +1,11 @@
 import React from 'react';
 import ClassNames from 'classnames';
 import { Link, NavLink } from 'react-router-dom';
-import { RouteType } from '../../routes/utils';
+import { LinkPath, RouteType } from '../../routes/utils';
 
 interface UILinkProps {
-  linkTo: string;
-  isActive?: boolean;
+  linkTo: LinkPath;
+  isActive: boolean;
   linkType: RouteType;
   activeClassName?: string;
   activeStyle?: object;
@@ -15,7 +15,7 @@ interface UILinkProps {
 const UILink: React.FC<UILinkProps> = (props) => {
   const {
     linkTo,
-    isActive,
+    isActive = false,
     activeClassName,
     activeStyle,
     children,

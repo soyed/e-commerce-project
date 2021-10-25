@@ -14,6 +14,11 @@ export enum LinkPath {
   ACCOUNT = '/account',
   FAVORITES = '/favorites',
   CART = '/cart',
+  MEN = '/men',
+  WOMEN = '/women',
+  SALE = '/products?fields=sale',
+  CATEGORY = '/categories',
+  PURCHASE_OPTIONS = '/purchase-options',
   // NOT Found
   NOTFOUND = '*',
 }
