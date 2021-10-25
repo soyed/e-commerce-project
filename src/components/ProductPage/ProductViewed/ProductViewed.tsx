@@ -11,7 +11,7 @@ const ProductViewed: React.FC<ProductViewedProps> = (props) => {
   const { isLoading } = props;
 
   return (
-    <div className='flex justify-center item-center'>
+    <div className='flex h-screen-1/4 justify-center item-center bg-purple-600'>
       {isLoading ? (
         <UILoadingSpinner />
       ) : (

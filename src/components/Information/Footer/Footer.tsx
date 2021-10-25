@@ -1,8 +1,8 @@
 import React from 'react';
-import { LinkPath, RouteType, SocialLink } from '../../routes/utils';
-import UIIcon from '../../UIKit/UIIcon/UIIcon';
-import UILink from '../../UIKit/UILink/UILink';
-import { IconType } from '../../utils/icons';
+import { LinkPath, RouteType, SocialLink } from '../../../routes/utils';
+import UIIcon from '../../../UIKit/UIIcon/UIIcon';
+import UILink from '../../../UIKit/UILink/UILink';
+import { IconType } from '../../../utils/icons';
 
 const Footer = () => {
   return (

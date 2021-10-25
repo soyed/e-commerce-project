@@ -2,7 +2,7 @@ import React from 'react';
 import ClassNames from 'classnames';
 import { IconType } from '../../utils/icons';
 import UILink from '../UILink/UILink';
-import { LinkPath, RouteType } from '../../routes/utils';
+import { LinkPath, RouteType, SocialLink } from '../../routes/utils';
 import classNames from 'classnames';
 import './UIIcon.scss';
 
@@ -10,7 +10,7 @@ interface UIIconProps {
   iconClassName?: string;
   containerClassName?: string;
   iconType?: IconType;
-  linkTo?: LinkPath;
+  linkTo?: LinkPath | SocialLink;
   iconText?: string;
   linkType?: RouteType;
   iconContainerClassName?: string;

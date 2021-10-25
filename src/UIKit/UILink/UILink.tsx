@@ -1,10 +1,10 @@
 import React from 'react';
 import ClassNames from 'classnames';
 import { Link, NavLink } from 'react-router-dom';
-import { LinkPath, RouteType } from '../../routes/utils';
+import { LinkPath, RouteType, SocialLink } from '../../routes/utils';
 
 interface UILinkProps {
-  linkTo: LinkPath;
+  linkTo: LinkPath | SocialLink;
   isActive?: boolean;
   linkType: RouteType;
   activeClassName?: string;

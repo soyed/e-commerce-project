@@ -2,8 +2,9 @@ import React from 'react';
 import { Switch, Redirect, Route } from 'react-router-dom';
 import { LinkPath } from '../routes/utils';
 import HomePage from '../components/HomePage/Homepage';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
+import Header from '../components/Information/Header/Header';
+import Footer from '../components/Information/Footer/Footer';
+import ProductPage from '../components/ProductPage/ProductPage';
 
 const AppRouter = () => {
   return (
@@ -23,6 +24,7 @@ const AppRouter = () => {
         <Route path={LinkPath.CART} />
 
         {/* Products Page => Routes */}
+        <Route path={LinkPath.CATEGORY} component={ProductPage} />
 
         {/* Information Route */}
         <Route path={LinkPath.FAQ} />
