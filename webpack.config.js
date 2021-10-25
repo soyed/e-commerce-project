@@ -31,7 +31,10 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: true } },
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 2, sourceMap: true },
+          },
           'postcss-loader',
           'sass-loader',
         ],
@@ -44,8 +47,12 @@ module.exports = {
     }),
   ].concat(mode === 'development' ? [] : [new MiniCssExtractPlugin()]),
   devtool: 'source-map',
+  devServer: {
+    historyApiFallback: true,
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
 };
