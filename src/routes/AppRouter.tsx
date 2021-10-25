@@ -17,9 +17,12 @@ const AppRouter = () => {
         <Route path={LinkPath.HOME} component={HomePage} exact />
 
         {/* COMMERCE ROUTE */}
+        {/*  */}
         <Route path={LinkPath.ACCOUNT} />
         <Route path={LinkPath.FAVORITES} />
         <Route path={LinkPath.CART} />
+
+        {/* Products Page => Routes */}
 
         {/* Information Route */}
         <Route path={LinkPath.FAQ} />
