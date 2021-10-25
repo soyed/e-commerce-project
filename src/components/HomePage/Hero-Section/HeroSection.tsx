@@ -5,9 +5,10 @@ import UILink from '../../../UIKit/UILink/UILink';
 interface HeroSectionProps {}
 
 const HeroSection: React.FC<HeroSectionProps> = (props) => {
+  const {} = props;
   return (
-    <div className='flex justify-center w-full'>
-      <div className='flex justify-evenly w-4/5 bg-red-300 h-80'>
+    <div className='flex justify-center h-screen-1/2'>
+      <div className='flex justify-evenly w-4/5 bg-red-300'>
         <div className='flex justify-center items-center'>
           <UILink
             linkTo={LinkPath.MEN}

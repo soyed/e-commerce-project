@@ -7,7 +7,7 @@ interface TopRatedProps {}
 
 const TopRated: React.FC<TopRatedProps> = (props) => {
   return (
-    <div className='flex flex-col justify-evenly items-center h-40 bg-indigo-300'>
+    <div className='flex flex-col justify-evenly items-center h-screen-1/4 bg-indigo-300'>
       <h3>Top Rated Products</h3>
       <div className='flex  flex-grow justify-evenly'>
         <div className='flex justify-center items-center'>Product 1</div>
