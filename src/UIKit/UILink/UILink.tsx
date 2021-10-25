@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 interface UILinkProps {
   linkTo?: string;
-  isActive?: string;
+  isActive?: boolean;
   activeClassName?: string;
   activeStyle?: object;
   parentClassName?: string;
