@@ -1,0 +1,16 @@
+.loading-spinner {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  border: 0.4rem solid rgb(204, 159, 204);
+  border-top-color: purple;
+
+  animation: spinner 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  // Animation
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}

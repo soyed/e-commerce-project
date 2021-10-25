@@ -7,7 +7,7 @@ interface UIButtonProps {
   text: string;
   isLoading?: boolean;
   buttonContainerClass?: string;
-  linkTo?: LinkPath;
+  linkTo: LinkPath;
   linkType?: RouteType;
   isLinkActive?: boolean;
 }
@@ -17,9 +17,9 @@ const UIButton: React.FC<UIButtonProps> = (props) => {
     text,
     isLoading = false,
     buttonContainerClass,
-    linkType,
+    linkType = RouteType.COMMERCE,
     linkTo,
-    isLinkActive,
+    isLinkActive = false,
   } = props;
   return (
     <div className={Classnames('button--container', buttonContainerClass)}>

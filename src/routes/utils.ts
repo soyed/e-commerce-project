@@ -19,6 +19,7 @@ export enum LinkPath {
   SALE = '/products?fields=sale',
   CATEGORY = '/categories',
   PURCHASE_OPTIONS = '/purchase-options',
+  TOP_RATED_PRODUCTS = '/products?search=topRated',
   // NOT Found
   NOTFOUND = '*',
 }
