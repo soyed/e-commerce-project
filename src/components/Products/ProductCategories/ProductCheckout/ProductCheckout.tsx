@@ -9,6 +9,10 @@ interface ProductCheckoutProps {
   productPrice?: string;
   productType?: ProductType;
   productColor?: string;
+  addToCart?: () => void;
+  likeProduct?: () => void;
+  incrementProductCount?: () => void;
+  decrementProductCount?: () => void;
 }
 
 const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
@@ -34,10 +38,17 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
       </div>
       <div className='flex justify-center items-center'>
         <div className='flex'>
-          <UIButton text={'Add To Cart'} />
+          <UIIcon iconType={IconType.DECREMENT} />
+          <p>0</p>
+          <UIIcon iconType={IconType.INCREMENT} />
         </div>
         <div className='flex'>
-          <UIIcon iconType={IconType.LIKE} hasRoute={false} />
+          <div className='flex'>
+            <UIButton text={'Add To Cart'} />
+          </div>
+          <div className='flex'>
+            <UIIcon iconType={IconType.LIKE} hasRoute={false} />
+          </div>
         </div>
       </div>
     </div>
