@@ -9,7 +9,7 @@ const Footer = () => {
         <p>Contact</p>
         <p>Shipping</p>
       </div>
-      <div className='flex '>
+      <div className='flex justify-center align-center'>
         <UIIcon />
         <p>Instagram</p>
         <p>Facebook</p>
