@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Redirect, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import { LinkPath } from './routes/utilS';
 
 const App = () => {
   return (
@@ -14,18 +15,13 @@ const App = () => {
         <Route path='/' exact>
           <Redirect to='/home' />
         </Route>
-        <Route path='/home' exact component={Header} />
+        <Route path={LinkPath.HOME} exact component={Header} />
 
-        {/* Social Pages redirect */}
-        <Route path='/facebook'>
-          <Redirect to='https://www.facebook.com' />
-        </Route>
-        <Route path='/twitter'>
-          <Redirect to='https://www.twitter.com' />
-        </Route>
-        <Route path='/instagram'>
-          <Redirect to='https://www.instagram.com' />
-        </Route>
+        {/* Information Route */}
+        <Route path={LinkPath.FAQ} />
+        <Route path={LinkPath.CONTACT} />
+        <Route path={LinkPath.SHIPPING} />
+
         {/* Not found page */}
         <Route path='*' />
       </Switch>

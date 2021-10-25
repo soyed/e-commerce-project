@@ -1,10 +1,12 @@
 import React from 'react';
 import ClassNames from 'classnames';
 import { Link, NavLink } from 'react-router-dom';
+import { LinkType } from '../../routes/utilS';
 
 interface UILinkProps {
-  linkTo?: string;
+  linkTo: string;
   isActive?: boolean;
+  linkType: LinkType;
   activeClassName?: string;
   activeStyle?: object;
   parentClassName?: string;
@@ -18,11 +20,16 @@ const UILink: React.FC<UILinkProps> = (props) => {
     activeStyle,
     children,
     parentClassName,
+    linkType,
   } = props;
   return (
     <div>
       <li className={ClassNames('link__container', parentClassName)}>
-        {isActive ? (
+        {linkType === LinkType.SOCIAL ? (
+          <a target='_blank' href={linkTo}>
+            {children}
+          </a>
+        ) : isActive && linkType === LinkType.COMMERCE ? (
           <NavLink
             to={linkTo}
             activeStyle={activeStyle}
