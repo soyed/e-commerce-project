@@ -2,6 +2,7 @@ import React from 'react';
 import ClassNames from 'classnames';
 import { IconType } from '../../utils/icons';
 import UILink from '../UILink/UILink';
+require('./UIIcon.scss');
 
 interface UIIconProps {
   iconClassName?: string;
@@ -12,8 +13,14 @@ interface UIIconProps {
 }
 
 const UIIcon: React.FC<UIIconProps> = (props) => {
-  const { containerClassName, iconClassName, iconType, onClickIcon, linkTo } =
-    props;
+  const {
+    containerClassName,
+    iconClassName,
+    iconType,
+    onClickIcon,
+    linkTo,
+    children,
+  } = props;
   return (
     <div className={ClassNames('icon__container', containerClassName)}>
       <UILink linkTo={linkTo} isActive={false}>

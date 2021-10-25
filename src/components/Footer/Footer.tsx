@@ -1,5 +1,6 @@
 import React from 'react';
 import UIIcon from '../../UIKit/UIIcon/UIIcon';
+import { IconType } from '../../utils/icons';
 
 const Footer = () => {
   return (
@@ -10,10 +11,9 @@ const Footer = () => {
         <p>Shipping</p>
       </div>
       <div className='flex justify-center align-center'>
-        <UIIcon />
-        <p>Instagram</p>
-        <p>Facebook</p>
-        <p>Instagram</p>
+        <UIIcon iconType={IconType.INSTAGRAM} linkTo={'/instagram'} />
+        <UIIcon iconType={IconType.FACEBOOK} linkTo={'/facebook'} />
+        <UIIcon iconType={IconType.TWITTER} linkTo={'/twitter'} />
       </div>
     </div>
   );
