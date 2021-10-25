@@ -17,3 +17,12 @@ export enum LinkPath {
   // NOT Found
   NOTFOUND = '*',
 }
+
+export enum SocialLink {
+  FACEBOOK = 'https://www.facebook.com',
+  TWITTER = 'https://www.twitter.com',
+  LINKEDIN = 'https://www.linkedin.com/in/samuel-oyediran-823450181/',
+  GITHUB = 'https://www.github.com/soyed',
+  INSTAGRAM = 'https://www.instagram.com',
+  TWEETME = 'https://twitter.com/AnonCoder45',
+}

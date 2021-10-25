@@ -25,7 +25,7 @@ const App = () => {
         <Route path={LinkPath.SHIPPING} />
 
         {/* Not found page */}
-        <Route path='*' />
+        <Route path={LinkPath.NOTFOUND} />
       </Switch>
     </>
   );

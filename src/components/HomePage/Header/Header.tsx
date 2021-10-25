@@ -17,16 +17,19 @@ const Header = () => {
           iconType={IconType.LIKE}
           linkTo={LinkPath.FAVORITES}
           linkType={RouteType.COMMERCE}
+          iconText={'WishList'}
         />
         <UIIcon
           iconType={IconType.USER}
           linkTo={LinkPath.ACCOUNT}
           linkType={RouteType.COMMERCE}
+          iconText={'Account'}
         />
         <UIIcon
           iconType={IconType.SORT}
           linkTo={LinkPath.CART}
           linkType={RouteType.COMMERCE}
+          iconText={'Cart'}
         />
       </div>
     </div>

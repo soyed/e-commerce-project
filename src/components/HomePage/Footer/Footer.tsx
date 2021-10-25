@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkPath, RouteType } from '../../../routes/utils';
+import { LinkPath, RouteType, SocialLink } from '../../../routes/utils';
 import UIIcon from '../../../UIKit/UIIcon/UIIcon';
 import UILink from '../../../UIKit/UILink/UILink';
 import { IconType } from '../../../utils/icons';
@@ -21,17 +21,17 @@ const Footer = () => {
       <div className='flex justify-center align-center'>
         <UIIcon
           iconType={IconType.INSTAGRAM}
-          linkTo={'https://www.instagram.com'}
+          linkTo={SocialLink.INSTAGRAM}
           linkType={RouteType.SOCIAL}
         />
         <UIIcon
           iconType={IconType.FACEBOOK}
-          linkTo={'https://www.facebook.com'}
+          linkTo={SocialLink.FACEBOOK}
           linkType={RouteType.SOCIAL}
         />
         <UIIcon
           iconType={IconType.TWITTER}
-          linkTo={'https://www.twitter.com'}
+          linkTo={SocialLink.TWITTER}
           linkType={RouteType.SOCIAL}
         />
       </div>
