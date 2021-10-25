@@ -5,6 +5,7 @@ import HomePage from '../components/HomePage/Homepage';
 import Header from '../components/Information/Header/Header';
 import Footer from '../components/Information/Footer/Footer';
 import ProductPage from '../components/ProductPage/ProductPage';
+import CategoriesPages from '../components/CategoriesPage/CategoriesPages';
 
 const AppRouter = () => {
   return (
@@ -24,7 +25,7 @@ const AppRouter = () => {
         <Route path={LinkPath.CART} />
 
         {/* Products Page => Routes */}
-        <Route path={LinkPath.CATEGORY} component={ProductPage} />
+        <Route path={LinkPath.CATEGORY} component={CategoriesPages} />
 
         {/* Information Route */}
         <Route path={LinkPath.FAQ} />

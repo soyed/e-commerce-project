@@ -8,7 +8,7 @@ const mode =
 module.exports = {
   entry: path.resolve(__dirname, '/src/index.tsx'),
   mode: mode,
-  resolve: { extensions: ['.tsx', '.ts', '.js'] },
+  resolve: { extensions: ['.tsx', '.ts', '.js', '.jsx'] },
   module: {
     rules: [
       {
