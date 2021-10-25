@@ -4,7 +4,7 @@ import { IconType } from '../../utils/icons';
 import UILink from '../UILink/UILink';
 import { RouteType } from '../../routes/utils';
 import classNames from 'classnames';
-require('./UIIcon.scss');
+import './UIIcon.scss';
 
 interface UIIconProps {
   iconClassName?: string;
