@@ -6,7 +6,7 @@ import { IconType } from '../../utils/icons';
 
 const Footer = () => {
   return (
-    <div className='flex flex-col h-12'>
+    <div className='flex flex-col h-screen-1/10'>
       <div className='flex justify-center'>
         <UILink linkType={RouteType.COMMERCE} linkTo={LinkPath.FAQ}>
           <p>FAQ</p>

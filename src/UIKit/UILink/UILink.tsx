@@ -5,7 +5,7 @@ import { LinkPath, RouteType } from '../../routes/utils';
 
 interface UILinkProps {
   linkTo: LinkPath;
-  isActive: boolean;
+  isActive?: boolean;
   linkType: RouteType;
   activeClassName?: string;
   activeStyle?: object;
