@@ -1,20 +1,20 @@
 import React from 'react';
-import { LinkPath, LinkType } from '../../routes/utilS';
-import UIIcon from '../../UIKit/UIIcon/UIIcon';
-import UILink from '../../UIKit/UILink/UILink';
-import { IconType } from '../../utils/icons';
+import { LinkPath, RouteType } from '../../../routes/utils';
+import UIIcon from '../../../UIKit/UIIcon/UIIcon';
+import UILink from '../../../UIKit/UILink/UILink';
+import { IconType } from '../../../utils/icons';
 
 const Footer = () => {
   return (
     <div className='flex flex-col h-12'>
       <div className='flex justify-center'>
-        <UILink linkType={LinkType.COMMERCE} linkTo={LinkPath.FAQ}>
+        <UILink linkType={RouteType.COMMERCE} linkTo={LinkPath.FAQ}>
           <p>FAQ</p>
         </UILink>
-        <UILink linkType={LinkType.COMMERCE} linkTo={LinkPath.CONTACT}>
+        <UILink linkType={RouteType.COMMERCE} linkTo={LinkPath.CONTACT}>
           <p>Contact</p>
         </UILink>
-        <UILink linkType={LinkType.COMMERCE} linkTo={LinkPath.SHIPPING}>
+        <UILink linkType={RouteType.COMMERCE} linkTo={LinkPath.SHIPPING}>
           <p>Shipping</p>
         </UILink>
       </div>
@@ -22,17 +22,17 @@ const Footer = () => {
         <UIIcon
           iconType={IconType.INSTAGRAM}
           linkTo={'https://www.instagram.com'}
-          linkType={LinkType.SOCIAL}
+          linkType={RouteType.SOCIAL}
         />
         <UIIcon
           iconType={IconType.FACEBOOK}
           linkTo={'https://www.facebook.com'}
-          linkType={LinkType.SOCIAL}
+          linkType={RouteType.SOCIAL}
         />
         <UIIcon
           iconType={IconType.TWITTER}
           linkTo={'https://www.twitter.com'}
-          linkType={LinkType.SOCIAL}
+          linkType={RouteType.SOCIAL}
         />
       </div>
     </div>
