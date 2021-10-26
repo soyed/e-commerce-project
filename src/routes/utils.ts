@@ -10,6 +10,7 @@ export enum LinkPath {
   FAQ = '/faq',
   SHIPPING = '/shipping',
   CONTACT = '/contact',
+  BUYING_OPTIONS = '/buying-options',
   // Commerce Section
   ACCOUNT = '/account',
   FAVORITES = '/favorites',

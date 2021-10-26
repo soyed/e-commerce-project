@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities';
 
 @import './scss/_reset.scss';
+@import './scss/variables.scss';
 
 // import fonts
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nunito:wght@300;400;600;700;800&display=swap');
@@ -14,6 +15,7 @@ body {
   font-size: 1.5rem;
   // font-family: 'Gochi Hand', cursive;
   font-family: 'Nunito', sans-serif;
+  background-color: $color-background;
 }
 
 #root {

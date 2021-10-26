@@ -4,8 +4,12 @@ import { LinkPath } from '../routes/utils';
 import HomePage from '../components/HomePage/Homepage';
 import Header from '../components/Information/Header/Header';
 import Footer from '../components/Information/Footer/Footer';
-import ProductPage from '../components/ProductPage/ProductPage';
+
 import CategoriesPages from '../components/CategoriesPage/CategoriesPages';
+import BuyingOptions from '../components/Information/Buying-Options/Buying-Options';
+import Faq from '../components/Information/FAQ/Faq';
+import Contact from '../components/Information/Contact/Contact';
+import Shipping from '../components/Information/Shipping/Shipping';
 
 const AppRouter = () => {
   return (
@@ -28,9 +32,10 @@ const AppRouter = () => {
         <Route path={LinkPath.CATEGORY} component={CategoriesPages} />
 
         {/* Information Route */}
-        <Route path={LinkPath.FAQ} />
-        <Route path={LinkPath.CONTACT} />
-        <Route path={LinkPath.SHIPPING} />
+        <Route path={LinkPath.FAQ} component={Faq} />
+        <Route path={LinkPath.CONTACT} component={Contact} />
+        <Route path={LinkPath.SHIPPING} component={Shipping} />
+        <Route path={LinkPath.BUYING_OPTIONS} component={BuyingOptions} />
 
         {/* Not found page */}
         <Route path={LinkPath.NOTFOUND} />

@@ -1,12 +1,12 @@
 import React from 'react';
 import UIContainer from '../../../UIKit/UIContainer/UIContainer';
 
-const Shipping = () => {
+const Contact = () => {
   return (
     <UIContainer className='flex flex-1 justify-center items-center'>
-      <h2>Shipping</h2>
+      <h2>Contact</h2>
     </UIContainer>
   );
 };
 
-export default Shipping;
+export default Contact;
