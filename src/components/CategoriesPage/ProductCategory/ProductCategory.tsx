@@ -7,15 +7,16 @@ import UILink from '../../../UIKit/UILink/UILink';
 import { Category } from '../model';
 
 interface ProductCategoryProps {
-  categories?: Category[];
-  linkTo?: SocialLink | LinkPath;
+  linkTo?: SocialLink | LinkPath | string;
   linkType?: RouteType;
+  categoryName?: string;
   containerClassName?: string;
   className?: string;
 }
 
 const ProductCategory: React.FC<ProductCategoryProps> = (props) => {
-  const { categories, linkTo, linkType, className, containerClassName } = props;
+  const { linkTo, linkType, className, containerClassName, categoryName } =
+    props;
 
   return (
     <UILink linkTo={linkTo} linkType={linkType} isActive={false}>
@@ -31,7 +32,7 @@ const ProductCategory: React.FC<ProductCategoryProps> = (props) => {
             className
           )}
         >
-          <h2>Category</h2>
+          <h2>{categoryName}</h2>
           <p>Shop Now</p>
         </div>
       </UIContainer>

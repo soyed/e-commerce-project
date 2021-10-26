@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { LinkPath, RouteType, SocialLink } from '../../routes/utils';
 
 interface UILinkProps {
-  linkTo: LinkPath | SocialLink;
+  linkTo: LinkPath | SocialLink | string;
   isActive?: boolean;
   linkType: RouteType;
   activeClassName?: string;

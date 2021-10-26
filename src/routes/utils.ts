@@ -18,9 +18,10 @@ export enum LinkPath {
   MEN = '/shop/men',
   WOMEN = '/shop/women',
   MARKET_PLACE = '/shop/market-place',
-  CATEGORY = '/categories',
-  TOP_RATED_PRODUCTS = '/products?search=topRated',
-  TOP_RATED_BRANDS = '/brands?search=top',
+  CATEGORY = '/shop/categories',
+  CATEGORY_PRODUCTS = '/shop/categories/:categoryId',
+  TOP_RATED_PRODUCTS = 'shop/products?search=topRated',
+  TOP_RATED_BRANDS = 'shop/brands?search=top',
   // NOT Found
   NOTFOUND = '*',
 }
