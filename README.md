@@ -17,3 +17,8 @@ Not sure what to call it yet... or what to do yet.😭
       - Webpack:
         - ```publicPath: /``` => set the base url for all resources 
         - historyAPIFallBack => redirects ```404s``` to ```/index.html```
+
+
+
+### Photo Credits
+- 

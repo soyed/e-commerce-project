@@ -1,5 +1,5 @@
 // The header file needs to be included in every request sent
-export const headers = {
+export const API_Headers = {
   'x-rapidapi-host': 'e-commerce12.p.rapidapi.com',
   'x-rapidapi-key': 'a0d839c038mshba62a4bc00678a4p18f251jsnb5a3516bd0c2',
 };

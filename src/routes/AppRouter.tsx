@@ -10,11 +10,15 @@ import BuyingOptions from '../components/Information/Buying-Options/Buying-Optio
 import Faq from '../components/Information/FAQ/Faq';
 import Contact from '../components/Information/Contact/Contact';
 import Shipping from '../components/Information/Shipping/Shipping';
+import NotFound from '../components/Information/Not-Found/Not-Found';
+import MarketPlace from '../components/MarketPlace/MarketPlace';
+import HomeOptions from '../components/HomePage/HomeOptions/HomeOptions';
 
 const AppRouter = () => {
   return (
     <>
       <Header />
+      <HomeOptions />
       {/* Routes => temp location */}
       <Switch>
         <Route path={LinkPath.UNIVERSAL} exact>
@@ -31,6 +35,9 @@ const AppRouter = () => {
         {/* Products Page => Routes */}
         <Route path={LinkPath.CATEGORY} component={CategoriesPages} />
 
+        {/* Mark Place */}
+        <Route path={LinkPath.MARKET_PLACE} component={MarketPlace} />
+
         {/* Information Route */}
         <Route path={LinkPath.FAQ} component={Faq} />
         <Route path={LinkPath.CONTACT} component={Contact} />
@@ -38,7 +45,7 @@ const AppRouter = () => {
         <Route path={LinkPath.BUYING_OPTIONS} component={BuyingOptions} />
 
         {/* Not found page */}
-        <Route path={LinkPath.NOTFOUND} />
+        <Route path={LinkPath.NOTFOUND} component={NotFound} />
       </Switch>
       <Footer />
     </>

@@ -1,6 +1,10 @@
 import React from 'react';
+import { fetchCategories } from '../../redux/Category/categoryReducer';
 import UIContainer from '../../UIKit/UIContainer/UIContainer';
 import ProductCategory from './ProductCategory/ProductCategory';
+// import { useDispatch } from 'react-redux';
+
+// const dispatch = useDispatch();
 
 const CategoriesPages = () => {
   return (

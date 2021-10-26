@@ -7,6 +7,7 @@ module.exports = {
         'screen-1/4': '25vh',
         'screen-1/2': '50vh',
         'screen-1/10': '10vh',
+        'screen-2/10': '20vh',
       },
     },
   },

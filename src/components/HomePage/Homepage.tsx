@@ -12,7 +12,6 @@ const HomePage: React.FC<HomePageProps> = (props) => {
 
   return (
     <div className={'flex flex-col flex-1'}>
-      <HomeOptions />
       <HeroSection />
       <TopRated />
       <TopBrands />
