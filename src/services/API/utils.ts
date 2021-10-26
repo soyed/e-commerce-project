@@ -53,3 +53,12 @@ export const getTopSalesByCategory = (
     sales ? `&rating=${sales}` : ''
   }${page ? `&page=${page}` : ''}${limit ? `&limit=${limit}` : ''}`;
 };
+
+// Get all products
+export const getAllProducts = (page?: number, limit?: number) => {
+  return `${URL}/products${limit ? `?limit=${limit}` : ''}${
+    page ? `&page=${page}` : ''
+  }`;
+};
+
+// export const getTopRatedProducts;
