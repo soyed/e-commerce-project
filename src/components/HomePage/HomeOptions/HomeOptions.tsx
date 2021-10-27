@@ -22,7 +22,7 @@ const HomeOptions: React.FC<HomeOptionsProps> = (props) => {
         <UILink
           linkType={RouteType.COMMERCE}
           isActive={true}
-          linkTo={LinkPath.CATEGORY}
+          linkTo={LinkPath.CATEGORIES}
         >
           <h3>Categories</h3>
         </UILink>

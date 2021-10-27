@@ -9,7 +9,3 @@ export interface Category {
   image?: string; // => image: [0: ""]
   platform?: Platform; //
 }
-
-export const getCategoryPath = (id: string) => {
-  return `$/${id}`;
-};

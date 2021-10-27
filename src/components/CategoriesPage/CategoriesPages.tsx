@@ -7,7 +7,7 @@ import {
   categoryList,
   categoryLoading,
 } from '../../redux/Category/categorySelectors';
-import { Category, getCategoryPath } from './model';
+import { Category } from './model';
 import UILoadingSpinner from '../../UIKit/UILoadingSpinner/UILoadingSpinner';
 import { LinkPath } from '../../routes/utils';
 
