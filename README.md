@@ -18,6 +18,12 @@ Not sure what to call it yet... or what to do yet.😭
         - ```publicPath: /``` => set the base url for all resources 
         - historyAPIFallBack => redirects ```404s``` to ```/index.html```
 
+- App Routing to match the Endpoints being consumed
+  - The navigation on the webpage is not the same with the endpoint being sent to fetch from the server
+    - Reasons
+      - Endpoints are not names to match preferred route structure
+      - Also, not the standard way to go as React-router-dom document states the webpage routes need to match the endpoint URL for the server.
+
 
 
 ### Photo Credits
