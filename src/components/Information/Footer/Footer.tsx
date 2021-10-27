@@ -8,13 +8,10 @@ import './Footer.scss';
 
 const Footer = () => {
   return (
-    <div
-      className={classNames(
-        'footer',
-        'flex flex-col h-screen-2/10 justify-center'
-      )}
-    >
-      <div className={classNames('footer--container-1', 'flex justify-center')}>
+    // 'flex flex-col h-screen-2/10 justify-center'
+    // 'flex justify-center'
+    <div className={classNames('footer')}>
+      <div className={classNames('footer--container-1')}>
         <UILink linkType={RouteType.COMMERCE} linkTo={LinkPath.FAQ}>
           <p
             className={classNames(

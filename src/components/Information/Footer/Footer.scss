@@ -1,33 +1,33 @@
 @import '../.../../../../scss/variables';
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   background-color: $color-black;
   color: $color-white;
-  height: 15vh;
+  height: 20vh;
 
   &--container-1 {
+    display: flex;
+    justify-content: space-evenly;
     margin-bottom: 2.5rem;
+    width: 60%;
 
     &__text {
-      font-size: 2rem;
+      font-size: 1.7rem;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &__text:hover,
+    &__text:active {
+      text-decoration: underline 0.2rem;
     }
   }
 
   &--container-2 {
+    display: flex;
+    justify-content: center;
   }
 }
-
-// .footer {
-//   background-color: black;
-//   color: white;
-//   height: 15vh;
-// }
-// .footer--container-1 {
-//   margin-bottom: 2.5rem;
-// }
-
-// .footer--container-1__text {
-//   font-size: 2rem;
-// }
-
-// .footer--container-1 {
-// }
