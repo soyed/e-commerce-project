@@ -11,4 +11,5 @@ export interface Product {
   sales?: number;
   ratings?: number;
   reviews?: any;
+  color?: string;
 }

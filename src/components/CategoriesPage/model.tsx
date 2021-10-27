@@ -11,5 +11,5 @@ export interface Category {
 }
 
 export const getCategoryPath = (id: string) => {
-  return `${LinkPath.CATEGORY_PRODUCTS}/${id}`;
+  return `$/${id}`;
 };

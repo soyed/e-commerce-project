@@ -22,7 +22,7 @@ const ProductCategory: React.FC<ProductCategoryProps> = (props) => {
     <UILink linkTo={linkTo} linkType={linkType} isActive={false}>
       <UIContainer
         className={classNames(
-          'flex justify-center items-center',
+          'flex justify-center items-center w-50',
           containerClassName
         )}
       >

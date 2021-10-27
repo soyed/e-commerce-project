@@ -6,6 +6,7 @@ export enum RouteType {
 export enum LinkPath {
   UNIVERSAL = '/',
   HOME = '/home',
+  SHOP = '/shop',
   // Information
   FAQ = '/faq',
   SHIPPING = '/shipping',
@@ -18,8 +19,8 @@ export enum LinkPath {
   MEN = '/shop/men',
   WOMEN = '/shop/women',
   MARKET_PLACE = '/shop/market-place',
-  CATEGORY = '/shop/categories',
-  CATEGORY_PRODUCTS = '/shop/categories/:categoryId',
+  CATEGORIES = '/shop/categories',
+  CATEGORY = '/shop/:categoryName',
   TOP_RATED_PRODUCTS = 'shop/products?search=topRated',
   TOP_RATED_BRANDS = 'shop/brands?search=top',
   // NOT Found

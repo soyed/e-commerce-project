@@ -13,29 +13,25 @@ import Shipping from '../components/Information/Shipping/Shipping';
 import NotFound from '../components/Information/Not-Found/Not-Found';
 import MarketPlace from '../components/MarketPlace/MarketPlace';
 import HomeOptions from '../components/HomePage/HomeOptions/HomeOptions';
+import ProductsPage from '../components/ProductsPage/ProductsPage';
 
 const AppRouter = () => {
   return (
     <>
       <Header />
       <HomeOptions />
-      {/* Routes => temp location */}
       <Switch>
-        <Route path={LinkPath.UNIVERSAL} exact>
-          <Redirect to={LinkPath.HOME} />
-        </Route>
-        <Route path={LinkPath.HOME} component={HomePage} exact />
-
         {/* COMMERCE ROUTE */}
         {/*  */}
         <Route path={LinkPath.ACCOUNT} />
         <Route path={LinkPath.FAVORITES} />
         <Route path={LinkPath.CART} />
 
-        {/* Products Page => Routes */}
-        <Route path={LinkPath.CATEGORY} component={CategoriesPages} />
+        {/* Categories Page => Routes */}
+        <Route path={LinkPath.CATEGORIES} component={CategoriesPages} />
+        <Route path={LinkPath.CATEGORY} component={ProductsPage} />
 
-        {/* Mark Place */}
+        {/* Market Place */}
         <Route path={LinkPath.MARKET_PLACE} component={MarketPlace} />
 
         {/* Information Route */}
@@ -43,6 +39,14 @@ const AppRouter = () => {
         <Route path={LinkPath.CONTACT} component={Contact} />
         <Route path={LinkPath.SHIPPING} component={Shipping} />
         <Route path={LinkPath.BUYING_OPTIONS} component={BuyingOptions} />
+
+        {/* General Routes */}
+
+        <Route path={LinkPath.SHOP} component={HomePage} exact />
+        <Redirect from={LinkPath.HOME} to={LinkPath.SHOP} exact />
+        <Route path={LinkPath.UNIVERSAL} exact>
+          <Redirect to={LinkPath.SHOP} />
+        </Route>
 
         {/* Not found page */}
         <Route path={LinkPath.NOTFOUND} component={NotFound} />

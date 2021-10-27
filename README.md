@@ -13,8 +13,10 @@ Not sure what to call it yet... or what to do yet.😭
   - The best solution would be:
     -  redirecting to ```/index.html``` for pages with access to the server
     - Serverless Fix
-      - For Netlify, create a ```/_redirects``` file and add ```.index.html``` this redirects all request to ```index.html``` => ```/_redirects``` needs to be in your public folder
-        - See React Document => https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing
+      - For Netlify, create a ```/_redirects``` file in your public folder and add ```/* /index.html 200``` this redirects all request to ```index.html```
+        - Resources
+          - https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing
+          - https://docs.netlify.com/routing/redirects/
       - Webpack:
         - ```publicPath: /``` => set the base url for all resources 
         - historyAPIFallBack => redirects ```404s``` to ```/index.html```
@@ -25,8 +27,21 @@ Not sure what to call it yet... or what to do yet.😭
     - Reasons
       - Endpoints are not names to match preferred route structure
       - Also, not the standard way to go as React-router-dom document states the webpage routes need to match the endpoint URL for the server.
+  - Nested Routes in React
+  - ```useRouteMatch``` is a react-router hook that is used for extract your route path or url.
+    - ```path``` is used to build nested routes => ```/shop/categories/:categoryName/:productName```
+    - ```url``` is used to build a nested link => ```/shop/categories/men-fashion/shoes```
+    - Resource 
+      - https://ui.dev/react-router-v5-nested-routes/
 
-
-
+- React Redux
+  - "cyclic import dependency" using CreateSelector from 'reselect'
+    - CreateSelector is a custom hook built to memoize the content selected from reducers
+      - A perfect explanation for this would be grabbing references from store
+      - Areference select from store always renders the content of whatever component is using the selected properties
+      - https://redux.js.org/tutorials/fundamentals/part-7-standard-patterns
+      - There is another way to that can handle memoizing with ```useSelector``` hook from ```react-redux```
+        -  Another approach to memoize selected properties is using ```shallowEqual``` from ```react-redux``` which is used to check for changes in the selected properties using ```useSelector``` Hook 
+- Redux-thunk
 ### Photo Credits
 - 

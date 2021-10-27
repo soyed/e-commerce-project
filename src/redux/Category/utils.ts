@@ -12,11 +12,7 @@ export enum Platform {
 const assignPlatform = (categories: Category[]) => {};
 
 // parse the categories
-const parsedFetchedCategories = (categories: any[]) => {
-  //   const tempCategories = categories;
-  //   const excludeFields = ['pageName', 'numberOfCategories'];
-  //   excludeFields.forEach((element: any) => delete tempCategories[element]);
-
+const parsedFetchedCategories = (categories: any[]): Category[] => {
   console.log(categories);
 
   const parsedCategories: Category[] = [];
