@@ -31,11 +31,16 @@ const CartItem: React.FC<CartItemProps> = (props) => {
         <p className='cart-item--container-2__text'>{productColor}</p>
       </div>
       <div className='cart-item--container-3'>
-        <UIIcon iconType={IconType.INCREMENT} />
-        <UIIcon iconType={IconType.DECREMENT} />
-        <UIIcon iconType={IconType.LIKE} />
-        {/* <div className='cart-item--container-3__actions-1'></div>
-          <div className='cart-item--container-3__actions-2'></div> */}
+        <div className='cart-item--container-3__actions-1'>
+          <UIIcon iconType={IconType.DECREMENT} />
+          <div className='cart-item--container-3__actions-1__text'>
+            {productQuantity}
+          </div>
+          <UIIcon iconType={IconType.INCREMENT} />
+        </div>
+        <div className='cart-item--container-3__actions-2'>
+          <UIIcon iconType={IconType.LIKE} />
+        </div>
       </div>
     </div>
   );
