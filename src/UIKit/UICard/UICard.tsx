@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { IconType } from '../../utils/icons';
 import UIIcon from '../UIIcon/UIIcon';
-import UIImage from '../UIImage/UIImage';
+import './UICard.scss';
 
 interface UICardProps {
   containerClassName?: string;
@@ -12,7 +12,8 @@ interface UICardProps {
   src?: string;
   alt?: string;
   name?: string;
-  price?: string;
+  price?: number;
+  checkout?: boolean;
 }
 
 const UICard: React.FC<UICardProps> = (props) => {
@@ -25,6 +26,7 @@ const UICard: React.FC<UICardProps> = (props) => {
     alt,
     name,
     price,
+    checkout,
   } = props;
 
   return (
@@ -33,12 +35,20 @@ const UICard: React.FC<UICardProps> = (props) => {
         <div className='card--container-1'>
           <img src={src} alt={alt} />
         </div>
+        <hr />
         <div className='card--container-2'>
           <div className='card--container-2__info'>
-            <h3>{name}</h3>
-            <p>{price}</p>
+            <p className='card--container-2__info__text'>{name}</p>
+            <p className='card--container-2__info__text'>{`$${price}`}</p>
           </div>
-          <UIIcon iconType={IconType.LIKE} />
+        </div>
+        <div className='card--container-3'>
+          <div className='card--container-3__actions-1'>
+            <button></button>
+          </div>
+          <div className='card--container-3__actions-2'>
+            <UIIcon iconType={IconType.LIKE} />
+          </div>
         </div>
       </div>
     </div>

@@ -15,6 +15,7 @@ import MarketPlace from '../components/MarketPlace/MarketPlace';
 import HomeOptions from '../components/HomePage/HomeOptions/HomeOptions';
 import ProductsPage from '../components/ProductsPage/ProductsPage';
 import Cart from '../components/Cart/Cart';
+import Favorites from '../components/Favorites/Favorites';
 
 const AppRouter = () => {
   return (
@@ -25,7 +26,7 @@ const AppRouter = () => {
         {/* COMMERCE ROUTE */}
         {/*  */}
         <Route path={LinkPath.ACCOUNT} />
-        <Route path={LinkPath.FAVORITES} />
+        <Route path={LinkPath.FAVORITES} component={Favorites} />
         <Route path={LinkPath.CART} component={Cart} />
 
         {/* Categories Page => Routes */}
