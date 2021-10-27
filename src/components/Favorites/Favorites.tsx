@@ -113,6 +113,7 @@ const Favorites: React.FC<FavoritesProps> = (props) => {
           src={product.image}
           name={product.name}
           price={product.price}
+          checkout
         />
       ))}
     </div>

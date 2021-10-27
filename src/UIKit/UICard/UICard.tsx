@@ -26,7 +26,7 @@ const UICard: React.FC<UICardProps> = (props) => {
     alt,
     name,
     price,
-    checkout,
+    checkout = false,
   } = props;
 
   return (
@@ -43,11 +43,15 @@ const UICard: React.FC<UICardProps> = (props) => {
           </div>
         </div>
         <div className='card--container-3'>
-          <div className='card--container-3__actions-1'>
-            <button></button>
-          </div>
+          {checkout && (
+            <div className='card--container-3__actions-1'>
+              <button className='card--container-3__actions-1__btn'>
+                Add to Cart
+              </button>
+            </div>
+          )}
           <div className='card--container-3__actions-2'>
-            <UIIcon iconType={IconType.LIKE} />
+            <UIIcon iconType={checkout ? IconType.DELETE : IconType.LIKE} />
           </div>
         </div>
       </div>

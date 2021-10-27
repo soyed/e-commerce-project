@@ -25,10 +25,10 @@
     }
 
     &-2 {
-      height: 30%;
+      height: 15%;
       display: flex;
       flex-direction: column;
-      margin: 1.2rem 0rem;
+      margin: 1rem 0rem;
 
       &__info {
         display: flex;
@@ -40,6 +40,38 @@
           font-weight: 600;
           font-size: 1.6rem;
         }
+      }
+    }
+
+    &-3 {
+      height: 15%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 1rem;
+
+      &__actions-1 {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10%;
+
+        &__btn {
+          width: 100%;
+          text-align: center;
+          cursor: point;
+          font-size: 1.5rem;
+          background-color: green;
+          text-transform: uppercase;
+          border-radius: 0.5rem;
+          padding: 0.2rem 0rem;
+        }
+      }
+
+      &__actions-2 {
+        width: 10%;
       }
     }
   }
