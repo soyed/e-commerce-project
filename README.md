@@ -13,10 +13,12 @@ Not sure what to call it yet... or what to do yet.😭
   - The best solution would be:
     -  redirecting to ```/index.html``` for pages with access to the server
     - Serverless Fix
-      - For Netlify, create a ```/_redirects``` file and add ```.index.html``` this redirects all request to ```index.html```
+      - For Netlify, create a ```/_redirects``` file and add ```.index.html``` this redirects all request to ```index.html``` => ```/_redirects``` needs to be in your public folder
+        - See React Document => https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing
       - Webpack:
         - ```publicPath: /``` => set the base url for all resources 
         - historyAPIFallBack => redirects ```404s``` to ```/index.html```
+        - This fix would fix all /get <Content> not found error
 
 - App Routing to match the Endpoints being consumed
   - The navigation on the webpage is not the same with the endpoint being sent to fetch from the server
