@@ -14,6 +14,7 @@ import NotFound from '../components/Information/Not-Found/Not-Found';
 import MarketPlace from '../components/MarketPlace/MarketPlace';
 import HomeOptions from '../components/HomePage/HomeOptions/HomeOptions';
 import ProductsPage from '../components/ProductsPage/ProductsPage';
+import Cart from '../components/Cart/Cart';
 
 const AppRouter = () => {
   return (
@@ -25,7 +26,7 @@ const AppRouter = () => {
         {/*  */}
         <Route path={LinkPath.ACCOUNT} />
         <Route path={LinkPath.FAVORITES} />
-        <Route path={LinkPath.CART} />
+        <Route path={LinkPath.CART} component={Cart} />
 
         {/* Categories Page => Routes */}
         <Route path={LinkPath.CATEGORIES} component={CategoriesPages} />
@@ -41,7 +42,6 @@ const AppRouter = () => {
         <Route path={LinkPath.BUYING_OPTIONS} component={BuyingOptions} />
 
         {/* General Routes */}
-
         <Route path={LinkPath.SHOP} component={HomePage} exact />
         <Redirect from={LinkPath.HOME} to={LinkPath.SHOP} exact />
         <Route path={LinkPath.UNIVERSAL} exact>
