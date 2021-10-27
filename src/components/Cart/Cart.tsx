@@ -68,6 +68,27 @@ const Cart: React.FC<CartProps> = (props) => {
           ))}
         </div>
       </div>
+      <div className='cart__container--checkout'>
+        <div className='cart__container--checkout--content-1'>
+          <h3 className='cart__container--checkout--content-1__text'>Total</h3>
+        </div>
+        <hr />
+        <div className='cart__container--checkout--content-2'>
+          <div className='checkout__container-1'>
+            <p className='checkout__container-1__text'>Sub-total</p>
+            <p className='checkout__container-1__text'>{`$50`}</p>
+          </div>
+          <div className='checkout__container-2'>
+            <p className='checkout__container-2__text'>Shipping</p>
+            <p className='checkout__container-2__text'>Working!</p>
+          </div>
+          <div className='checkout__container-3'>
+            <div className='checkout__container-3__btn'>
+              <button>Checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
