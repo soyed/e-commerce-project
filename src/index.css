@@ -1,0 +1,32 @@
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Nunito:wght@300;400;600;700;800&display=swap'); */
+:root {
+  font-size: 62.5%;
+}
+
+/* body {
+  font-size: 1.5rem;
+  // font-family: 'Gochi Hand', cursive;
+  font-family: 'Nunito', sans-serif;
+  background-color: #f3fcf0;
+} */
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}

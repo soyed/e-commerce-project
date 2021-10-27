@@ -1,0 +1,34 @@
+/* @import '../../../scss/variables.scss'; */
+
+/* .footer {
+  background-color: $color-black;
+  color: $color-white;
+  height: 15vh;
+
+  &--container-1 {
+    margin-bottom: 2.5rem;
+
+    &__text {
+      font-size: 2rem;
+    }
+  }
+
+  &--container-2 {
+  }
+} */
+
+.footer {
+  background-color: black;
+  color: white;
+  height: 15vh;
+}
+.footer--container-1 {
+  margin-bottom: 2.5rem;
+}
+
+.footer--container-1__text {
+  font-size: 2rem;
+}
+
+.footer--container-1 {
+}

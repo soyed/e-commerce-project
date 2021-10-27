@@ -44,4 +44,8 @@ Not sure what to call it yet... or what to do yet.😭
         -  Another approach to memoize selected properties is using ```shallowEqual``` from ```react-redux``` which is used to check for changes in the selected properties using ```useSelector``` Hook 
 - Redux-thunk
 ### Photo Credits
-- 
+- Photo by KoolShooters from Pexels - https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/
+- Photo by Philip Boakye from Pexels - https://www.pexels.com/photo/men-s-black-leather-jacket-1813947/
+- Photo by Sound On from Pexels - https://www.pexels.com/photo/photo-of-woman-in-yellow-shirt-3760856/
+- Photo by <a href="https://unsplash.com/@j_erhunse?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeffery Erhunse</a> on <a href="https://unsplash.com/s/photos/black-girl?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  

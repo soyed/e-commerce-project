@@ -1,0 +1,26 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+  &--container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+
+    &-1 {
+      display: flex;
+      justify-content: center;
+
+      &__btn {
+      }
+    }
+
+    &-2 {
+      display: flex;
+      justify-content: center;
+
+      &__btn {
+      }
+    }
+  }
+}
