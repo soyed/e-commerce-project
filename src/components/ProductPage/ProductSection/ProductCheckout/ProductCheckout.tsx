@@ -6,9 +6,10 @@ import { ProductType } from '../../utils';
 
 interface ProductCheckoutProps {
   productName?: string;
-  productPrice?: string;
+  productPrice?: number;
   productType?: ProductType;
   productColor?: string;
+  productRatings?: number;
   addToCart?: () => void;
   likeProduct?: () => void;
   incrementProductCount?: () => void;
@@ -16,7 +17,13 @@ interface ProductCheckoutProps {
 }
 
 const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
-  const { productName, productPrice, productType, productColor } = props;
+  const {
+    productName,
+    productPrice,
+    productType,
+    productColor,
+    productRatings,
+  } = props;
   return (
     <div className='flex'>
       <div className='flex justify-center items-center'>
