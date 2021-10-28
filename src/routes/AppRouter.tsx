@@ -16,6 +16,7 @@ import HomeOptions from '../components/HomePage/HomeOptions/HomeOptions';
 import ProductsPage from '../components/ProductsPage/ProductsPage';
 import Cart from '../components/Cart/Cart';
 import Favorites from '../components/Favorites/Favorites';
+import Accounts from '../components/Accounts/Accounts';
 
 const AppRouter = () => {
   return (
@@ -25,7 +26,7 @@ const AppRouter = () => {
       <Switch>
         {/* COMMERCE ROUTE */}
         {/*  */}
-        <Route path={LinkPath.ACCOUNT} />
+        <Route path={LinkPath.ACCOUNT} component={Accounts} />
         <Route path={LinkPath.FAVORITES} component={Favorites} />
         <Route path={LinkPath.CART} component={Cart} />
 

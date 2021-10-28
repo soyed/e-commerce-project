@@ -1,0 +1,11 @@
+.accounts {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
