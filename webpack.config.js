@@ -6,7 +6,9 @@ const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
 module.exports = {
-  entry: path.resolve(__dirname, '/src/index.tsx'),
+  entry: {
+    index: path.resolve(__dirname, '/src/index.tsx'),
+  },
   mode: mode,
   resolve: { extensions: ['.tsx', '.ts', '.js', '.jsx'] },
   module: {
@@ -21,11 +23,11 @@ module.exports = {
       {
         test: /\.(ico|png|jpe?g|gif|svg)/i,
         type: 'asset',
-        parser: {
-          dataUrlCondition: {
-            maxSize: 30 * 1024, // 3Kb max size for line
-          },
-        },
+        // parser: {
+        //   dataUrlCondition: {
+        //     maxSize: 30 * 1024, // 3Kb max size for line
+        //   },
+        // },
       },
       {
         test: /\.(sa|sc|c)ss$/,
@@ -45,7 +47,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
     }),
-  ].concat(mode === 'development' ? [] : [new MiniCssExtractPlugin()]),
+  ].concat(
+    mode === 'development'
+      ? []
+      : [
+          new MiniCssExtractPlugin({
+            filename: '[name].bundle.css',
+            chunkFilename: '[id].css',
+          }),
+        ]
+  ),
   devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
@@ -54,5 +65,10 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
     publicPath: '/',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 };

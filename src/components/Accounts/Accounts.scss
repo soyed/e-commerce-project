@@ -1,11 +1,16 @@
 .accounts {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex: 1;
 
   &__container {
     display: flex;
-    justify-content: center;
+
     align-items: center;
+    width: 65rem;
+    height: 55rem;
+    background-color: purple;
+    flex-direction: column;
   }
 }

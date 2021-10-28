@@ -1,0 +1,17 @@
+.products-page {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+
+  &__container-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -12,6 +12,11 @@ export enum LinkPath {
   SHIPPING = '/shipping',
   CONTACT = '/contact',
   BUYING_OPTIONS = '/buying-options',
+
+  // Accounts Validation
+  SIGN_IN = '/identify/sign-in',
+  SIGN_UP = '/identify/sign-up',
+
   // Commerce Section
   ACCOUNT = '/account',
   FAVORITES = '/favorites',
@@ -20,7 +25,8 @@ export enum LinkPath {
   WOMEN = '/shop/women',
   MARKET_PLACE = '/shop/market-place',
   CATEGORIES = '/shop/categories',
-  CATEGORY = '/shop/:categoryName',
+  CATEGORY_PRODUCTS = '/shop/:categoryName/products',
+  PRODUCT_PAGE = '/shop/:categoryName/products/:productName',
   TOP_RATED_PRODUCTS = 'shop/products?search=topRated',
   TOP_RATED_BRANDS = 'shop/brands?search=top',
   // NOT Found

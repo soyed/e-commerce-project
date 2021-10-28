@@ -10,33 +10,31 @@ import {
 import { Category } from './model';
 import UILoadingSpinner from '../../UIKit/UILoadingSpinner/UILoadingSpinner';
 import { LinkPath } from '../../routes/utils';
+import './CategoriesPage.scss';
 
 const CategoriesPages = () => {
   const categories: Category[] = useSelector(categoryList);
   const isLoading: boolean = useSelector(categoryLoading);
 
   return (
-    <>
+    <div className='categories-page'>
       {isLoading ? (
-        <UIContainer>
-          <UILoadingSpinner
-            className={'flex flex-1  bg-pink-300 justify-center items-center'}
-          />
-        </UIContainer>
+        <div className='categories-page__container-1'>
+          <UILoadingSpinner />
+        </div>
       ) : (
-        <UIContainer
-          className={'flex flex-1 flex-wrap bg-pink-300 justify-evenly'}
-        >
+        <UIContainer className='categories-page__container-2'>
           {categories.map((category) => (
             <ProductCategory
               key={category.id}
-              linkTo={`${LinkPath.SHOP}/${category.categoryName}`}
+              linkTo={`${LinkPath.SHOP}/${category.categoryName}/products`}
               categoryName={category.categoryName}
+              categoryImage={category.image}
             />
           ))}
         </UIContainer>
       )}
-    </>
+    </div>
   );
 };
 

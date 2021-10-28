@@ -17,6 +17,7 @@ import ProductsPage from '../components/ProductsPage/ProductsPage';
 import Cart from '../components/Cart/Cart';
 import Favorites from '../components/Favorites/Favorites';
 import Accounts from '../components/Accounts/Accounts';
+import ProductPage from '../components/ProductPage/ProductPage';
 
 const AppRouter = () => {
   return (
@@ -32,7 +33,8 @@ const AppRouter = () => {
 
         {/* Categories Page => Routes */}
         <Route path={LinkPath.CATEGORIES} component={CategoriesPages} />
-        <Route path={LinkPath.CATEGORY} component={ProductsPage} />
+        <Route path={LinkPath.PRODUCT_PAGE} component={ProductPage} />
+        <Route path={LinkPath.CATEGORY_PRODUCTS} component={ProductsPage} />
 
         {/* Market Place */}
         <Route path={LinkPath.MARKET_PLACE} component={MarketPlace} />

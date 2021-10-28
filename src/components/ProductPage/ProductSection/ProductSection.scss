@@ -1,0 +1,18 @@
+.product-section {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(241, 185, 241);
+  height: 50vh;
+  flex-direction: column;
+
+  &__container-1 {
+    display: flex;
+    justify-content: space-evenly;
+    height: 60%;
+  }
+
+  &__container-2 {
+    display: flex;
+    height: 40%;
+  }
+}

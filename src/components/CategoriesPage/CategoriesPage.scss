@@ -1,0 +1,20 @@
+.categories-page {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  background-color: rgb(195, 113, 195);
+
+  &__container-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__container-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem 0rem;
+    width: 100%;
+  }
+}
