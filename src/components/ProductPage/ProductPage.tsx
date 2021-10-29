@@ -8,13 +8,14 @@ import {
   productsLoading,
 } from '../../redux/Products/productsSelectors';
 import { Product } from './model';
+import './ProductPage.scss';
 
 const ProductPage = () => {
   const dispatch = useDispatch();
   const isLoading: boolean = useSelector(productsLoading);
   const products: Product[] = useSelector(fetchProducts);
   return (
-    <>
+    <div className='product-page'>
       <ProductSection
         key={products[0].id}
         productImage={products[0].image}
@@ -28,7 +29,7 @@ const ProductPage = () => {
       />
       <SimilarProducts />
       <ProductViewed />
-    </>
+    </div>
   );
 };
 

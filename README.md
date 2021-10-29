@@ -42,7 +42,16 @@ Not sure what to call it yet... or what to do yet.😭
       - https://redux.js.org/tutorials/fundamentals/part-7-standard-patterns
       - There is another way to that can handle memoizing with ```useSelector``` hook from ```react-redux```
         -  Another approach to memoize selected properties is using ```shallowEqual``` from ```react-redux``` which is used to check for changes in the selected properties using ```useSelector``` Hook 
-- Redux-thunk
+- Redux-thunk and Middle Wares
+
+
+
+- Webpack Optimization
+
+
+
+
+
 ### Photo Credits
 - Photo by KoolShooters from Pexels - https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/
 - Photo by Philip Boakye from Pexels - https://www.pexels.com/photo/men-s-black-leather-jacket-1813947/
