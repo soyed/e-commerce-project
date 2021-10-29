@@ -11,4 +11,9 @@ const firebaseConfig = {
 const googleProvider = new GoogleAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 
+export enum ProviderType {
+  GOOGLE = 'Google',
+  FACEBOOK = 'Facebook',
+}
+
 export { firebaseConfig, googleProvider, facebookProvider };
