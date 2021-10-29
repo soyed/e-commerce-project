@@ -1,6 +1,5 @@
 import firebase from 'firebase/app';
-import firestore from 'firebase/firestore';
-import fireAuth from 'firebase/auth';
+import { getFirestore, addDoc, collection } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyClldAY-UbvLyyqiYyb1_mdCLCLGuESQjI',
@@ -12,6 +11,12 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+const firestore = getFirestore();
+
+addDoc(collection(firestore, 'users'), { testing: '123' })
+  .then((res) => console.log(res))
+  .catch((error) => console.log(error));
 
 // request to the backend
 
