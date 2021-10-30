@@ -14,35 +14,77 @@ const validatePlatform = (categoryId: string) => {
   return excludedCategories.some((category) => category === categoryId);
 };
 
-const parseFetchedProducts = (
+export const productParser = (products: any, categoryId: string) => {
+  let parsedProducts: Product[] = [];
+  if (products?.length) {
+    for (let key in products) {
+      if (products[key].category_id === categoryId) {
+        parsedProducts.push({
+          id: products[key]._id,
+          name: products[key].name,
+          description: products[key].description,
+          category: products[key].category,
+          stock: products[key].stock,
+          ratings: products[key].ratings,
+          price: products[key].price,
+          image: products[key].image[0],
+          sales: products[key].sales,
+          color: products[key].color,
+          platform: validatePlatform(products[key].category)
+            ? Platform.MARKETPLACE
+            : Platform.COMMERCE,
+        });
+      }
+    }
+  } else {
+    parsedProducts.push({
+      id: products._id,
+      name: products.name,
+      description: products.description,
+      category: products.category,
+      stock: products.stock,
+      ratings: products.ratings,
+      price: products.price,
+      image: products.image[0],
+      sales: products.sales,
+      color: products.color,
+      platform: validatePlatform(products.category)
+        ? Platform.MARKETPLACE
+        : Platform.COMMERCE,
+    });
+  }
+
+  return parsedProducts;
+};
+
+export const parseFetchedProducts = (
   products: any[],
   categoryId: string
 ): Product[] => {
-  let parsedProducts: Product[] = [];
-  console.log(products[0].reviews.toString());
+  // let parsedProducts: Product[] = [];
+  return productParser(products, categoryId);
 
-  for (let key in products) {
-    if (products[key].category_id === categoryId) {
-      parsedProducts.push({
-        id: products[key]._id,
-        name: products[key].name,
-        description: products[key].description,
-        category: products[key].category,
-        stock: products[key].stock,
-        ratings: products[key].ratings,
-        price: products[key].price,
-        image: products[key].image[0],
-        sales: products[key].sales,
-        color: products[key].color,
-        platform: validatePlatform(products[key].category)
-          ? Platform.MARKETPLACE
-          : Platform.COMMERCE,
-      });
-    }
-  }
-  console.log(parsedProducts);
+  // for (let key in products) {
+  //   if (products[key].category_id === categoryId) {
+  //     parsedProducts.push({
+  //       id: products[key]._id,
+  //       name: products[key].name,
+  //       description: products[key].description,
+  //       category: products[key].category,
+  //       stock: products[key].stock,
+  //       ratings: products[key].ratings,
+  //       price: products[key].price,
+  //       image: products[key].image[0],
+  //       sales: products[key].sales,
+  //       color: products[key].color,
+  //       platform: validatePlatform(products[key].category)
+  //         ? Platform.MARKETPLACE
+  //         : Platform.COMMERCE,
+  //     });
+  //   }
+  // }
 
-  return parsedProducts;
+  // return parsedProducts;
 };
 
 // Fetching from Endpoint

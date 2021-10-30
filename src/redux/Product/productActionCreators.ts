@@ -2,8 +2,8 @@ import { Product } from '../../components/ProductPage/model';
 import { STATUS } from '../Category/utils';
 import productActions from './productActions';
 
-export const fetchingProducts = (products: Product[]) => {
-  return { type: productActions.FETCH_PRODUCT, payload: { products } };
+export const fetchingProducts = (product: Product) => {
+  return { type: productActions.FETCH_PRODUCT, payload: { product } };
 };
 
 export const productStatus = (status: STATUS) => {

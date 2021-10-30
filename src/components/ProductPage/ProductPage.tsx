@@ -10,10 +10,15 @@ import {
 import { Product } from './model';
 import './ProductPage.scss';
 
+import { useParams } from 'react-router-dom';
+
 const ProductPage = () => {
   const dispatch = useDispatch();
+  const params = useParams();
   const isLoading: boolean = useSelector(statusForProducts);
   const products: Product[] = useSelector(fetchProducts);
+
+  // extract catgeory name and productId
 
   React.useEffect(() => {}, []);
   return (

@@ -4,7 +4,7 @@ import productActions from './productActions';
 const initialState = {
   status: STATUS.IDLE,
   errorMessage: ' ',
-  products: [],
+  product: {},
 };
 
 const productReducer = (state = initialState, action: any) => {
