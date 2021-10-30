@@ -6,7 +6,7 @@ export enum IconType {
   LINKEDIN = 'fab fa-linkedin-in',
   GITHUB = 'fab fa-github',
   // Action Icons
-  CART = '',
+  CART = 'fas fa-cart-plus',
   LIKE = 'fas fa-heart',
   USER = 'fas fa-user',
   DELETE = 'fas fa-trash-alt',

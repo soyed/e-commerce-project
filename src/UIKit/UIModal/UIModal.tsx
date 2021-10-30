@@ -1,5 +1,6 @@
 import React from 'react';
 import { VerifyUser } from '../../components/Accounts/utils';
+import { createNewUser } from '../../services/Firebase/firebase-auth';
 
 import './UIModal.scss';
 
@@ -11,7 +12,18 @@ interface UIModalProps {
 const UIModal: React.FC<UIModalProps> = (props) => {
   const { action } = props;
 
-  //   const handleSubmission = () => {};
+  const emailRef = React.useRef<HTMLInputElement>();
+  const passwordRef = React.useRef<HTMLInputElement>();
+
+  const handleSubmission = (event) => {
+    // prevent default
+    event.preventDefault();
+
+    console.log(emailRef.current.value);
+    console.log(passwordRef.current.value);
+
+    // createNewUser(emailRef.current.value, passwordRef.current.value);
+  };
   return (
     <div className='modal'>
       <div className='modal--container'>
@@ -22,6 +34,7 @@ const UIModal: React.FC<UIModalProps> = (props) => {
           <div className='container--2__content-1'>
             <label className='modal__label'>Email Address:</label>
             <input
+              ref={emailRef}
               className='modal__input'
               type='email'
               placeholder='Email Address'
@@ -50,13 +63,19 @@ const UIModal: React.FC<UIModalProps> = (props) => {
           <div className='container--2__content-4'>
             <label className='modal__label'>Password:</label>
             <input
+              ref={passwordRef}
               className='modal__input'
               type='password'
               placeholder='Password'
             />
           </div>
           <div className='container--2__content-5'>
-            <button className='container--2__content-5__btn'>{action}</button>
+            <button
+              className='container--2__content-5__btn'
+              onClick={handleSubmission}
+            >
+              {action}
+            </button>
           </div>
           <div className='container--2__content-6'>
             <p className='container--2__content-6__text'>forgot password?</p>
