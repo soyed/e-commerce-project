@@ -5,14 +5,14 @@ import SimilarProducts from './SimilarProducts/SimilarProducts';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchProducts,
-  productsLoading,
+  statusForProducts,
 } from '../../redux/Products/productsSelectors';
 import { Product } from './model';
 import './ProductPage.scss';
 
 const ProductPage = () => {
   const dispatch = useDispatch();
-  const isLoading: boolean = useSelector(productsLoading);
+  const isLoading: boolean = useSelector(statusForProducts);
   const products: Product[] = useSelector(fetchProducts);
   return (
     <div className='product-page'>

@@ -7,8 +7,8 @@ import {
 } from './categoryActionCreators';
 
 export enum Platform {
-  INTERNAL = 'internal',
-  EXTERNAL = 'external',
+  COMMERCE = 'Commerce',
+  MARKETPLACE = 'MarketPlace',
 }
 
 export enum STATUS {
@@ -32,6 +32,17 @@ export enum Images {
   JEWELRY = '',
 }
 
+export const excludedCategories = [
+  'BeautyHealthHair',
+  'ToysKidsBabies',
+  'ConsumerElectronics',
+  'PhonesTelecommunications',
+  'HomePetAppliance',
+  'ComputerOfficeSecurity',
+  'OutdoorFunSports',
+  'HomeImprovementTools',
+];
+
 const categoryImage = (categories: Category[]) => {};
 
 // Assign the appropriate images to the categories and return an array for the categories
@@ -51,30 +62,15 @@ const categoryParser = (categories: any[]): Category[] => {
 
 // parse the categories
 const parsedFetchedCategories = (categories: any[]): Category[][] => {
-  // this are products that would be displayed at the marketplace section of the app
-  const excludedCategories = [
-    'BeautyHealthHair',
-    'ToysKidsBabies',
-    'ConsumerElectronics',
-    'PhonesTelecommunications',
-    'HomePetAppliance',
-    'ComputerOfficeSecurity',
-    'OutdoorFunSports',
-    'HomeImprovementTools',
-  ];
-
+  // filter products to display in stores main page
   const commerce = categories.filter(
     (category) =>
       !excludedCategories.some((element) => element === category.category_id)
   );
-
+  // filter marketplace products
   const marketPlace = categories.filter((category) =>
     excludedCategories.some((element) => element === category.category_id)
   );
-
-  console.log(commerce);
-  console.log(marketPlace);
-
   // const commerceCategories = categoryParse(categories);
   const parsedData = [categoryParser(commerce), categoryParser(marketPlace)];
 

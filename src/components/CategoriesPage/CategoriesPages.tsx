@@ -57,7 +57,7 @@ const CategoriesPages = () => {
           {categories?.map((category) => (
             <ProductCategory
               key={category.id}
-              linkTo={`${LinkPath.SHOP}/${category.categoryName}/products`}
+              linkTo={`${LinkPath.SHOP}/${category.categoryId}/products`}
               categoryName={category.categoryName}
               categoryImage={category.image}
             />

@@ -25,7 +25,7 @@ export enum LinkPath {
   WOMEN = '/shop/women',
   MARKET_PLACE = '/shop/market-place',
   CATEGORIES = '/shop/categories',
-  CATEGORY_PRODUCTS = '/shop/:categoryName/products',
+  CATEGORY_PRODUCTS = '/shop/:categoryId/products',
   PRODUCT_PAGE = '/shop/:categoryName/products/:productName',
   TOP_RATED_PRODUCTS = 'shop/products?search=topRated',
   TOP_RATED_BRANDS = 'shop/brands?search=top',

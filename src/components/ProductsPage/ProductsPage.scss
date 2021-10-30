@@ -3,7 +3,8 @@
   justify-content: center;
   flex: 1;
 
-  &__container-1 {
+  &__container-1,
+  &__container-3 {
     display: flex;
     justify-content: center;
     align-items: center;

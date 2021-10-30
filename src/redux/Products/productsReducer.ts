@@ -1,3 +1,4 @@
+import { STATUS } from '../Category/utils';
 import productsActions from './productsActions';
 
 const temp = [
@@ -101,10 +102,9 @@ const temp = [
 ];
 
 const initialState = {
-  status: false,
+  status: STATUS.IDLE,
+  errorMessage: '',
   products: temp,
-  similarProducts: {},
-  viewedProducts: {},
   pageNumber: 0,
 };
 const productReducer = (state = initialState, action: any) => {
@@ -113,6 +113,8 @@ const productReducer = (state = initialState, action: any) => {
       return { ...state, status: action.payload.status };
     case productsActions.FETCH_CATEGORY_PRODUCTS:
       return { ...state, products: action.payload.products };
+    case productsActions.FAILED_CATEGORY_PRODUCTS:
+      return { ...state, errorMessage: action.payload.message };
     default:
       return state;
   }

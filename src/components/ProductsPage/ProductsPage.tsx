@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductsByCategories } from '../../redux/Products/utils';
 import {
   fetchProducts,
-  productsLoading,
+  statusForProducts,
+  failedProducts,
 } from '../../redux/Products/productsSelectors';
 import { Product } from '../ProductPage/model';
 import './ProductsPage.scss';
@@ -13,6 +14,7 @@ import UICard from '../../UIKit/UICard/UICard';
 
 import { useParams, useRouteMatch, Route } from 'react-router-dom';
 import ProductPage from '../ProductPage/ProductPage';
+import { STATUS } from '../../redux/Category/utils';
 
 interface ProductsPageProps {
   products?: string[];
@@ -20,21 +22,29 @@ interface ProductsPageProps {
 
 const ProductsPage: React.FC<ProductsPageProps> = () => {
   const dispatch = useDispatch();
-  const isLoading: boolean = useSelector(productsLoading);
+  const status: STATUS = useSelector(statusForProducts);
   const products: Product[] = useSelector(fetchProducts);
+  const errorMessage: string = useSelector(failedProducts);
 
   // dispatch(fetchProductsByCategories('MensFashion'));
   const params = useParams();
-  const { categoryName } = params;
-  console.log(categoryName);
+  const { categoryId } = params;
+  console.log(categoryId);
 
   const { url, path } = useRouteMatch();
   console.log(url, path);
 
+  // hooks
+
+  // fetching products
+  React.useEffect(() => {
+    dispatch(fetchProductsByCategories(categoryId));
+  }, [categoryId]);
+
   return (
     <>
       <div className='products-page'>
-        {isLoading ? (
+        {status === STATUS.LOADING ? (
           <div className='products-page__container-1'>
             <UILoadingSpinner />
           </div>
@@ -51,6 +61,9 @@ const ProductsPage: React.FC<ProductsPageProps> = () => {
               />
             ))}
           </div>
+        )}
+        {status === STATUS.FAILED && (
+          <div className='products-page__container-3'>{errorMessage}</div>
         )}
       </div>
     </>
