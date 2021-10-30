@@ -14,6 +14,8 @@ const ProductPage = () => {
   const dispatch = useDispatch();
   const isLoading: boolean = useSelector(statusForProducts);
   const products: Product[] = useSelector(fetchProducts);
+
+  React.useEffect(() => {}, []);
   return (
     <div className='product-page'>
       <ProductSection

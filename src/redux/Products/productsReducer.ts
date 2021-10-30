@@ -107,7 +107,7 @@ const initialState = {
   products: temp,
   pageNumber: 0,
 };
-const productReducer = (state = initialState, action: any) => {
+const productsReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case productsActions.LOADING_CATEGORY_PRODUCTS:
       return { ...state, status: action.payload.status };
@@ -120,4 +120,4 @@ const productReducer = (state = initialState, action: any) => {
   }
 };
 
-export default productReducer;
+export default productsReducer;
