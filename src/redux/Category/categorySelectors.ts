@@ -1,5 +1,22 @@
 import { createSelector } from 'reselect';
 
-export const categoryLoading = (state: any) => state.category.status;
+const categories = (state: any) => state.category;
 
-export const categoryList = (state: any) => state.category.entities;
+export const categoryStatus = createSelector(
+  [categories],
+  (category) => category.status
+);
+
+export const categoryCommerce = createSelector(
+  [categories],
+  (category) => category.commerce
+);
+export const categoryMarketPlace = createSelector(
+  [categories],
+  (category) => category.marketPlace
+);
+
+export const categoryError = createSelector(
+  [categories],
+  (category) => category.message
+);

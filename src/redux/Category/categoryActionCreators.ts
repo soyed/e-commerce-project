@@ -1,9 +1,14 @@
 import { Category } from '../../components/CategoriesPage/model';
 import CategoryActions from './categoryActions';
-export const fetchCategory = (categories: Category[]) => {
-  return { type: CategoryActions.FETCH_CATEGORIES, payload: categories };
+import { STATUS } from './utils';
+export const fetchCategory = (categories: Category[][]) => {
+  return { type: CategoryActions.FETCH_CATEGORIES, payload: { categories } };
 };
 
-export const loadCategory = (status: boolean) => {
-  return { type: CategoryActions.LOADING_CATEGORIES, payload: status };
+export const loadCategory = (status: STATUS) => {
+  return { type: CategoryActions.LOADING_CATEGORIES, payload: { status } };
+};
+
+export const failedCategory = (message: string) => {
+  return { type: CategoryActions.FAILED_CATEGORIES, payload: { message } };
 };

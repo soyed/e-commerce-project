@@ -1,30 +1,43 @@
 import React from 'react';
-import { fetchCategories } from '../../redux/Category/categoryReducer';
 import UIContainer from '../../UIKit/UIContainer/UIContainer';
 import ProductCategory from './ProductCategory/ProductCategory';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
-  categoryList,
-  categoryLoading,
+  categoryCommerce,
+  categoryStatus,
+  categoryError,
 } from '../../redux/Category/categorySelectors';
 import { Category } from './model';
 import UILoadingSpinner from '../../UIKit/UILoadingSpinner/UILoadingSpinner';
 import { LinkPath } from '../../routes/utils';
 import './CategoriesPage.scss';
+import { STATUS, fetchCategories } from '../../redux/Category/utils';
 
 const CategoriesPages = () => {
-  const categories: Category[] = useSelector(categoryList);
-  const isLoading: boolean = useSelector(categoryLoading);
+  // Hooks
+  const dispatch = useDispatch();
+  // selectors
+  const categories: Category[] = useSelector(categoryCommerce);
+  const status: STATUS = useSelector(categoryStatus);
+  const errorMessage: string = useSelector(categoryError);
+  console.log(errorMessage);
+
+  // Effects
+
+  React.useEffect(() => {
+    // fetching categories
+    // dispatch(fetchCategories);
+  }, []);
 
   return (
     <div className='categories-page'>
-      {isLoading ? (
+      {/* {status === STATUS.LOADING ? (
         <div className='categories-page__container-1'>
           <UILoadingSpinner />
         </div>
       ) : (
         <UIContainer className='categories-page__container-2'>
-          {categories.map((category) => (
+          {categories?.map((category) => (
             <ProductCategory
               key={category.id}
               linkTo={`${LinkPath.SHOP}/${category.categoryName}/products`}
@@ -33,6 +46,27 @@ const CategoriesPages = () => {
             />
           ))}
         </UIContainer>
+      )} */}
+      {status === STATUS.LOADING && (
+        <div className='categories-page__container-1'>
+          <UILoadingSpinner />
+        </div>
+      )}
+      {status === STATUS.IDLE && (
+        <UIContainer className='categories-page__container-2'>
+          {categories?.map((category) => (
+            <ProductCategory
+              key={category.id}
+              linkTo={`${LinkPath.SHOP}/${category.categoryName}/products`}
+              categoryName={category.categoryName}
+              categoryImage={category.image}
+            />
+          ))}
+        </UIContainer>
+      )}
+
+      {status === STATUS.FAILED && (
+        <div className='categories-page__container-3'>{errorMessage}</div>
       )}
     </div>
   );

@@ -4,7 +4,8 @@
   flex: 1;
   background-color: rgb(195, 113, 195);
 
-  &__container-1 {
+  &__container-1,
+  &__container-3 {
     display: flex;
     justify-content: center;
     align-items: center;
