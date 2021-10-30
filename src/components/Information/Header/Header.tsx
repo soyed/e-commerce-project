@@ -31,7 +31,7 @@ const Header = () => {
           containerClassName='icon__container'
         />
         <UIIcon
-          iconType={IconType.SORT}
+          iconType={IconType.CART}
           linkTo={LinkPath.CART}
           linkType={RouteType.COMMERCE}
           iconText={'Cart'}
