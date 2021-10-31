@@ -12,8 +12,7 @@ import './ProductsPage.scss';
 import UILoadingSpinner from '../../UIKit/UILoadingSpinner/UILoadingSpinner';
 import UICard from '../../UIKit/UICard/UICard';
 
-import { useParams, useRouteMatch, Route } from 'react-router-dom';
-import ProductPage from '../ProductPage/ProductPage';
+import { useParams, useRouteMatch } from 'react-router-dom';
 import { STATUS } from '../../redux/Category/utils';
 
 interface ProductsPageProps {
@@ -57,7 +56,7 @@ const ProductsPage: React.FC<ProductsPageProps> = () => {
                 alt={products.name}
                 price={products.price}
                 name={products.name}
-                linkTo={`${url}/${products.name}`}
+                linkTo={`${url}/${products.id}`}
               />
             ))}
           </div>

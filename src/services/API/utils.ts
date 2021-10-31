@@ -25,7 +25,7 @@ export const endpointProductsById = (
   productId: string,
   similarProducts: boolean = true
 ) => {
-  return `${URL}/products/getproductbyid/${productId}${
+  return `${BASE_URL}/products/getproductbyid/${productId}${
     similarProducts ? `?similarProducts=${similarProducts}` : ''
   }`;
 };
@@ -56,7 +56,7 @@ export const endpointTopSalesByCategory = (
 
 // Get all products
 export const endpointAllProducts = (page?: number, limit?: number) => {
-  return `${URL}/products${limit ? `?limit=${limit}` : ''}${
+  return `${BASE_URL}/products${limit ? `?limit=${limit}` : ''}${
     page ? `&page=${page}` : ''
   }`;
 };

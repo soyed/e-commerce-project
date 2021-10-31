@@ -15,5 +15,5 @@ export interface Product {
   reviews?: any;
   color?: string;
   platform: Platform;
-  similarProducts: Product[];
+  similarProducts?: Product[];
 }

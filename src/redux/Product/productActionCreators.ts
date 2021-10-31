@@ -2,7 +2,7 @@ import { Product } from '../../components/ProductPage/model';
 import { STATUS } from '../Category/utils';
 import productActions from './productActions';
 
-export const fetchingProducts = (product: Product) => {
+export const fetchingProduct = (product: Product) => {
   return { type: productActions.FETCH_PRODUCT, payload: { product } };
 };
 

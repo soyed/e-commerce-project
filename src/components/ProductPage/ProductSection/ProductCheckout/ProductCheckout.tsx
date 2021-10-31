@@ -48,9 +48,9 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
         </div>
         <div className='product-checkout__container-3 '>
           <div className='flex'>
-            <UIIcon iconType={IconType.DECREMENT} />
+            <UIIcon iconType={IconType.DECREMENT} hasRoute={false} />
             <p>0</p>
-            <UIIcon iconType={IconType.INCREMENT} />
+            <UIIcon iconType={IconType.INCREMENT} hasRoute={false} />
           </div>
           <div className='flex'>
             <div className='flex'>

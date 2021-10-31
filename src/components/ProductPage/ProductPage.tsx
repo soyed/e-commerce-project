@@ -3,40 +3,59 @@ import ProductSection from './ProductSection/ProductSection';
 import ProductViewed from './ProductViewed/ProductViewed';
 import SimilarProducts from './SimilarProducts/SimilarProducts';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  fetchProducts,
-  statusForProducts,
-} from '../../redux/Products/productsSelectors';
+
 import { Product } from './model';
 import './ProductPage.scss';
 
 import { useParams } from 'react-router-dom';
+import { fetchProduct } from '../../redux/Product/utils';
+import {
+  failedProduct,
+  fetchedProduct,
+  statusForProduct,
+} from '../../redux/Product/productSelectors';
+import { STATUS } from '../../redux/Category/utils';
+import UILoadingSpinner from '../../UIKit/UILoadingSpinner/UILoadingSpinner';
 
 const ProductPage = () => {
   const dispatch = useDispatch();
   const params = useParams();
-  const isLoading: boolean = useSelector(statusForProducts);
-  const products: Product[] = useSelector(fetchProducts);
+  const status: STATUS = useSelector(statusForProduct);
+  const product: Product = useSelector(fetchedProduct);
+  const errorMessage: string = useSelector(failedProduct);
 
-  // extract catgeory name and productId
+  // extract category name and productId
+  const { categoryId, productId } = params;
+  console.log(categoryId, productId);
 
-  React.useEffect(() => {}, []);
+  React.useEffect(() => {
+    // dispatch(fetchProduct(productId, categoryId));
+  }, [categoryId, productId]);
   return (
-    <div className='product-page'>
-      <ProductSection
-        key={products[0].id}
-        productImage={products[0].image}
-        productId={products[0].id}
-        productColor={products[0].color}
-        productDescription={products[0].description}
-        productPrice={products[0].price}
-        productRatings={products[0].ratings}
-        productName={products[0].name}
-        productCategory={products[0].category}
-      />
-      <SimilarProducts />
-      <ProductViewed />
-    </div>
+    <>
+      <div className='product-page'>
+        {status === STATUS.LOADING ? (
+          <UILoadingSpinner />
+        ) : (
+          <ProductSection
+            key={product.id}
+            productImage={product.image}
+            productId={product.id}
+            productColor={product.color}
+            productDescription={product.description}
+            productPrice={product.price}
+            productRatings={product.ratings}
+            productName={product.name}
+            productCategory={product.category}
+          />
+        )}
+        {status === STATUS.LOADING ? <UILoadingSpinner /> : <SimilarProducts />}
+        <ProductViewed />
+      </div>
+      <div className='product-page__error'>
+        {status === STATUS.FAILED && <div>{errorMessage}</div>}
+      </div>
+    </>
   );
 };
 
