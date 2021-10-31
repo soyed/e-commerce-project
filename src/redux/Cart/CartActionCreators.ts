@@ -1,11 +1,8 @@
 import cartActions from './CartActions';
+import { CartItem } from './utils';
 
-export const updateCartItem = (item: any) => {
-  return { type: cartActions.UPDATE_CART_ITEM, payload: { item } };
-};
-
-export const addCartItem = (item: any) => {
-  return { type: cartActions.ADD_TO_CART, payload: { item } };
+export const addCartItem = (product: CartItem) => {
+  return { type: cartActions.ADD_TO_CART, payload: { product } };
 };
 
 export const clearCartItems = () => {
@@ -13,5 +10,8 @@ export const clearCartItems = () => {
 };
 
 export const removeItemFromCart = (productId: string) => {
-  return { type: cartActions.REMOVE_FROM_CART, payload: { productId } };
+  return {
+    type: cartActions.REMOVE_FROM_CART,
+    payload: { productId },
+  };
 };

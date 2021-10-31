@@ -14,5 +14,5 @@ export const cartTotalPrice = createSelector(
 
 export const cartTotalItems = createSelector(
   [cartSelector],
-  (cart) => cart.count
+  (cart) => cart.itemCount
 );
