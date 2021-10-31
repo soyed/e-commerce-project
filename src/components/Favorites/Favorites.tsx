@@ -117,7 +117,7 @@ const Favorites: React.FC<FavoritesProps> = (props) => {
   // hooks
   const dispatch = useDispatch();
   // methods
-  const products: CartItem = useSelector(wishlistProducts);
+  const items: CartItem[] = useSelector(wishlistProducts);
 
   const handleAddToCart = (product: Product) => {
     const item: CartItem = {
@@ -135,18 +135,18 @@ const Favorites: React.FC<FavoritesProps> = (props) => {
 
   return (
     <div className='favorites'>
-      {DUMMY_DATA.map((product) => (
+      {items?.map((item) => (
         <UICard
-          key={product.id}
-          src={product.image}
-          name={product.name}
-          price={product.price}
+          key={item.product.id}
+          src={item.product.image}
+          name={item.product.name}
+          price={item.product.price}
           checkout
           onClickAddToCart={() => {
-            handleAddToCart(product);
+            handleAddToCart(item.product);
           }}
-          onClickDelete={() => {
-            handleRemoveFromWishlist(product.id);
+          onClickIcon={() => {
+            handleRemoveFromWishlist(item.product.id);
           }}
         />
       ))}

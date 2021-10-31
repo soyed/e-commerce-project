@@ -9,6 +9,8 @@ import { useDispatch } from 'react-redux';
 import './ProductCheckout.scss';
 import { addCartItem } from '../../../../redux/Cart/CartActionCreators';
 import { CartItem } from '../../../../redux/Cart/utils';
+import { Product } from '../../model';
+import { addToWishList } from '../../../../redux/WishList/wishlistActionCreators';
 
 interface ProductCheckoutProps {
   productName?: string;
@@ -16,6 +18,7 @@ interface ProductCheckoutProps {
   productType?: ProductType;
   productColor?: string;
   productRatings?: number;
+  product?: Product;
 }
 
 const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
@@ -25,6 +28,7 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
     productType,
     productColor,
     productRatings,
+    product,
   } = props;
 
   const dispatch = useDispatch();
@@ -39,6 +43,15 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
     if (productQuantity > 0) {
       setProductQuantity((prevState) => prevState - 1);
     }
+  };
+
+  const handleLikeProduct = (product: Product) => {
+    const item: CartItem = {
+      quantity: 1,
+      product: product,
+    };
+
+    dispatch(addToWishList(item));
   };
 
   const handleAddToCart = () => {
@@ -95,7 +108,13 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
               <UIButton text={'Add To Cart'} onClickButton={handleAddToCart} />
             </div>
             <div className='flex'>
-              <UIIcon iconType={IconType.LIKE} hasRoute={false} />
+              <UIIcon
+                iconType={IconType.LIKE}
+                hasRoute={false}
+                onClickIcon={() => {
+                  handleLikeProduct(product);
+                }}
+              />
             </div>
           </div>
         </div>

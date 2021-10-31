@@ -9,6 +9,7 @@ interface CartItemProps {
   productPrice?: number;
   productQuantity?: number;
   productColor?: string;
+  onClickLike?: () => void;
 }
 
 const CartItem: React.FC<CartItemProps> = (props) => {
@@ -18,6 +19,7 @@ const CartItem: React.FC<CartItemProps> = (props) => {
     productPrice,
     productColor,
     productQuantity = 1,
+    onClickLike,
   } = props;
   return (
     <div className='cart-item--container'>
@@ -39,7 +41,7 @@ const CartItem: React.FC<CartItemProps> = (props) => {
           <UIIcon iconType={IconType.INCREMENT} />
         </div>
         <div className='cart-item--container-3__actions-2'>
-          <UIIcon iconType={IconType.LIKE} />
+          <UIIcon iconType={IconType.LIKE} onClickIcon={onClickLike} />
         </div>
       </div>
     </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { cartTotalPrice, fetchCartItems } from '../../redux/Cart/cartSelectors';
 import { CartItem } from '../../redux/Cart/utils';
+import { addToWishList } from '../../redux/WishList/wishlistActionCreators';
+import { Product } from '../ProductPage/model';
 import './Cart.scss';
 import Item from './CartItem/CartItem';
 
@@ -55,6 +57,17 @@ const DUMMY_DATA = [
 const Cart: React.FC<CartProps> = (props) => {
   const cartTotal: number = useSelector(cartTotalPrice);
   const cartItems: CartItem[] = useSelector(fetchCartItems);
+  const dispatch = useDispatch();
+
+  const handleLikeProduct = (product: Product) => {
+    const item: CartItem = {
+      product: product,
+      quantity: 1,
+    };
+    // add item to wishlist
+    dispatch(addToWishList(item));
+  };
+
   return (
     <div className='cart'>
       <div className='cart__container'>
@@ -70,6 +83,9 @@ const Cart: React.FC<CartProps> = (props) => {
               productPrice={item.product.price}
               productColor={item.product.color}
               productQuantity={item.quantity}
+              onClickLike={() => {
+                handleLikeProduct(item.product);
+              }}
             />
           ))}
         </div>

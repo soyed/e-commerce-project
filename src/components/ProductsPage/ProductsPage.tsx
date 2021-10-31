@@ -14,6 +14,8 @@ import UICard from '../../UIKit/UICard/UICard';
 
 import { useParams, useRouteMatch } from 'react-router-dom';
 import { STATUS } from '../../redux/Category/utils';
+import { CartItem } from '../../redux/Cart/utils';
+import { addToWishList } from '../../redux/WishList/wishlistActionCreators';
 
 interface ProductsPageProps {
   products?: string[];
@@ -40,6 +42,17 @@ const ProductsPage: React.FC<ProductsPageProps> = () => {
     // dispatch(fetchProductsByCategories(categoryId));
   }, [categoryId]);
 
+  // methods
+  const handleLikeProduct = (product: Product) => {
+    const item: CartItem = {
+      quantity: 1,
+      product: product,
+    };
+    dispatch(addToWishList(item));
+  };
+
+  // TODO: Disable liked button once product has been added to wishList
+
   return (
     <>
       <div className='products-page'>
@@ -49,14 +62,17 @@ const ProductsPage: React.FC<ProductsPageProps> = () => {
           </div>
         ) : (
           <div className='products-page__container-2'>
-            {products.map((products) => (
+            {products.map((product) => (
               <UICard
-                key={products.id}
-                src={products.image}
-                alt={products.name}
-                price={products.price}
-                name={products.name}
-                linkTo={`${url}/${products.id}`}
+                key={product.id}
+                src={product.image}
+                alt={product.name}
+                price={product.price}
+                name={product.name}
+                linkTo={`${url}/${product.id}`}
+                onClickIcon={() => {
+                  handleLikeProduct(product);
+                }}
               />
             ))}
           </div>

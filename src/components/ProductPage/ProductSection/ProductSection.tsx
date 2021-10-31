@@ -27,6 +27,7 @@ const ProductSection: React.FC<ProductSectionProp> = (props) => {
     productRatings,
     productName,
     productCategory,
+    product,
   } = props;
   return (
     <div className='product-section'>
@@ -41,6 +42,7 @@ const ProductSection: React.FC<ProductSectionProp> = (props) => {
             productName={productName}
             productColor={productColor}
             productRatings={productRatings}
+            product={product}
           />
         </div>
         <div className='product-section__container-2'>
