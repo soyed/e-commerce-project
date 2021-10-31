@@ -1,5 +1,14 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCartItem } from '../../redux/Cart/CartActionCreators';
+import { CartItem } from '../../redux/Cart/utils';
+import {
+  addToWishList,
+  removeFromWishlist,
+} from '../../redux/WishList/wishlistActionCreators';
+import { wishlistProducts } from '../../redux/WishList/wishlistSelectors';
 import UICard from '../../UIKit/UICard/UICard';
+import { Product } from '../ProductPage/model';
 import './Favorites.scss';
 
 interface FavoritesProps {}
@@ -105,6 +114,25 @@ const DUMMY_DATA = [
 ];
 
 const Favorites: React.FC<FavoritesProps> = (props) => {
+  // hooks
+  const dispatch = useDispatch();
+  // methods
+  const products: CartItem = useSelector(wishlistProducts);
+
+  const handleAddToCart = (product: Product) => {
+    const item: CartItem = {
+      product: product,
+      quantity: 1,
+    };
+    // add item to cart and remove from wishlist at the same item
+    dispatch(addCartItem(item));
+    dispatch(removeFromWishlist(product.id));
+  };
+
+  const handleRemoveFromWishlist = (productId: string) => {
+    dispatch(removeFromWishlist(productId));
+  };
+
   return (
     <div className='favorites'>
       {DUMMY_DATA.map((product) => (
@@ -114,6 +142,12 @@ const Favorites: React.FC<FavoritesProps> = (props) => {
           name={product.name}
           price={product.price}
           checkout
+          onClickAddToCart={() => {
+            handleAddToCart(product);
+          }}
+          onClickDelete={() => {
+            handleRemoveFromWishlist(product.id);
+          }}
         />
       ))}
     </div>
