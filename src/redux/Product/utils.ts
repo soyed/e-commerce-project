@@ -14,13 +14,10 @@ export const fetchProduct = (productId: string, categoryId: string) => {
       dispatch(productStatus(STATUS.LOADING));
       const response = await getProductsById(productId, true);
       const responseData = await response.json();
-      console.log(responseData);
       const { product, similarProducts } = responseData;
       const parsedProduct = productParser(product, categoryId)[0];
       const parsedSimilarProducts = productParser(similarProducts, categoryId);
       parsedProduct.similarProducts = parsedSimilarProducts;
-      console.log(parsedProduct);
-      console.log(parsedSimilarProducts);
       dispatch(fetchingProduct(parsedProduct));
       dispatch(productStatus(STATUS.IDLE));
     } catch (error) {

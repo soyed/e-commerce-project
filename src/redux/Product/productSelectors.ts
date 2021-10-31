@@ -4,7 +4,7 @@ const productSelector = (state: any) => state.product;
 
 export const fetchedProduct = createSelector(
   [productSelector],
-  (product) => product.products
+  (product) => product.product
 );
 
 export const statusForProduct = createSelector(

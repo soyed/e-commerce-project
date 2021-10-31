@@ -81,14 +81,15 @@ const temp = {
 
 const initialState = {
   status: STATUS.IDLE,
-  errorMessage: temp,
-  product: {},
+  errorMessage: '',
+  //   product: {},
+  product: temp,
 };
 
 const productReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case productActions.FETCH_PRODUCT:
-      return { ...state, products: action.payload.product };
+      return { ...state, product: action.payload.product };
     case productActions.PRODUCT_STATUS:
       return { ...state, status: action.payload.status };
     case productActions.PRODUCT_FAILED:
