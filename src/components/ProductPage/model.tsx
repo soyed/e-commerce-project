@@ -14,6 +14,6 @@ export interface Product {
   ratings?: number;
   reviews?: any;
   color?: string;
-  platform: Platform;
+  platform?: Platform;
   similarProducts?: Product[];
 }

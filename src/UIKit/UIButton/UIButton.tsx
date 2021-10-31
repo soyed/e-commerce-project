@@ -11,6 +11,7 @@ interface UIButtonProps {
   linkType?: RouteType;
   isLinkActive?: boolean;
   hasRoute?: boolean;
+  onClickButton?: () => void;
 }
 
 const UIButton: React.FC<UIButtonProps> = (props) => {
@@ -22,19 +23,26 @@ const UIButton: React.FC<UIButtonProps> = (props) => {
     linkTo,
     isLinkActive = false,
     hasRoute = true,
+    onClickButton,
   } = props;
   return (
     <div className={Classnames('button--container', buttonContainerClass)}>
       <div className={Classnames('button--container__content')}>
         {hasRoute ? (
           <UILink linkTo={linkTo} linkType={linkType} isActive={isLinkActive}>
-            <button className={Classnames('button--container__content--btn')}>
+            <button
+              className={Classnames('button--container__content--btn')}
+              onClick={onClickButton}
+            >
               {text}
               {/* implement loading feature */}
             </button>
           </UILink>
         ) : (
-          <button className={Classnames('button--container__content--btn')}>
+          <button
+            className={Classnames('button--container__content--btn')}
+            onClick={onClickButton}
+          >
             {text}
             {/* implement loading feature */}
           </button>

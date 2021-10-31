@@ -30,6 +30,7 @@ const UIIcon: React.FC<UIIconProps> = (props) => {
     iconText,
     iconTextClassName,
     hasRoute = true,
+    onClickIcon,
   } = props;
   return (
     <div className={ClassNames('icon__container', containerClassName)}>
@@ -66,6 +67,7 @@ const UIIcon: React.FC<UIIconProps> = (props) => {
             'icon__container--content',
             iconContainerClassName
           )}
+          onClick={onClickIcon}
         >
           {iconText && (
             <p

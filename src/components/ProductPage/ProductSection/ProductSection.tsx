@@ -3,6 +3,7 @@ import ProductCheckout from './ProductCheckout/ProductCheckout';
 import ProductInformation from './ProductInformation/ProductInformation';
 import ProductView from './ProductView/ProductView';
 import './ProductSection.scss';
+import { Product } from '../model';
 
 interface ProductSectionProp {
   productImage?: string;
@@ -13,6 +14,7 @@ interface ProductSectionProp {
   productRatings?: number;
   productName?: string;
   productCategory?: string;
+  product?: Product;
 }
 
 const ProductSection: React.FC<ProductSectionProp> = (props) => {

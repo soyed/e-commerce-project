@@ -47,6 +47,7 @@ const ProductPage = () => {
             productRatings={product.ratings}
             productName={product.name}
             productCategory={product.category}
+            product={product}
           />
         )}
         {status === STATUS.LOADING ? <UILoadingSpinner /> : <SimilarProducts />}

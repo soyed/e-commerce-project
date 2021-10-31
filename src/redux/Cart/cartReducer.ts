@@ -23,15 +23,18 @@ const cartReducer = (state = initialState, action: any) => {
 
       let newProducts;
 
-      if (existingItemId) {
+      if (existingItemId !== -1) {
         const newProduct = {
           ...existingItem,
           quantity: existingItem.quantity + 1,
         };
+        debugger;
         newProducts = [...state.products];
         newProducts[existingItemId] = newProduct;
       } else {
-        newProducts = state.products.concat(product);
+        debugger;
+        newProducts = [...state.products];
+        newProducts = newProducts.concat(action.payload.item);
       }
 
       return {
@@ -68,7 +71,7 @@ const cartReducer = (state = initialState, action: any) => {
           quantity: existingProduct.quantity - 1,
         };
 
-        // create copy exiting products and update the newly mutated index of the product
+        // create copy of existing products and update index for the mutated Product
         updatedProducts = [...state.products];
         updatedProducts[existingProductId] = updateProduct;
       }

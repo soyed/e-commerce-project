@@ -1,8 +1,8 @@
 import cartActions from './CartActions';
 import { CartItem } from './utils';
 
-export const addCartItem = (product: CartItem) => {
-  return { type: cartActions.ADD_TO_CART, payload: { product } };
+export const addCartItem = (item: CartItem) => {
+  return { type: cartActions.ADD_TO_CART, payload: { item } };
 };
 
 export const clearCartItems = () => {

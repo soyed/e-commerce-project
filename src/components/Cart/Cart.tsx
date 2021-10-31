@@ -1,6 +1,9 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { cartTotalPrice, fetchCartItems } from '../../redux/Cart/cartSelectors';
+import { CartItem } from '../../redux/Cart/utils';
 import './Cart.scss';
-import CartItem from './CartItem/CartItem';
+import Item from './CartItem/CartItem';
 
 interface CartProps {}
 
@@ -50,6 +53,8 @@ const DUMMY_DATA = [
 ];
 
 const Cart: React.FC<CartProps> = (props) => {
+  const cartTotal: number = useSelector(cartTotalPrice);
+  const cartItems: CartItem[] = useSelector(fetchCartItems);
   return (
     <div className='cart'>
       <div className='cart__container'>
@@ -57,13 +62,14 @@ const Cart: React.FC<CartProps> = (props) => {
           <h2 className='cart__container-1__text'>My Cart</h2>
         </div>
         <div className='cart__container-2'>
-          {DUMMY_DATA.map((data) => (
-            <CartItem
-              key={data.id}
-              productImg={data.image}
-              productName={data.name}
-              productPrice={data.price}
-              productColor={data.color}
+          {cartItems?.map((item) => (
+            <Item
+              key={item.product.id}
+              productImg={item.product.image}
+              productName={item.product.name}
+              productPrice={item.product.price}
+              productColor={item.product.color}
+              productQuantity={item.quantity}
             />
           ))}
         </div>
@@ -76,7 +82,7 @@ const Cart: React.FC<CartProps> = (props) => {
         <div className='cart__container--checkout--content-2'>
           <div className='checkout__container-1'>
             <p className='checkout__container-1__text'>Sub-total</p>
-            <p className='checkout__container-1__text'>{`$50`}</p>
+            <p className='checkout__container-1__text'>{cartTotal}</p>
           </div>
           <div className='checkout__container-2'>
             <p className='checkout__container-2__text'>Shipping</p>
