@@ -52,6 +52,8 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
       quantity: productQuantity,
     };
     dispatch(addCartItem(cartItem));
+    // reset the quantity of products to add
+    setProductQuantity(0);
   };
 
   return (

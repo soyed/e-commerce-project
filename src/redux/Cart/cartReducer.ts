@@ -28,11 +28,9 @@ const cartReducer = (state = initialState, action: any) => {
           ...existingItem,
           quantity: existingItem.quantity + 1,
         };
-        debugger;
         newProducts = [...state.products];
         newProducts[existingItemId] = newProduct;
       } else {
-        debugger;
         newProducts = [...state.products];
         newProducts = newProducts.concat(action.payload.item);
       }
