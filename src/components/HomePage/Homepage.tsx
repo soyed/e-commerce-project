@@ -4,6 +4,7 @@ import HeroSection from './Hero-Section/HeroSection';
 import HomeOptions from './HomeOptions/HomeOptions';
 import TopBrands from './TopBrands/TopBrands';
 import TopRated from './TopRated/TopRated';
+import './Homepage.scss';
 
 interface HomePageProps {}
 
@@ -11,7 +12,7 @@ const HomePage: React.FC<HomePageProps> = (props) => {
   const {} = props;
 
   return (
-    <div className={'flex flex-col flex-1'}>
+    <div className={'homepage-section'}>
       <HeroSection />
       <TopRated />
       <TopBrands />

@@ -17,10 +17,10 @@ export enum STATUS {
   FAILED = 'Failed',
 }
 
-export enum Images {
-  MEN = '',
-  WOMEN = '',
-  KIDS = '',
+export enum ImageType {
+  MEN = 'MensFashion',
+  WOMEN = 'WomensFashion',
+  KIDS = 'KIDS',
   ELECTRONICS = '',
   PHONES = '',
   OFFICE = '',
@@ -31,6 +31,37 @@ export enum Images {
   BAGS = '',
   JEWELRY = '',
 }
+
+// const categoryImages: categoryImage[] = [
+//   {
+//     category: ImageType.MEN,
+//     imageUrl:
+//       'https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/',
+//     platform: 'Pexels',
+//     source: 'KoolShooters',
+//   },
+//   {
+//     category: ImageType.WOMEN,
+//     imageUrl:
+//       'https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/',
+//     platform: 'Pexels',
+//     source: 'KoolShooters',
+//   },
+//   {
+//     category: ImageType.JEWELRY,
+//     imageUrl:
+//       'https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/',
+//     platform: 'Pexels',
+//     source: 'KoolShooters',
+//   },
+//   {
+//     category: ImageType.BAGS,
+//     imageUrl:
+//       'https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/',
+//     platform: 'Pexels',
+//     source: 'KoolShooters',
+//   },
+// ];
 
 export const excludedCategories = [
   'BeautyHealthHair',
@@ -43,7 +74,7 @@ export const excludedCategories = [
   'HomeImprovementTools',
 ];
 
-const categoryImage = (categories: Category[]) => {};
+// const categoryImage = (categories: Category[]) => {};
 
 // Assign the appropriate images to the categories and return an array for the categories
 const categoryParser = (categories: any[]): Category[] => {

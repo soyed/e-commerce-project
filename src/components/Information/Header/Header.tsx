@@ -14,7 +14,6 @@ const Header = () => {
         </UILink>
       </div>
 
-      {/* The Action bars of the page */}
       <div className='header--container-2 '>
         <UIIcon
           iconType={IconType.LIKE}

@@ -53,8 +53,39 @@ Not sure what to call it yet... or what to do yet.😭
 
 
 ### Photo Credits
-- Photo by KoolShooters from Pexels - https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/
+
 - Photo by Philip Boakye from Pexels - https://www.pexels.com/photo/men-s-black-leather-jacket-1813947/
 - Photo by Sound On from Pexels - https://www.pexels.com/photo/photo-of-woman-in-yellow-shirt-3760856/
+- 
+- main female page
 - Photo by <a href="https://unsplash.com/@j_erhunse?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeffery Erhunse</a> on <a href="https://unsplash.com/s/photos/black-girl?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+
+- Bags with shoes => 
+- Photo by <a href="https://unsplash.com/@malvestida?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Malvestida Magazine</a> on <a href="https://unsplash.com/s/photos/bags-and-shoes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
+- Jewelery and Watches
+- Photo by <a href="https://unsplash.com/@ruthson_zimmerman?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ruthson Zimmerman</a> on <a href="https://unsplash.com/s/photos/jewelery-and-watch?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+- category male
+
+
+- category female
+
+
+
+- 'BeautyHealthHair',
+- Photo by Anna Tarazevich from Pexels => https://www.pexels.com/photo/woman-in-white-tank-top-holding-green-can-5308636/
+- 'ToysKidsBabies', => https://www.pexels.com/photo/black-boy-with-toy-dinosaurs-on-light-background-7139728/ => Photo by Monstera from Pexels
+- 
+- 'ConsumerElectronics',
+- 
+-   'PhonesTelecommunications',
+-   
+-  'HomePetAppliance', => Photo by Sam Lion from Pexels => https://www.pexels.com/photo/calm-small-dogs-in-party-hats-5732429/
+-  
+- 'ComputerOfficeSecurity',
+- 
+-  'OutdoorFunSports',
+-  
+-  'HomeImprovementTools',

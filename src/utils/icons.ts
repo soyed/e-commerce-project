@@ -1,3 +1,5 @@
+import { ImageType } from '../redux/Category/utils';
+
 export enum IconType {
   // Social Icons
   FACEBOOK = 'fab fa-facebook-f',
@@ -16,4 +18,12 @@ export enum IconType {
   FILTER = 'fas fa-filter',
   EDIT = 'fas fa-pencil-alt',
   CHEVRON = 'fas fa-chevron-right',
+}
+
+export interface categoryImage {
+  imageUrl?: string;
+  link?: string;
+  source?: string;
+  platform?: string;
+  category?: ImageType;
 }

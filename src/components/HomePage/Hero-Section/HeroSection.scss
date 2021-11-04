@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-evenly;
 
-    width: 80%;
+    width: 90%;
     height: 100%;
 
     &-1,
@@ -16,6 +16,7 @@
       align-items: center;
       justify-content: flex-end;
       width: 50%;
+      height: 100%;
       height: inherit;
       position: relative;
     }
@@ -50,6 +51,13 @@
       padding: 1rem 2rem;
       background-color: crimson;
       border-radius: 1rem;
+    }
+  }
+
+  // media queries
+  @media screen and (max-width: 700px) {
+    .hero-section--container {
+      width: 100%;
     }
   }
 }
