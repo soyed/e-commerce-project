@@ -11,20 +11,13 @@ const ProductView: React.FC<ProductViewProps> = (props) => {
 
   return (
     <div className='product-view'>
-      {/* <div className='product-view__container'>
+      <div className='product-view__container'>
         <img
           src={imageSrc}
           alt={imageAlt}
           className='product-view__container--img'
         />
-      </div> */}
-
-      <UIImage
-        containerClassName='product-view__container'
-        src={imageSrc}
-        alt={imageAlt}
-        className='product-view__container--img'
-      />
+      </div>
     </div>
   );
 };

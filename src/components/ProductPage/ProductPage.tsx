@@ -17,6 +17,8 @@ import {
 import { STATUS } from '../../redux/Category/utils';
 import UILoadingSpinner from '../../UIKit/UILoadingSpinner/UILoadingSpinner';
 
+import './ProductPage.scss';
+
 const ProductPage = () => {
   const dispatch = useDispatch();
   const params = useParams();
@@ -34,24 +36,27 @@ const ProductPage = () => {
   return (
     <>
       <div className='product-page'>
-        {status === STATUS.LOADING ? (
-          <UILoadingSpinner />
-        ) : (
-          <ProductSection
-            key={product.id}
-            productImage={product.image}
-            productId={product.id}
-            productColor={product.color}
-            productDescription={product.description}
-            productPrice={product.price}
-            productRatings={product.ratings}
-            productName={product.name}
-            productCategory={product.category}
-            product={product}
-          />
-        )}
-        {status === STATUS.LOADING ? <UILoadingSpinner /> : <SimilarProducts />}
-        <ProductViewed />
+        <div className='product-page__container-1'>
+          {status === STATUS.LOADING ? (
+            <div className='spinner__container'>
+              <UILoadingSpinner />
+            </div>
+          ) : (
+            <ProductSection key={product.id} product={product} />
+          )}
+        </div>
+
+        <div className='product-page__container-2'>
+          {status === STATUS.LOADING ? (
+            <div className='spinner__container'>
+              <UILoadingSpinner />
+            </div>
+          ) : (
+            <SimilarProducts products={product.similarProducts} />
+          )}
+        </div>
+
+        {/* <ProductViewed className='product-page__container-3'/> */}
       </div>
       <div className='product-page__error'>
         {status === STATUS.FAILED && <div>{errorMessage}</div>}

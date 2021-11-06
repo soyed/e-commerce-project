@@ -6,50 +6,30 @@ import './ProductSection.scss';
 import { Product } from '../model';
 
 interface ProductSectionProp {
-  productImage?: string;
-  productPrice?: number;
-  productDescription?: string;
-  productColor?: string;
-  productId?: string;
-  productRatings?: number;
-  productName?: string;
-  productCategory?: string;
   product?: Product;
 }
 
 const ProductSection: React.FC<ProductSectionProp> = (props) => {
-  const {
-    productColor,
-    productDescription,
-    productId,
-    productImage,
-    productPrice,
-    productRatings,
-    productName,
-    productCategory,
-    product,
-  } = props;
+  const { product } = props;
   return (
     <div className='product-section'>
       <div className='product-section__container'>
         <div className='product-section__container-1 '>
-          <ProductView
-            imageAlt={`${productName}-img`}
-            imageSrc={productImage}
-          />
-          <ProductCheckout
-            productPrice={productPrice}
-            productName={productName}
-            productColor={productColor}
-            productRatings={productRatings}
-            product={product}
-          />
+          <div className='product-section__gallery'>
+            <ProductView
+              imageAlt={`${product.name}-img`}
+              imageSrc={product.image}
+            />
+          </div>
+          <div className='product-section__checkout'>
+            <ProductCheckout product={product} />
+          </div>
         </div>
         <div className='product-section__container-2'>
           <ProductInformation
-            productId={productId}
-            productDescription={productDescription}
-            productCategory={productCategory}
+            productId={product.id}
+            productDescription={product.description}
+            productCategory={product.category}
           />
         </div>
       </div>

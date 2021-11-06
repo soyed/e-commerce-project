@@ -11,25 +11,13 @@ import { addCartItem } from '../../../../redux/Cart/CartActionCreators';
 import { CartItem } from '../../../../redux/Cart/utils';
 import { Product } from '../../model';
 import { addToWishList } from '../../../../redux/WishList/wishlistActionCreators';
-
+import './ProductCheckout.scss';
 interface ProductCheckoutProps {
-  productName?: string;
-  productPrice?: number;
-  productType?: ProductType;
-  productColor?: string;
-  productRatings?: number;
   product?: Product;
 }
 
 const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
-  const {
-    productName,
-    productPrice,
-    productType,
-    productColor,
-    productRatings,
-    product,
-  } = props;
+  const { product } = props;
 
   const dispatch = useDispatch();
 
@@ -56,12 +44,7 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
 
   const handleAddToCart = () => {
     const cartItem: CartItem = {
-      product: {
-        price: productPrice,
-        color: productColor,
-        ratings: productRatings,
-        name: productName,
-      },
+      product: product,
       quantity: productQuantity,
     };
     dispatch(addCartItem(cartItem));
@@ -73,21 +56,12 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
     <div className='product-checkout'>
       <div className='product-checkout__container'>
         <div className='product-checkout__container-1'>
-          <h3>{productName}</h3>
-          <p>{`Price: $${productPrice}`}</p>
+          <h3>{product.name}</h3>
+          <p>{`Price: $${product.price}`}</p>
         </div>
         <div className='product-checkout__container-2'>
-          <p>{`Color: ${productColor}`}</p>
-          {productType ? (
-            <div className='flex justify-center items-center'>
-              <p>S</p>
-              <p>M</p>
-              <p>L</p>
-              <p>XL</p>
-            </div>
-          ) : (
-            <div className='flex'>{productRatings}</div>
-          )}
+          <p>{`Color: ${product.color}`}</p>
+          <div className='flex'>{product.ratings}</div>
         </div>
         <div className='product-checkout__container-3 '>
           <div className='flex'>

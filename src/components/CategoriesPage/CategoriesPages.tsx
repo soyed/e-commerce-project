@@ -31,22 +31,6 @@ const CategoriesPages = () => {
 
   return (
     <div className='categories-page'>
-      {/* {status === STATUS.LOADING ? (
-        <div className='categories-page__container-1'>
-          <UILoadingSpinner />
-        </div>
-      ) : (
-        <UIContainer className='categories-page__container-2'>
-          {categories?.map((category) => (
-            <ProductCategory
-              key={category.id}
-              linkTo={`${LinkPath.SHOP}/${category.categoryName}/products`}
-              categoryName={category.categoryName}
-              categoryImage={category.image}
-            />
-          ))}
-        </UIContainer>
-      )} */}
       {status === STATUS.LOADING && (
         <div className='categories-page__container-1'>
           <UILoadingSpinner />
