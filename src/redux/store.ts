@@ -3,9 +3,22 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunkMiddleWare from 'redux-thunk';
 import { fetchCategories } from './Category/utils';
 import rootReducer from './rootReducer';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
+const persistConfig = {
+  key: 'persistedStore',
+  storage,
+  // blacklist and whitelist a reducer
+};
+
+// enchancers and middleware
 const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleWare));
 
-const store = createStore(rootReducer, composedEnhancer);
+// Persisted Reducer -> store the state of reducers
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+const store = createStore(persistedReducer, composedEnhancer);
+const persistor = persistStore(store);
 // store.dispatch(fetchCategories);
-export default store;
+export { store, persistor };

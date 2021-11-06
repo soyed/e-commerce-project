@@ -42,11 +42,30 @@ Not sure what to call it yet... or what to do yet.😭
       - https://redux.js.org/tutorials/fundamentals/part-7-standard-patterns
       - There is another way to that can handle memoizing with ```useSelector``` hook from ```react-redux```
         -  Another approach to memoize selected properties is using ```shallowEqual``` from ```react-redux``` which is used to check for changes in the selected properties using ```useSelector``` Hook 
-- Redux-thunk and Middle Wares
+- Redux-thunk and Middle Ware
+- Enchancers
+- MiddleWare / Async Operations in redux
 
 
 
 - Webpack Optimization
+- Dynamic imports - can be done using react.lazy load feature
+- file splitting - can be problematic => not a recommend standard
+
+- Redux Persist
+- Important Concepts learnt
+- 
+- Redux-Persist stores the redux-store in web browser's local storage => your reducer's can be ke upon revisiting a webpage
+  - persistStore => is a hook that store the state of your redux store
+  - persistReducer =>  is a hook that store the state of reducers 
+  - persistGate => is a hook that delays rendering of your react app while your redux-store states are being rehydrated (i.e your persistedState is being retrieved and updated with your current redux-store)
+  - Persisted State can be configured to match different use cases
+    - You can Blacklist or Whitelist a reducer.
+      -   A blacklisted reducer => does not get store in local storage
+      -   A Whitelisted reducer => gets stored in local storage
+    - 
+  - 
+  - Resource => https://github.com/rt2zz/redux-persist
 
 
 
