@@ -4,11 +4,17 @@
   align-items: center;
   flex: 1;
 
-  &__container-1 {
+  &__container-1,
+  &__container-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__container-2 {
-  }
-  &__container-3 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
   }
 }
