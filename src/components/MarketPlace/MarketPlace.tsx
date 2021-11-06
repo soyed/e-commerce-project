@@ -1,11 +1,39 @@
 import React from 'react';
-import UIContainer from '../../UIKit/UIContainer/UIContainer';
+import { useDispatch, useSelector } from 'react-redux';
+import { STATUS } from '../../redux/Category/utils';
+import {
+  getMarketplaceError,
+  getMarketPlaceProducts,
+  getMarketplaceStatus,
+} from '../../redux/MarketPlace/marketPlaceSelectors';
+import { fetchMarketPlaceProducts } from '../../redux/MarketPlace/utils';
+import UILoadingSpinner from '../../UIKit/UILoadingSpinner/UILoadingSpinner';
+import { Product } from '../ProductPage/model';
+import './MarketPlace.scss';
 
 const MarketPlace = () => {
+  const dispatch = useDispatch();
+  // hooks
+  React.useEffect(() => {
+    // dispatch(fetchMarketPlaceProducts());
+  }, []);
+
+  // selectors
+  const products: Product[] = useSelector(getMarketPlaceProducts);
+  const status: STATUS = useSelector(getMarketplaceStatus);
+  const errorMessage: string = useSelector(getMarketplaceError);
+
   return (
-    <UIContainer className='flex flex-1 justify-center items-center'>
-      <h2>MarketPlace</h2>
-    </UIContainer>
+    <div className='market-place'>
+      {true && (
+        <div className='market-place__container-1'>
+          <UILoadingSpinner />
+        </div>
+      )}
+
+      <div className='market-place__container-2'></div>
+      <div className='market-place__container-3'></div>
+    </div>
   );
 };
 

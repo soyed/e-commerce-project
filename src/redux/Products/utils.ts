@@ -9,12 +9,13 @@ import {
   productsFailed,
 } from './productsActionCreators';
 
-// parse ProductsFetch
-const validatePlatform = (categoryId: string) => {
+// validates the platform the products belongs to
+export const validatePlatform = (categoryId: string): boolean => {
   return excludedCategories.some((category) => category === categoryId);
 };
 
-export const productParser = (products: any, categoryId: string) => {
+// parse the products and ensure the right products are displaying for the category to fetch
+export const categoryProductParser = (products: any, categoryId: string) => {
   let parsedProducts: Product[] = [];
   if (products?.length) {
     for (let key in products) {
@@ -24,13 +25,14 @@ export const productParser = (products: any, categoryId: string) => {
           name: products[key].name,
           description: products[key].description,
           category: products[key].category,
+          categoryId: products[key].category_id,
           stock: products[key].stock,
           ratings: products[key].ratings,
           price: products[key].price,
           image: products[key].image[0],
           sales: products[key].sales,
           color: products[key].color,
-          platform: validatePlatform(products[key].category)
+          platform: validatePlatform(products[key].category_id)
             ? Platform.MARKETPLACE
             : Platform.COMMERCE,
         });
@@ -42,13 +44,14 @@ export const productParser = (products: any, categoryId: string) => {
       name: products.name,
       description: products.description,
       category: products.category,
+      categoryId: products.category_id,
       stock: products.stock,
       ratings: products.ratings,
       price: products.price,
       image: products.image[0],
       sales: products.sales,
       color: products.color,
-      platform: validatePlatform(products.category)
+      platform: validatePlatform(products.category_id)
         ? Platform.MARKETPLACE
         : Platform.COMMERCE,
     });
@@ -61,8 +64,8 @@ export const parseFetchedProducts = (
   products: any[],
   categoryId: string
 ): Product[] => {
-  console.log(productParser);
-  return productParser(products, categoryId);
+  console.log(categoryProductParser);
+  return categoryProductParser(products, categoryId);
 };
 
 // Fetching from Endpoint

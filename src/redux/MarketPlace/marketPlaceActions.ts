@@ -3,3 +3,5 @@ const marketPlaceAction = {
   MARKETPLACE_PRODUCTS_STATUS: 'marketplace/marketPlaceProductsStatus',
   MARKETPLACE_PRODUCTS_FAILED: 'marketplace/marketPlaceProductsFailed',
 };
+
+export default marketPlaceAction;

@@ -1,6 +1,6 @@
 import { getProductsById } from '../../services/API/API';
 import { STATUS } from '../Category/utils';
-import { parseFetchedProducts, productParser } from '../Products/utils';
+import { parseFetchedProducts, categoryProductParser } from '../Products/utils';
 import {
   fetchingProduct,
   productFailed,
@@ -15,8 +15,11 @@ export const fetchProduct = (productId: string, categoryId: string) => {
       const response = await getProductsById(productId, true);
       const responseData = await response.json();
       const { product, similarProducts } = responseData;
-      const parsedProduct = productParser(product, categoryId)[0];
-      const parsedSimilarProducts = productParser(similarProducts, categoryId);
+      const parsedProduct = categoryProductParser(product, categoryId)[0];
+      const parsedSimilarProducts = categoryProductParser(
+        similarProducts,
+        categoryId
+      );
       parsedProduct.similarProducts = parsedSimilarProducts;
       dispatch(fetchingProduct(parsedProduct));
       dispatch(productStatus(STATUS.IDLE));

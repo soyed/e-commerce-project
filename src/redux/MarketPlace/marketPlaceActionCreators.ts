@@ -1,5 +1,6 @@
 import { Product } from '../../components/ProductPage/model';
 import { STATUS } from '../Category/utils';
+import marketPlaceAction from './marketPlaceActions';
 
 export const marketplaceProducts = (products: Product[]) => {
   return {
