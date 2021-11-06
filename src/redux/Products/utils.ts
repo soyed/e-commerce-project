@@ -61,30 +61,8 @@ export const parseFetchedProducts = (
   products: any[],
   categoryId: string
 ): Product[] => {
-  // let parsedProducts: Product[] = [];
+  console.log(productParser);
   return productParser(products, categoryId);
-
-  // for (let key in products) {
-  //   if (products[key].category_id === categoryId) {
-  //     parsedProducts.push({
-  //       id: products[key]._id,
-  //       name: products[key].name,
-  //       description: products[key].description,
-  //       category: products[key].category,
-  //       stock: products[key].stock,
-  //       ratings: products[key].ratings,
-  //       price: products[key].price,
-  //       image: products[key].image[0],
-  //       sales: products[key].sales,
-  //       color: products[key].color,
-  //       platform: validatePlatform(products[key].category)
-  //         ? Platform.MARKETPLACE
-  //         : Platform.COMMERCE,
-  //     });
-  //   }
-  // }
-
-  // return parsedProducts;
 };
 
 // Fetching from Endpoint

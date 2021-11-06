@@ -63,7 +63,9 @@ Not sure what to call it yet... or what to do yet.😭
     - You can Blacklist or Whitelist a reducer.
       -   A blacklisted reducer => does not get store in local storage
       -   A Whitelisted reducer => gets stored in local storage
-    - 
+  - My only concern is the redux-state being stored in your local storage 
+    - Anyone can access information from these states
+      - An ideal fix for this? to be researched 
   - 
   - Resource => https://github.com/rt2zz/redux-persist
 

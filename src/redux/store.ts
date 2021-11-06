@@ -12,13 +12,14 @@ const persistConfig = {
   // blacklist and whitelist a reducer
 };
 
-// enchancers and middleware
+// enhancers and middleware
 const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleWare));
 
 // Persisted Reducer -> store the state of reducers
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = createStore(persistedReducer, composedEnhancer);
+// persisted redux-store
 const persistor = persistStore(store);
 // store.dispatch(fetchCategories);
 export { store, persistor };
