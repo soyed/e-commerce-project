@@ -38,16 +38,18 @@ const wishlistReducer = (state = initialState, action: any) => {
 
       // Check if the item exist in 'items' array and get the id for the item
       const existingId = state.items.findIndex(
-        (item) => item.product.id === product.id
+        (item) => item.product.id === productId
       );
 
       let removedItems;
 
       if (existingId !== -1) {
+        debugger;
         removedItems = state.items.filter(
-          (item) => item.product.id === productId
+          (item) => item.product.id !== productId
         );
       } else {
+        debugger;
         return { ...state };
       }
 

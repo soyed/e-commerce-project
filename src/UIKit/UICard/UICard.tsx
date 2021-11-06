@@ -62,6 +62,7 @@ const UICard: React.FC<UICardProps> = (props) => {
               <UIIcon
                 iconType={checkout ? IconType.DELETE : IconType.LIKE}
                 onClickIcon={onClickIcon}
+                hasRoute={false}
               />
             </div>
           </div>

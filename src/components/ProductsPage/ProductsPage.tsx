@@ -16,6 +16,7 @@ import { useParams, useRouteMatch } from 'react-router-dom';
 import { STATUS } from '../../redux/Category/utils';
 import { CartItem } from '../../redux/Cart/utils';
 import { addToWishList } from '../../redux/WishList/wishlistActionCreators';
+import { DEFAULT_QUANTITY } from '../../utils/utils';
 
 interface ProductsPageProps {
   products?: string[];
@@ -44,8 +45,9 @@ const ProductsPage: React.FC<ProductsPageProps> = () => {
 
   // methods
   const handleLikeProduct = (product: Product) => {
+    debugger;
     const item: CartItem = {
-      quantity: 1,
+      quantity: DEFAULT_QUANTITY,
       product: product,
     };
     dispatch(addToWishList(item));

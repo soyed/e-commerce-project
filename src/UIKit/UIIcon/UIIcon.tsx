@@ -32,6 +32,12 @@ const UIIcon: React.FC<UIIconProps> = (props) => {
     hasRoute = true,
     onClickIcon,
   } = props;
+
+  const handleClickIcon = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    // event.stopPropagation();
+    onClickIcon?.();
+  };
   return (
     <div className={ClassNames('icon__container', containerClassName)}>
       {hasRoute ? (
@@ -67,7 +73,7 @@ const UIIcon: React.FC<UIIconProps> = (props) => {
             'icon__container--content',
             iconContainerClassName
           )}
-          onClick={onClickIcon}
+          onClick={handleClickIcon}
         >
           {iconText && (
             <p

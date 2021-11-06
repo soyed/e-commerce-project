@@ -12,10 +12,10 @@ import { CartItem } from '../../../../redux/Cart/utils';
 import { Product } from '../../model';
 import { addToWishList } from '../../../../redux/WishList/wishlistActionCreators';
 import './ProductCheckout.scss';
+import { DEFAULT_QUANTITY } from '../../../../utils/utils';
 interface ProductCheckoutProps {
   product?: Product;
 }
-export const DEFAULT_QUANTITY = 1;
 
 const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
   const { product } = props;
