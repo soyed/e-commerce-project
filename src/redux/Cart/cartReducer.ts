@@ -15,15 +15,16 @@ const cartReducer = (state = initialState, action: any) => {
 
       //  get existing item index and existing item
       const existingItemId = state.products.findIndex(
-        (item) => item.id === product.id
+        (item) => item.product.id === product.id
       );
       const existingItem = state.products.find(
-        (item) => item.id === product.id
+        (item) => item.product.id === product.id
       );
 
       let newProducts;
 
       if (existingItemId !== -1) {
+        debugger;
         const newProduct = {
           ...existingItem,
           quantity: existingItem.quantity + 1,
@@ -31,6 +32,7 @@ const cartReducer = (state = initialState, action: any) => {
         newProducts = [...state.products];
         newProducts[existingItemId] = newProduct;
       } else {
+        debugger;
         newProducts = [...state.products];
         newProducts = newProducts.concat(action.payload.item);
       }
@@ -46,11 +48,11 @@ const cartReducer = (state = initialState, action: any) => {
 
       // Get the existing cart item to remove and id
       const existingProduct = state.products.find(
-        (product) => product.id === productId
+        (item) => item.product.id === productId
       );
 
       const existingProductId = state.products.findIndex(
-        (product) => product.id === productId
+        (item) => item.product.id === productId
       );
 
       const itemCount = state.itemCount - 1;

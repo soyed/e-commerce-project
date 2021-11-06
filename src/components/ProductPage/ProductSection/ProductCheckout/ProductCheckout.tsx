@@ -15,6 +15,7 @@ import './ProductCheckout.scss';
 interface ProductCheckoutProps {
   product?: Product;
 }
+export const DEFAULT_QUANTITY = 1;
 
 const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
   const { product } = props;
@@ -22,20 +23,21 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
   const dispatch = useDispatch();
 
   // states
-  const [productQuantity, setProductQuantity] = React.useState<number>(0);
+  const [productQuantity, setProductQuantity] =
+    React.useState<number>(DEFAULT_QUANTITY);
 
   const handleIncrementQuantity = () => {
     setProductQuantity((prevState) => prevState + 1);
   };
   const handleDecrementQuantity = () => {
-    if (productQuantity > 0) {
+    if (productQuantity > DEFAULT_QUANTITY) {
       setProductQuantity((prevState) => prevState - 1);
     }
   };
 
   const handleLikeProduct = (product: Product) => {
     const item: CartItem = {
-      quantity: 1,
+      quantity: DEFAULT_QUANTITY,
       product: product,
     };
 
@@ -49,7 +51,7 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
     };
     dispatch(addCartItem(cartItem));
     // reset the quantity of products to add
-    setProductQuantity(0);
+    setProductQuantity(DEFAULT_QUANTITY);
   };
 
   return (
