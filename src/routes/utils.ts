@@ -23,12 +23,17 @@ export enum LinkPath {
   CART = '/cart',
   MEN = '/shop/men',
   WOMEN = '/shop/women',
-  MARKET_PLACE = '/shop/market-place',
   CATEGORIES = '/shop/categories',
   CATEGORY_PRODUCTS = '/shop/:categoryId/products',
   PRODUCT_PAGE = '/shop/:categoryId/products/:productId',
   TOP_RATED_PRODUCTS = 'shop/products?search=topRated',
   TOP_RATED_BRANDS = 'shop/brands?search=top',
+
+  // MarketPlace Section
+  MARKET_PLACE = '/shop/market-place',
+  MARKET_CATEGORY_PRODUCTS = '',
+  MARKET_PRODUCT_PAGE = '/shop/market-place/:categoryId/products/:productId',
+
   // NOT Found
   NOTFOUND = '*',
 }
