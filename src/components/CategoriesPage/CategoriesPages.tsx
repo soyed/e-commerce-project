@@ -42,7 +42,7 @@ const CategoriesPages = () => {
             <ProductCategory
               key={category.id}
               linkTo={`${LinkPath.SHOP}/${category.categoryId}/products`}
-              categoryName={category.categoryName}
+              categoryName={category.categoryId}
               categoryImage={category.image}
             />
           ))}

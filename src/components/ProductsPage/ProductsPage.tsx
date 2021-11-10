@@ -45,7 +45,6 @@ const ProductsPage: React.FC<ProductsPageProps> = () => {
 
   // methods
   const handleLikeProduct = (product: Product) => {
-    debugger;
     const item: CartItem = {
       quantity: DEFAULT_QUANTITY,
       product: product,

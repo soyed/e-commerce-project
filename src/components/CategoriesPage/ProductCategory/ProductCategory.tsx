@@ -5,6 +5,10 @@ import UIContainer from '../../../UIKit/UIContainer/UIContainer';
 import UILink from '../../../UIKit/UILink/UILink';
 import { Category } from '../model';
 import './ProductCategory.scss';
+import menFashionImage from '../../../assets/homepage-men.jpg';
+import womenFashionImage from '../../../assets/home-page-women.jpg';
+import jeweleryImage from '../../../assets/watches-and-jewelry.jpg';
+import bagsAndShoesImage from '../../../assets/bags-and-shoes.jpg';
 
 interface ProductCategoryProps {
   linkTo?: SocialLink | LinkPath | string;
@@ -16,6 +20,25 @@ interface ProductCategoryProps {
 const ProductCategory: React.FC<ProductCategoryProps> = (props) => {
   const { linkTo, linkType, categoryName, categoryImage } = props;
 
+  // Updating images for the separate categories
+  const updateCategoryImage = () => {
+    if (categoryName === 'MensFashion') {
+      return menFashionImage;
+    }
+
+    if (categoryName === 'WomensFashion') {
+      return womenFashionImage;
+    }
+
+    if (categoryName === 'BagsShoes') {
+      return bagsAndShoesImage;
+    }
+
+    if (categoryName === 'JewelryWatches') {
+      return jeweleryImage;
+    }
+  };
+
   return (
     <UILink linkTo={linkTo} linkType={linkType} isActive={false}>
       <div className='product-category'>
@@ -23,7 +46,7 @@ const ProductCategory: React.FC<ProductCategoryProps> = (props) => {
           <div className='category__main'>
             <img
               className='category__main--img'
-              src={categoryImage}
+              src={updateCategoryImage()}
               alt={`${categoryName}-img`}
             />
           </div>

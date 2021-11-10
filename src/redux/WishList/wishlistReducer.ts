@@ -44,12 +44,10 @@ const wishlistReducer = (state = initialState, action: any) => {
       let removedItems;
 
       if (existingId !== -1) {
-        debugger;
         removedItems = state.items.filter(
           (item) => item.product.id !== productId
         );
       } else {
-        debugger;
         return { ...state };
       }
 

@@ -5,6 +5,7 @@ import HomeOptions from './HomeOptions/HomeOptions';
 import TopBrands from './TopBrands/TopBrands';
 import TopRated from './TopRated/TopRated';
 import './Homepage.scss';
+import ExploreMarket from './ExploreMarket/ExploreMarket';
 
 interface HomePageProps {}
 
@@ -14,8 +15,9 @@ const HomePage: React.FC<HomePageProps> = (props) => {
   return (
     <div className={'homepage-section'}>
       <HeroSection />
-      <TopRated />
-      <TopBrands />
+      <ExploreMarket />
+      {/* <TopRated />
+      <TopBrands /> */}
     </div>
   );
 };
