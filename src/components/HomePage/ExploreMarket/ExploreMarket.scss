@@ -1,8 +1,8 @@
-.market-place {
+.explore-market {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 25vh;
+  flex: 1;
   &__container-1 {
     width: 100%;
     position: relative;
@@ -17,6 +17,7 @@
 
   &__container-2 {
     display: flex;
+    width: 100%;
     flex-direction: column;
     position: absolute;
     align-items: center;
