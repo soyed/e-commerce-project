@@ -9,6 +9,7 @@ import {
 } from '../../redux/MarketPlace/marketPlaceSelectors';
 import { fetchMarketPlaceProducts } from '../../redux/MarketPlace/utils';
 import { addToWishList } from '../../redux/WishList/wishlistActionCreators';
+import { LinkPath } from '../../routes/utils';
 import UICard from '../../UIKit/UICard/UICard';
 import UILoadingSpinner from '../../UIKit/UILoadingSpinner/UILoadingSpinner';
 import { DEFAULT_QUANTITY } from '../../utils/utils';
@@ -38,11 +39,12 @@ const MarketPlace = () => {
 
   return (
     <div className='market-place'>
-      {status === STATUS.FAILED && (
+      {status === STATUS.LOADING && (
         <div className='market-place__container-1'>
           <UILoadingSpinner />
         </div>
       )}
+
       <div className='market-place__container-2'>
         {products?.map((product) => (
           <UICard
@@ -54,9 +56,11 @@ const MarketPlace = () => {
             onClickIcon={() => {
               handleLikeProduct(product);
             }}
+            linkTo={LinkPath.SHOP}
           />
         ))}
       </div>
+
       {status === STATUS.FAILED && (
         <div className='market-place__container-3'>{errorMessage}</div>
       )}

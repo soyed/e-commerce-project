@@ -31,7 +31,7 @@ export enum LinkPath {
 
   // MarketPlace Section
   MARKET_PLACE = '/shop/market-place',
-  MARKET_CATEGORY_PRODUCTS = '',
+  MARKET_CATEGORY_PRODUCTS = '/shop/market-place/categories',
   MARKET_PRODUCT_PAGE = '/shop/market-place/:categoryId/products/:productId',
 
   // NOT Found

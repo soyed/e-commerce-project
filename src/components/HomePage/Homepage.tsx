@@ -1,7 +1,5 @@
 import React from 'react';
-import UILoadingSpinner from '../../UIKit/UILoadingSpinner/UILoadingSpinner';
 import HeroSection from './Hero-Section/HeroSection';
-import HomeOptions from './HomeOptions/HomeOptions';
 import './Homepage.scss';
 import ExploreMarket from './ExploreMarket/ExploreMarket';
 import Subscription from './Subscription/Subscription';
