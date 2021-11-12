@@ -69,7 +69,10 @@ Not sure what to call it yet... or what to do yet.😭
   - 
   - Resource => https://github.com/rt2zz/redux-persist
 
-
+- Hiding Sensitive information using dotenv
+  - A custom built react app with webpack does not support ```process.env``` out of the box.
+  - The package ```dotenv-webpack``` helps resolve this issue by simply adding the plugin for this package in webpack.config.js you can inject | export the content of .env into your project and ```process.env``` can now be recognized across all tsx?|jsx? files you have created.
+  - Source => https://github.com/mrsteele/dotenv-webpack
 
 
 

@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
@@ -47,6 +48,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
     }),
+    new Dotenv({ path: './.env' }),
   ].concat(
     mode === 'development'
       ? []

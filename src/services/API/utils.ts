@@ -1,7 +1,9 @@
 // The header file needs to be included in every request sent
+// const = process.env.API_KEY;
+// console.log(password);
 export const API_Headers = {
   'x-rapidapi-host': 'e-commerce12.p.rapidapi.com',
-  'x-rapidapi-key': 'a0d839c038mshba62a4bc00678a4p18f251jsnb5a3516bd0c2',
+  'x-rapidapi-key': process.env.API_KEY,
 };
 // ENDPOINT
 const BASE_URL = 'https://e-commerce12.p.rapidapi.com';

@@ -7,7 +7,7 @@ import { Category } from '../model';
 import './ProductCategory.scss';
 import menFashionImage from '../../../assets/homepage-men.jpg';
 import womenFashionImage from '../../../assets/home-page-women.jpg';
-import jeweleryImage from '../../../assets/watches-and-jewelry.jpg';
+import jewelryImage from '../../../assets/watches-and-jewelry.jpg';
 import bagsAndShoesImage from '../../../assets/bags-and-shoes.jpg';
 
 interface ProductCategoryProps {
@@ -15,27 +15,28 @@ interface ProductCategoryProps {
   linkType?: RouteType;
   categoryName?: string;
   categoryImage?: string;
+  categoryId?: string;
 }
 
 const ProductCategory: React.FC<ProductCategoryProps> = (props) => {
-  const { linkTo, linkType, categoryName, categoryImage } = props;
+  const { linkTo, linkType, categoryName, categoryImage, categoryId } = props;
 
   // Updating images for the separate categories
   const updateCategoryImage = () => {
-    if (categoryName === 'MensFashion') {
+    if (categoryId === 'MensFashion') {
       return menFashionImage;
     }
 
-    if (categoryName === 'WomensFashion') {
+    if (categoryId === 'WomensFashion') {
       return womenFashionImage;
     }
 
-    if (categoryName === 'BagsShoes') {
+    if (categoryId === 'BagsShoes') {
       return bagsAndShoesImage;
     }
 
-    if (categoryName === 'JewelryWatches') {
-      return jeweleryImage;
+    if (categoryId === 'JewelryWatches') {
+      return jewelryImage;
     }
   };
 
@@ -46,7 +47,7 @@ const ProductCategory: React.FC<ProductCategoryProps> = (props) => {
           <div className='category__main'>
             <img
               className='category__main--img'
-              src={updateCategoryImage()}
+              src={updateCategoryImage() || categoryImage}
               alt={`${categoryName}-img`}
             />
           </div>

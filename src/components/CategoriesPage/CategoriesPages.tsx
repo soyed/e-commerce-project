@@ -42,8 +42,9 @@ const CategoriesPages = () => {
             <ProductCategory
               key={category.id}
               linkTo={`${LinkPath.SHOP}/${category.categoryId}/products`}
-              categoryName={category.categoryId}
+              categoryName={category.categoryName}
               categoryImage={category.image}
+              categoryId={category.categoryId}
             />
           ))}
         </UIContainer>
