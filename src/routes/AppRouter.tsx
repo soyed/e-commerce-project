@@ -18,6 +18,8 @@ import Cart from '../components/Cart/Cart';
 import Favorites from '../components/Favorites/Favorites';
 import Accounts from '../components/Accounts/Accounts';
 import ProductPage from '../components/ProductPage/ProductPage';
+import MarketPlaceProducts from '../components/MarketPlace/MarketPlaceProducts/MarketPlaceProducts';
+import MarketPlaceProduct from '../components/MarketPlace/MarketPlaceProduct/MarketPlaceProduct';
 
 const AppRouter = () => {
   return (
@@ -38,6 +40,14 @@ const AppRouter = () => {
 
         {/* Market Place */}
         <Route path={LinkPath.MARKET_PLACE} component={MarketPlace} />
+        <Route
+          path={LinkPath.MARKET_PRODUCT_PAGE}
+          component={MarketPlaceProduct}
+        />
+        <Route
+          path={LinkPath.MARKET_PLACE_PRODUCTS}
+          component={MarketPlaceProducts}
+        />
 
         {/* Information Route */}
         <Route path={LinkPath.FAQ} component={Faq} />

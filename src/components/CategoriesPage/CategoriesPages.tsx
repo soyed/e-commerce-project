@@ -6,21 +6,31 @@ import {
   categoryCommerce,
   categoryStatus,
   categoryError,
+  categoryMarketPlace,
 } from '../../redux/Category/categorySelectors';
 import { Category } from './model';
 import UILoadingSpinner from '../../UIKit/UILoadingSpinner/UILoadingSpinner';
 import { LinkPath } from '../../routes/utils';
 import './CategoriesPage.scss';
-import { STATUS, fetchCategories } from '../../redux/Category/utils';
+import { STATUS, fetchCategories, Platform } from '../../redux/Category/utils';
 
-const CategoriesPages = () => {
+interface CategoriesPageProps {
+  platform?: Platform;
+  linkTo?: LinkPath;
+}
+
+const CategoriesPages: React.FC<CategoriesPageProps> = (props) => {
+  const { platform = Platform.COMMERCE, linkTo = LinkPath.SHOP } = props;
   // Hooks
   const dispatch = useDispatch();
   // selectors
-  const categories: Category[] = useSelector(categoryCommerce);
+
+  // conditional to determine which categories to render
+  const categories: Category[] = useSelector(
+    platform === Platform.COMMERCE ? categoryCommerce : categoryMarketPlace
+  );
   const status: STATUS = useSelector(categoryStatus);
   const errorMessage: string = useSelector(categoryError);
-  console.log(errorMessage);
 
   // Effects
 
@@ -41,7 +51,7 @@ const CategoriesPages = () => {
           {categories?.map((category) => (
             <ProductCategory
               key={category.id}
-              linkTo={`${LinkPath.SHOP}/${category.categoryId}/products`}
+              linkTo={`${linkTo}/${category.categoryId}/products`}
               categoryName={category.categoryName}
               categoryImage={category.image}
               categoryId={category.categoryId}

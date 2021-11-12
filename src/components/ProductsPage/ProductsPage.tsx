@@ -17,10 +17,9 @@ import { STATUS } from '../../redux/Category/utils';
 import { CartItem } from '../../redux/Cart/utils';
 import { addToWishList } from '../../redux/WishList/wishlistActionCreators';
 import { DEFAULT_QUANTITY } from '../../utils/utils';
+import { LinkPath } from '../../routes/utils';
 
-interface ProductsPageProps {
-  products?: string[];
-}
+interface ProductsPageProps {}
 
 const ProductsPage: React.FC<ProductsPageProps> = () => {
   const dispatch = useDispatch();

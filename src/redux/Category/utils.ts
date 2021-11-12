@@ -7,8 +7,8 @@ import {
 } from './categoryActionCreators';
 
 export enum Platform {
-  COMMERCE = 'Commerce',
-  MARKETPLACE = 'MarketPlace',
+  COMMERCE = 'main',
+  MARKETPLACE = 'market-place',
 }
 
 export enum STATUS {
@@ -17,51 +17,20 @@ export enum STATUS {
   FAILED = 'Failed',
 }
 
-export enum ImageType {
+export enum CategoryType {
   MEN = 'MensFashion',
   WOMEN = 'WomensFashion',
-  KIDS = 'KIDS',
-  ELECTRONICS = '',
-  PHONES = '',
-  OFFICE = '',
-  PETS = '',
-  OUTDOOR = '',
-  BEAUTY = '',
-  HOME_IMPROVEMENT = '',
-  BAGS = '',
-  JEWELRY = '',
+  KIDS = 'ToysKidsBabies',
+  ELECTRONICS = 'ConsumerElectronics',
+  PHONES = 'PhonesTelecommunications',
+  OFFICE = 'ComputerOfficeSecurity',
+  PETS = 'HomePetAppliance',
+  OUTDOOR = 'OutdoorFunSports',
+  BEAUTY = 'BeautyHealthHair',
+  HOME_IMPROVEMENT = 'HomeImprovementTools',
+  BAGS = 'BagsShoes',
+  JEWELRY = 'JewelryWatches',
 }
-
-// const categoryImages: categoryImage[] = [
-//   {
-//     category: ImageType.MEN,
-//     imageUrl:
-//       'https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/',
-//     platform: 'Pexels',
-//     source: 'KoolShooters',
-//   },
-//   {
-//     category: ImageType.WOMEN,
-//     imageUrl:
-//       'https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/',
-//     platform: 'Pexels',
-//     source: 'KoolShooters',
-//   },
-//   {
-//     category: ImageType.JEWELRY,
-//     imageUrl:
-//       'https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/',
-//     platform: 'Pexels',
-//     source: 'KoolShooters',
-//   },
-//   {
-//     category: ImageType.BAGS,
-//     imageUrl:
-//       'https://www.pexels.com/photo/man-in-brown-coat-holding-yellow-flower-6976002/',
-//     platform: 'Pexels',
-//     source: 'KoolShooters',
-//   },
-// ];
 
 export const excludedCategories = [
   'BeautyHealthHair',
