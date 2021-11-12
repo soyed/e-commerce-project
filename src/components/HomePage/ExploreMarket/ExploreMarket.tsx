@@ -1,12 +1,12 @@
 import React from 'react';
 import './ExploreMarket.scss';
-import marketPlaceImg from '../../../assets/explore-market-place.jpg';
+import marketPlaceImg from '../../../assets/explore-market-place-2.jpg';
 import UIButton from '../../../UIKit/UIButton/UIButton';
 import { LinkPath } from '../../../routes/utils';
 
 interface ExploreMarketProps {}
 
-const ExploreMarket: React.FC<ExploreMarketProps> = (props) => {
+const ExploreMarket: React.FC<ExploreMarketProps> = () => {
   return (
     <div className='market-place'>
       <div className='market-place__container-1'>
