@@ -14,6 +14,7 @@ interface UICardProps {
   name?: string;
   price?: number;
   checkout?: boolean;
+  showLike?: boolean;
   linkTo?: LinkPath | SocialLink | string;
   onClickIcon?: () => void;
   onClickAddToCart?: () => void;
@@ -31,6 +32,7 @@ const UICard: React.FC<UICardProps> = (props) => {
     linkTo,
     onClickIcon,
     onClickAddToCart,
+    showLike = true,
   } = props;
 
   return (
@@ -59,11 +61,19 @@ const UICard: React.FC<UICardProps> = (props) => {
               </div>
             )}
             <div className='card--container-3__actions-2'>
-              <UIIcon
-                iconType={checkout ? IconType.DELETE : IconType.LIKE}
-                onClickIcon={onClickIcon}
-                hasRoute={false}
-              />
+              {!showLike ? (
+                <UIIcon
+                  iconType={IconType.DELETE}
+                  onClickIcon={onClickIcon}
+                  hasRoute={false}
+                />
+              ) : (
+                <UIIcon
+                  iconType={IconType.LIKE}
+                  onClickIcon={onClickIcon}
+                  hasRoute={false}
+                />
+              )}
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ const cartReducer = (state = initialState, action: any) => {
       const totalPrice = product.price * quantity;
       const newTotalPrice = totalPrice + state.totalPrice;
 
-      const newItemCount = state.itemCount + 1;
+      const newItemCount = state.itemCount + quantity;
 
       //  get existing item index and existing item
       const existingItemId = state.products.findIndex(
@@ -57,7 +57,7 @@ const cartReducer = (state = initialState, action: any) => {
       const total = state.totalPrice - existingProduct.product.price;
 
       let updatedProducts;
-
+      debugger;
       // check the quantity for the item
       if (existingProduct.quantity === 1) {
         updatedProducts = state.products.filter(
@@ -74,8 +74,40 @@ const cartReducer = (state = initialState, action: any) => {
         updatedProducts[existingProductId] = updateProduct;
       }
 
+      debugger;
+
       // update the total amount and item count for the cart
       return { ...state, itemCount: itemCount, totalPrice: total };
+
+    case cartActions.DELETE_FROM_CART:
+      // deleting an item from cart
+      const { productId: Id } = action.payload;
+
+      // find the existing product
+      const productToDeleteId = state.products.findIndex(
+        (item) => item.product.id === Id
+      );
+
+      const productToDelete = state.products.find(
+        (item) => item.product.id === Id
+      );
+
+      if (productToDeleteId === -1) {
+        return { ...state };
+      }
+
+      const filteredProducts = state.products.filter(
+        (item) => item.product.id !== Id
+      );
+      const totalToDelete =
+        productToDelete.product.price * productToDelete.quantity;
+
+      return {
+        ...state,
+        itemCount: state.itemCount - productToDelete.quantity,
+        products: filteredProducts,
+        totalPrice: state.totalPrice - totalToDelete,
+      };
     case cartActions.CLEAR_CART:
       return initialState;
     default:

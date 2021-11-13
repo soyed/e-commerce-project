@@ -35,7 +35,6 @@ const UIIcon: React.FC<UIIconProps> = (props) => {
 
   const handleClickIcon = (event: React.MouseEvent<HTMLDivElement>) => {
     event.preventDefault();
-    // event.stopPropagation();
     onClickIcon?.();
   };
   return (

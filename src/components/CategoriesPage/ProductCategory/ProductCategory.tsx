@@ -9,6 +9,9 @@ import menFashionImage from '../../../assets/homepage-men.jpg';
 import womenFashionImage from '../../../assets/home-page-women.jpg';
 import jewelryImage from '../../../assets/watches-and-jewelry.jpg';
 import bagsAndShoesImage from '../../../assets/bags-and-shoes.jpg';
+import beautyImage from '../../../assets/beauty.jpg';
+import kidsImage from '../../../assets/kids.jpg';
+import { CategoryType } from '../../../redux/Category/utils';
 
 interface ProductCategoryProps {
   linkTo?: SocialLink | LinkPath | string;
@@ -23,20 +26,31 @@ const ProductCategory: React.FC<ProductCategoryProps> = (props) => {
 
   // Updating images for the separate categories
   const updateCategoryImage = () => {
-    if (categoryId === 'MensFashion') {
-      return menFashionImage;
-    }
-
-    if (categoryId === 'WomensFashion') {
-      return womenFashionImage;
-    }
-
-    if (categoryId === 'BagsShoes') {
-      return bagsAndShoesImage;
-    }
-
-    if (categoryId === 'JewelryWatches') {
-      return jewelryImage;
+    switch (categoryId) {
+      case CategoryType.MEN:
+        return menFashionImage;
+      case CategoryType.WOMEN:
+        return womenFashionImage;
+      case CategoryType.BAGS:
+        return bagsAndShoesImage;
+      case CategoryType.JEWELRY:
+        return jewelryImage;
+      case CategoryType.BEAUTY:
+        return beautyImage;
+      case CategoryType.ELECTRONICS:
+        return;
+      case CategoryType.HOME_IMPROVEMENT:
+        return;
+      case CategoryType.OFFICE:
+        return;
+      case CategoryType.KIDS:
+        return kidsImage;
+      case CategoryType.PHONES:
+        return;
+      case CategoryType.PETS:
+        return;
+      case CategoryType.OUTDOOR:
+        return;
     }
   };
 

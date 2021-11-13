@@ -15,3 +15,7 @@ export const removeItemFromCart = (productId: string) => {
     payload: { productId },
   };
 };
+
+export const deleteItemFromCart = (productId: string) => {
+  return { type: cartActions.DELETE_FROM_CART, payload: { productId } };
+};
