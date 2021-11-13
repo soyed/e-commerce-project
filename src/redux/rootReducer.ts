@@ -13,6 +13,7 @@ const reducers = combineReducers({
   products: productsReducer,
   product: productReducer,
   wishlist: wishlistReducer,
+  marketplace: marketPlaceReducer,
   users: usersReducer,
 });
 

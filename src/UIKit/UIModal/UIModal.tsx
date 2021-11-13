@@ -6,11 +6,13 @@ import './UIModal.scss';
 
 interface UIModalProps {
   action?: VerifyUser;
-  onClickSubmit?: () => {};
+  onClickSubmit?: () => void;
+  onClickGoogle?: () => void;
+  onClickFacebook?: () => void;
 }
 
 const UIModal: React.FC<UIModalProps> = (props) => {
-  const { action } = props;
+  const { action, onClickSubmit, onClickGoogle, onClickFacebook } = props;
 
   const emailRef = React.useRef<HTMLInputElement>();
   const passwordRef = React.useRef<HTMLInputElement>();
@@ -22,8 +24,9 @@ const UIModal: React.FC<UIModalProps> = (props) => {
     console.log(emailRef.current.value);
     console.log(passwordRef.current.value);
 
-    // createNewUser(emailRef.current.value, passwordRef.current.value);
+    onClickSubmit?.();
   };
+
   return (
     <div className='modal'>
       <div className='modal--container'>
@@ -85,10 +88,14 @@ const UIModal: React.FC<UIModalProps> = (props) => {
           <div className='modal--container--3__heading'>{`Or ${action} with...`}</div>
           <div className='modal--container--3__options'>
             <div className='modal--container--3__options--option-1'>
-              <button className='option-1__btn'>Google</button>
+              <button className='option-1__btn' onClick={onClickGoogle}>
+                Google
+              </button>
             </div>
             <div className='modal--container--3__options--option-2'>
-              <button className='option-2__btn'>Facebook</button>
+              <button className='option-2__btn' onClick={onClickFacebook}>
+                Facebook
+              </button>
             </div>
           </div>
         </div>

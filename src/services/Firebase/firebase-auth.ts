@@ -14,6 +14,7 @@ import {
   FacebookAuthProvider,
   EmailAuthProvider,
   EmailAuthCredential,
+  onAuthStateChanged,
 } from 'firebase/auth';
 import {
   facebookProvider,
@@ -37,7 +38,15 @@ export const createNewUser = async (email: string, password: string) => {
   }
 };
 
-export const authenticatePasswordAndEmail = (
+export const getCurrentUser = () => {
+  onAuthStateChanged(firebaseAuth, (user) => {
+    if (user) {
+    } else {
+    }
+  });
+};
+
+export const authenticateWithPasswordAndEmail = (
   email: string,
   password: string
 ) => {
@@ -64,11 +73,15 @@ export const signOutUser = async () => {
 
 // sign-in with third party authentication providers
 export const thirdPartySignUp = async (providerType: ProviderType) => {
-  try {
-    const provider =
-      providerType === ProviderType.GOOGLE ? googleProvider : facebookProvider;
-    const linkUser = await linkWithRedirect(firebaseAuth.currentUser, provider);
-  } catch (error) {}
+  // try {
+  //   const provider =
+  //     providerType === ProviderType.GOOGLE ? googleProvider : facebookProvider;
+  //   await linkWithRedirect(firebaseAuth.currentUser, provider);
+  // } catch (error) {}
+  const provider =
+    providerType === ProviderType.GOOGLE ? googleProvider : facebookProvider;
+
+  return linkWithRedirect(firebaseAuth.currentUser, provider);
 };
 
 export const getThirdPartyRedirectResult = async (provider: ProviderType) => {

@@ -5,7 +5,11 @@ import UILink from '../../../UIKit/UILink/UILink';
 import { IconType } from '../../../utils/icons';
 import './Header.scss';
 
+import { useSelector } from 'react-redux';
+import { cartTotalItems } from '../../../redux/Cart/cartSelectors';
+
 const Header = () => {
+  const cartItems = useSelector(cartTotalItems);
   return (
     <div className='header'>
       <div className='header--container-1'>
@@ -29,13 +33,16 @@ const Header = () => {
           iconText={'Account'}
           containerClassName='icon__container'
         />
-        <UIIcon
-          iconType={IconType.CART}
-          linkTo={LinkPath.CART}
-          linkType={RouteType.COMMERCE}
-          iconText={'Cart'}
-          containerClassName='icon__container'
-        />
+        <div>
+          {cartItems}
+          <UIIcon
+            iconType={IconType.CART}
+            linkTo={LinkPath.CART}
+            linkType={RouteType.COMMERCE}
+            iconText={'Cart'}
+            containerClassName='icon__container'
+          />
+        </div>
       </div>
     </div>
   );
