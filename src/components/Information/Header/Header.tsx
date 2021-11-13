@@ -30,7 +30,7 @@ const Header = () => {
           iconType={IconType.USER}
           linkTo={LinkPath.ACCOUNT}
           linkType={RouteType.COMMERCE}
-          iconText={'Account'}
+          iconText={'Account | Login'}
           containerClassName='icon__container'
         />
         <div>
