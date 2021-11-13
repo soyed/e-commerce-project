@@ -15,6 +15,7 @@ const HomeOptions: React.FC<HomeOptionsProps> = (props) => {
           linkType={RouteType.COMMERCE}
           isActive={true}
           linkTo={LinkPath.MARKET_PLACE}
+          activeClassName='active-link-1'
         >
           <h3 className='home-options--container__text'>Market Place</h3>
         </UILink>
@@ -33,6 +34,7 @@ const HomeOptions: React.FC<HomeOptionsProps> = (props) => {
           linkType={RouteType.COMMERCE}
           isActive={true}
           linkTo={LinkPath.BUYING_OPTIONS}
+          activeClassName='active-link-3'
         >
           <h3 className='home-options--container__text'>Buying Options</h3>
         </UILink>

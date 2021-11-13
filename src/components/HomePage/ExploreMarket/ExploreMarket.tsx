@@ -2,7 +2,8 @@ import React from 'react';
 import './ExploreMarket.scss';
 import marketPlaceImg from '../../../assets/explore-market-place-2.jpg';
 import UIButton from '../../../UIKit/UIButton/UIButton';
-import { LinkPath } from '../../../routes/utils';
+import { LinkPath, RouteType } from '../../../routes/utils';
+import UILink from '../../../UIKit/UILink/UILink';
 
 interface ExploreMarketProps {}
 
@@ -24,10 +25,9 @@ const ExploreMarket: React.FC<ExploreMarketProps> = () => {
           The market place is a third party platform where products can be
           bought from other sellers in the community
         </p>
-        <UIButton
-          text={'Explore Market Place'}
-          linkTo={LinkPath.MARKET_PLACE}
-        />
+        <UILink linkType={RouteType.COMMERCE} linkTo={LinkPath.MARKET_PLACE}>
+          <button className='explore-btn'>Explore Market Place</button>
+        </UILink>
       </div>
     </div>
   );

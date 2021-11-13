@@ -5,7 +5,7 @@ import './HeroSection.scss';
 import womenHero from '../../../assets/home-page-women.jpg';
 import menHero from '../../../assets/homepage-men.jpg';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCategories } from '../../../redux/Category/utils';
+import { CategoryType, fetchCategories } from '../../../redux/Category/utils';
 import { categoryCommerce } from '../../../redux/Category/categorySelectors';
 import { Category } from '../../CategoriesPage/model';
 interface HeroSectionProps {}
@@ -25,11 +25,11 @@ const HeroSection: React.FC<HeroSectionProps> = (props) => {
 
   const Categories: Category[] = useSelector(categoryCommerce);
   const female_route: Category[] = Categories.filter((category) =>
-    category.categoryId.includes('Womens')
+    category.categoryId.includes(CategoryType.WOMEN)
   );
 
   const male_route: Category[] = Categories.filter((category) =>
-    category.categoryId.includes('Mens')
+    category.categoryId.includes(CategoryType.MEN)
   );
 
   console.log(female_route[0].categoryId);
@@ -38,7 +38,7 @@ const HeroSection: React.FC<HeroSectionProps> = (props) => {
   const {} = props;
   return (
     <div className='hero-section flex justify-center h-screen-1/2'>
-      <div className='hero-section--container  '>
+      <div className='hero-section--container'>
         <div className='hero-section--container-1'>
           <div className='container-1__body-1'>
             <img className='hero--img' src={menHero} alt='men-hero-img' />

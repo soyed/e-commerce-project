@@ -70,6 +70,7 @@ const ProductCategory: React.FC<ProductCategoryProps> = (props) => {
             <p className="'category__content__text'">Shop Now</p>
           </div>
         </div>
+        {/* the  */}
       </div>
     </UILink>
   );

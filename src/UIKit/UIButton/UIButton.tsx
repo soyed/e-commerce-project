@@ -35,7 +35,6 @@ const UIButton: React.FC<UIButtonProps> = (props) => {
               onClick={onClickButton}
             >
               {text}
-              {/* implement loading feature */}
             </button>
           </UILink>
         ) : (
@@ -44,7 +43,6 @@ const UIButton: React.FC<UIButtonProps> = (props) => {
             onClick={onClickButton}
           >
             {text}
-            {/* implement loading feature */}
           </button>
         )}
       </div>

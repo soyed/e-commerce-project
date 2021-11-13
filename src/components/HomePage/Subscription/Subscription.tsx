@@ -6,9 +6,7 @@ const Subscription = () => {
     <div className='subscription'>
       <div className='subscription__container'>
         <div className='subscription__container-1'>
-          <h2 className='container-1__heading'>
-            Sign Up for Email NewsLetter!!
-          </h2>
+          <h2 className='container-1__heading'>Sign Up for Email Newsletter</h2>
         </div>
         <div className='subscription__container-2'>
           <div className='container-2__content-1'>

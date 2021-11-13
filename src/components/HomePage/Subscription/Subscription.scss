@@ -20,9 +20,9 @@
 
       .container-1__heading {
         font-size: 2.5rem;
-        letter-spacing: 0.2rem;
-        font-weight: 500;
-        line-height: 2.5rem;
+        letter-spacing: 0.3rem;
+        font-weight: 400;
+        line-height: 2.5;
       }
     }
 
@@ -41,20 +41,25 @@
           width: 100%;
           outline: none;
           border-radius: 0.7rem;
-        }
-
-        .subscription__input:active {
-          border-bottom: 0.3rem solid black;
+          border: 0.1rem solid #161616;
         }
       }
 
       .container-2__content-2 {
         .sign-up__btn {
           padding: 1rem 3rem;
-          background-color: green;
+          background-color: #161616;
           border-radius: 0.7rem;
           letter-spacing: 0.1rem;
           font-weight: 500;
+
+          transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+          color: white;
+        }
+
+        .sign-up__btn:hover,
+        .sign-up__btn:active {
+          background-color: crimson;
         }
       }
     }
@@ -68,12 +73,10 @@
 
   @media screen and (max-width: 500px) {
     .container-1__heading {
-      font-size: 2.3rem;
-      letter-spacing: 0.1rem;
-      font-weight: 700;
-      line-height: 2.5rem;
-      text-align: center;
+      line-height: 1.7;
+      font-size: 2.1rem;
       padding: 0.5rem;
+      text-align: center;
     }
     .container-2__content-1 {
       width: 85%;

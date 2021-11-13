@@ -9,6 +9,8 @@
       font-size: 3rem;
       margin-left: 5vw;
       text-transform: capitalize;
+      line-height: 2rem;
+      letter-spacing: 0.2rem;
     }
   }
 
@@ -17,30 +19,41 @@
     align-items: center;
     justify-content: flex-end;
     width: 40%;
-  }
-}
 
-.icon__container {
-  display: flex;
+    .header-icon__container {
+      // background-color: red;
 
-  &--content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 2rem;
+      &--content {
+        // font-size: 1.3rem;
+        &__text {
+        }
 
-    &__text {
-      font-size: 2rem;
-      margin-right: 1rem;
+        &__social-icon {
+        }
+      }
     }
 
-    &__social-icon {
-      font-size: 2rem;
+    .cart-header__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__text {
+        font-size: 1.6rem;
+      }
     }
   }
 
-  &--content:hover,
-  &--content:active {
-    text-decoration: underline;
+  @media screen and (max-width: 450px) {
+    .header-icon__container {
+      &--content {
+        font-size: 1.5rem;
+        padding: 0.8rem;
+      }
+    }
+
+    .cart-header__container__text {
+      font-size: 1.5rem;
+    }
   }
 }

@@ -31,6 +31,7 @@ const UIIcon: React.FC<UIIconProps> = (props) => {
     iconTextClassName,
     hasRoute = true,
     onClickIcon,
+    children,
   } = props;
 
   const handleClickIcon = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -47,6 +48,13 @@ const UIIcon: React.FC<UIIconProps> = (props) => {
               iconContainerClassName
             )}
           >
+            <i
+              className={ClassNames(
+                'icon__container--content__social-icon',
+                iconType,
+                iconClassName
+              )}
+            />
             {iconText && (
               <p
                 className={classNames(
@@ -57,13 +65,7 @@ const UIIcon: React.FC<UIIconProps> = (props) => {
                 {iconText}
               </p>
             )}
-            <i
-              className={ClassNames(
-                'icon__container--content__social-icon',
-                iconType,
-                iconClassName
-              )}
-            ></i>
+            {children}
           </div>
         </UILink>
       ) : (
@@ -74,6 +76,13 @@ const UIIcon: React.FC<UIIconProps> = (props) => {
           )}
           onClick={handleClickIcon}
         >
+          <i
+            className={ClassNames(
+              'icon__container--content__social-icon',
+              iconType,
+              iconClassName
+            )}
+          ></i>
           {iconText && (
             <p
               className={classNames(
@@ -84,13 +93,7 @@ const UIIcon: React.FC<UIIconProps> = (props) => {
               {iconText}
             </p>
           )}
-          <i
-            className={ClassNames(
-              'icon__container--content__social-icon',
-              iconType,
-              iconClassName
-            )}
-          ></i>
+          {children}
         </div>
       )}
     </div>

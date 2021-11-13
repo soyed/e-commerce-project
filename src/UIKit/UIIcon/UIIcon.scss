@@ -1,0 +1,22 @@
+.icon__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &--content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    padding: 1rem;
+
+    &__text {
+      letter-spacing: 0.1rem;
+      text-transform: capitalize;
+      margin-right: 0.5rem;
+    }
+
+    &__social-icon {
+      margin-right: 0.5rem;
+    }
+  }
+}

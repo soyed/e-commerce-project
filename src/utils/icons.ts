@@ -1,4 +1,4 @@
-import { ImageType } from '../redux/Category/utils';
+import { CategoryType } from '../redux/Category/utils';
 
 export enum IconType {
   // Social Icons
@@ -18,6 +18,7 @@ export enum IconType {
   FILTER = 'fas fa-filter',
   EDIT = 'fas fa-pencil-alt',
   CHEVRON = 'fas fa-chevron-right',
+  // CART = 'far fa-shopping-bag',
 }
 
 export interface categoryImage {
@@ -25,5 +26,5 @@ export interface categoryImage {
   link?: string;
   source?: string;
   platform?: string;
-  category?: ImageType;
+  category?: CategoryType;
 }

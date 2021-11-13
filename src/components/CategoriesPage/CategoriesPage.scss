@@ -2,7 +2,6 @@
   display: flex;
   justify-content: center;
   flex: 1;
-  background-color: rgb(195, 113, 195);
 
   &__container-1,
   &__container-3 {
@@ -17,5 +16,10 @@
     justify-content: center;
     padding: 2rem 0rem;
     width: 100%;
+
+    // display: grid;
+    // gap: 2.5rem;
+    // grid-template-columns: repeat(4, 250px);
+    // grid-template-rows: repeat(4, 250px);
   }
 }

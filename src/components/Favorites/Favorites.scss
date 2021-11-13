@@ -3,11 +3,41 @@
   justify-content: center;
   flex: 1;
   flex-wrap: wrap;
-  // padding: 1rem;
+}
 
-  // &--container {
-  //   display: flex;
+.favorites__empty {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 
-  //   width: 100%;
-  // }
+  &--container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 40rem;
+    background-color: crimson;
+    color: white;
+
+    &__text {
+      font-size: 2.2rem;
+      letter-spacing: 0.1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .favorites__empty--container {
+      width: 40%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .favorites__empty--container {
+      width: 70%;
+      padding: 3rem;
+    }
+  }
 }
