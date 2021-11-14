@@ -9,6 +9,8 @@ import {
 import { cartTotalPrice, fetchCartItems } from '../../redux/Cart/cartSelectors';
 import { CartItem } from '../../redux/Cart/utils';
 import { addToWishList } from '../../redux/WishList/wishlistActionCreators';
+import Stripe from '../../services/Stripe/Stripe';
+import StripeCheckout from '../../services/Stripe/StripeCheckout';
 import { Product } from '../ProductPage/model';
 import './Cart.scss';
 import Item from './CartItem/CartItem';
@@ -62,10 +64,9 @@ const Cart: React.FC<CartProps> = (props) => {
               </div>
             )}
 
-            <div className='cart-products__container-2'>
-              {cartItems.length > 0 &&
-                cartItems &&
-                cartItems?.map((item) => (
+            {cartItems.length > 0 && cartItems && (
+              <div className='cart-products__container-2'>
+                {cartItems?.map((item) => (
                   <Item
                     key={item.product.id}
                     productQuantity={item.quantity}
@@ -78,7 +79,8 @@ const Cart: React.FC<CartProps> = (props) => {
                     onClickIncrement={handleIncrementQuantity}
                   />
                 ))}
-            </div>
+              </div>
+            )}
           </div>
 
           {/* Cart Checkout section */}
@@ -101,6 +103,10 @@ const Cart: React.FC<CartProps> = (props) => {
               <div className='checkout__container-3'>
                 <div className='checkout__container-3__btn--container'>
                   <button className='checkout-btn'>Checkout</button>
+
+                  <Stripe>
+                    <StripeCheckout btnText={'submit'} />
+                  </Stripe>
                 </div>
               </div>
             </div>
