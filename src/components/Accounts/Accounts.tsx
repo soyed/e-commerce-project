@@ -13,8 +13,8 @@ interface AccountsProps {}
 const Accounts: React.FC<AccountsProps> = (props) => {
   // methods
   const handleGoogleProvider = () => {
-    thirdPartySignUp(ProviderType.GOOGLE).then((stat) => console.log(stat));
-    // getThirdPartyRedirectResult(ProviderType.GOOGLE);
+    // thirdPartySignUp(ProviderType.GOOGLE).then((stat) => console.log(stat));
+    // // getThirdPartyRedirectResult(ProviderType.GOOGLE);
   };
 
   const handleFacebookProvider = () => {};

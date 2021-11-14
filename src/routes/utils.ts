@@ -15,8 +15,8 @@ export enum LinkPath {
   BUYING_OPTIONS = '/buying-options',
 
   // Accounts Validation
-  SIGN_IN = '/identify/sign-in',
-  SIGN_UP = '/identify/sign-up',
+  SIGN_IN = 'account/sign-in',
+  SIGN_UP = 'account/sign-up',
 
   // Commerce Section
   ACCOUNT = '/account',
