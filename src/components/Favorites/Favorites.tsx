@@ -39,7 +39,7 @@ const Favorites: React.FC<FavoritesProps> = (props) => {
         <div className='favorites__empty'>
           <div className='favorites__empty--container'>
             <h3 className='favorites__empty--container__text'>
-              No Liked products
+              No Liked Products
             </h3>
           </div>
         </div>

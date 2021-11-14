@@ -50,41 +50,59 @@ const Cart: React.FC<CartProps> = (props) => {
         <div className='cart__container-1'>
           <h2 className='cart__container-1__text'>My Cart</h2>
         </div>
+
         <div className='cart__container-2'>
-          {cartItems?.map((item) => (
-            <Item
-              key={item.product.id}
-              productQuantity={item.quantity}
-              product={item.product}
-              onClickLike={() => {
-                handleLikeProduct(item.product);
-              }}
-              onClickDelete={handleDeleteProduct}
-              onClickDecrement={handleDecrementQuantity}
-              onClickIncrement={handleIncrementQuantity}
-            />
-          ))}
-        </div>
-      </div>
-      <div className='cart__container--checkout'>
-        <div className='cart__container--checkout--content-1'>
-          <h3 className='cart__container--checkout--content-1__text'>
-            Your Total
-          </h3>
-        </div>
-        <hr />
-        <div className='cart__container--checkout--content-2'>
-          <div className='checkout__container-1'>
-            <p className='checkout__container-1__text'>Total</p>
-            <p className='checkout__container-1__text'>{`$${cartTotal}`}</p>
+          {/* Cart Items */}
+          <div className='cart__container-2__products'>
+            {cartItems.length === 0 && (
+              <div className='cart-products__container-1'>
+                <div className='cart-products__error'>
+                  <p className='cart-products__error--text'>Cart Is Empty</p>
+                </div>
+              </div>
+            )}
+
+            <div className='cart-products__container-2'>
+              {cartItems.length > 0 &&
+                cartItems &&
+                cartItems?.map((item) => (
+                  <Item
+                    key={item.product.id}
+                    productQuantity={item.quantity}
+                    product={item.product}
+                    onClickLike={() => {
+                      handleLikeProduct(item.product);
+                    }}
+                    onClickDelete={handleDeleteProduct}
+                    onClickDecrement={handleDecrementQuantity}
+                    onClickIncrement={handleIncrementQuantity}
+                  />
+                ))}
+            </div>
           </div>
-          <div className='checkout__container-2'>
-            <p className='checkout__container-2__text'>Shipping</p>
-            <p className='checkout__container-2__text'>free</p>
-          </div>
-          <div className='checkout__container-3'>
-            <div className='checkout__container-3__btn'>
-              <button>Checkout</button>
+
+          {/* Cart Checkout section */}
+          <div className='cart__container-2__checkout'>
+            <div className='cart__container-2__checkout--content-1'>
+              <h3 className='cart__container-2__checkout--content-1__text'>
+                Your Total
+              </h3>
+            </div>
+
+            <div className='cart__container-2__checkout--content-2'>
+              <div className='checkout__container-1'>
+                <p className='checkout__container-1__text'>Total</p>
+                <p className='checkout__container-1__text'>{`$${cartTotal}`}</p>
+              </div>
+              <div className='checkout__container-2'>
+                <p className='checkout__container-2__text'>Shipping</p>
+                <p className='checkout__container-2__text'>free</p>
+              </div>
+              <div className='checkout__container-3'>
+                <div className='checkout__container-3__btn--container'>
+                  <button className='checkout-btn'>Checkout</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
