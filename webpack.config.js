@@ -6,9 +6,11 @@ const Dotenv = require('dotenv-webpack');
 const mode =
   process.env.NODE_ENV === 'production' ? 'production' : 'development';
 
+console.log(__dirname);
+
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, '/src/index.tsx'),
+    index: path.resolve(__dirname, './src/index.tsx'),
   },
   mode: mode,
   resolve: { extensions: ['.tsx', '.ts', '.js', '.jsx'] },
@@ -48,7 +50,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
     }),
-    new Dotenv({ path: './.env', systemvars: true }),
+    new Dotenv({ path: './.env', systemvars: true, safe: true }),
   ].concat(
     mode === 'development'
       ? []
