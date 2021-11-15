@@ -6,11 +6,24 @@
 
   &__container {
     display: flex;
-
+    // #161616
     align-items: center;
     width: 65rem;
     height: 55rem;
-    background-color: purple;
+    background-color: white;
     flex-direction: column;
+    border-radius: 0.7rem;
+
+    .accounts__action {
+      height: 10%;
+      width: 100%;
+    }
+
+    .accounts__info {
+      height: 90%;
+      width: 100%;
+      padding: 3rem 0rem;
+      // display: flex;
+    }
   }
 }

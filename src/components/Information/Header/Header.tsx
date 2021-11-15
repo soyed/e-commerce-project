@@ -39,7 +39,7 @@ const Header = () => {
         />
         <UIIcon
           iconType={IconType.USER}
-          linkTo={LinkPath.ACCOUNT}
+          linkTo={`${LinkPath.ACCOUNT}?identify=login`}
           linkType={RouteType.COMMERCE}
           iconText={'Login'}
           containerClassName='header-icon__container'

@@ -10,7 +10,7 @@ interface UIIconProps {
   iconClassName?: string;
   containerClassName?: string;
   iconType?: IconType;
-  linkTo?: LinkPath | SocialLink;
+  linkTo?: LinkPath | SocialLink | string;
   iconText?: string;
   linkType?: RouteType;
   iconContainerClassName?: string;

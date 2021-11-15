@@ -1,4 +1,4 @@
 export enum VerifyUser {
-  SIGN_IN = 'Sign In',
-  SIGN_UP = 'Sign Up',
+  SIGN_IN = 'login',
+  SIGN_UP = 'signup',
 }
