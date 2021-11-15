@@ -30,9 +30,9 @@ const Cart: React.FC<CartProps> = (props) => {
     dispatch(addToWishList(item));
   };
 
-  // React.useEffect(() => {
-  //   dispatch(clearCartItems());
-  // }, []);
+  React.useEffect(() => {
+    dispatch(clearCartItems());
+  }, []);
 
   const handleDeleteProduct = (productId: string) => {
     dispatch(deleteItemFromCart(productId));
