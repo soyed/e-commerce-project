@@ -36,7 +36,7 @@ const CategoriesPages: React.FC<CategoriesPageProps> = (props) => {
 
   React.useEffect(() => {
     // fetching categories
-    dispatch(fetchCategories);
+    // dispatch(fetchCategories);
   }, []);
 
   return (

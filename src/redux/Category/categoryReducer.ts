@@ -1,3 +1,4 @@
+import MarketPlace from '../../components/MarketPlace/MarketPlace';
 import { getCategories } from '../../services/API/API';
 import CategoryActionTypes from './categoryActions';
 import { STATUS } from './utils';
@@ -183,8 +184,8 @@ const initialState = {
   status: STATUS.IDLE,
   message: '',
   // caetgories: [],
-  commerce: [],
-  marketPlace: [],
+  commerce: commerce,
+  marketPlace: MarketPlace,
   // categories: tem,
   categoriesLength: 0,
 };

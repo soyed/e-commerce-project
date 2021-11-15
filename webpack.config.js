@@ -48,7 +48,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
     }),
-    new Dotenv({ path: './.env' }),
+    new Dotenv({ path: path.resolve(__dirname, './.env') }),
   ].concat(
     mode === 'development'
       ? []
