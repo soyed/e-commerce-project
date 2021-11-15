@@ -7,8 +7,13 @@ import { ProviderType } from '../../services/Firebase/firebase.config';
 import UIModal from '../../UIKit/UIModal/UIModal';
 import AccountAction from './Account-Actions/AccountAction';
 import './Accounts.scss';
-import { VerifyUser } from './utils';
+import { UserInformation, VerifyUser } from './utils';
 import { useLocation, useRouteMatch } from 'react-router-dom';
+import Login from './Login/Login';
+import SignUp from './Signup/Signup';
+
+import { useDispatch } from 'react-redux';
+import { signInUser, signupNewUser } from '../../redux/Users/utils';
 interface AccountsProps {}
 
 const Accounts: React.FC<AccountsProps> = (props) => {
@@ -22,12 +27,17 @@ const Accounts: React.FC<AccountsProps> = (props) => {
 
   console.log(location);
 
+  const dispatch = useDispatch();
+
   // methods
-  const handleGoogleProvider = () => {};
+  const handleSignUp = (userInfo: UserInformation) => {
+    // sign up user using firebase
+    dispatch(signupNewUser(userInfo.email, userInfo.password));
+  };
 
-  const handleFacebookProvider = () => {};
-
-  const handleAuthenticatingUser = () => {};
+  const handleSignIn = (userInfo: UserInformation) => {
+    dispatch(signInUser(userInfo.email, userInfo.password));
+  };
 
   const isLogin = true;
 
@@ -40,15 +50,9 @@ const Accounts: React.FC<AccountsProps> = (props) => {
 
         <div className='accounts__info'>
           {isLogin ? (
-            <UIModal
-              action={VerifyUser.SIGN_IN}
-              onClickGoogle={handleGoogleProvider}
-            />
+            <Login onClickLogin={handleSignIn} />
           ) : (
-            <UIModal
-              action={VerifyUser.SIGN_UP}
-              onClickGoogle={handleGoogleProvider}
-            />
+            <SignUp onClickSignUp={handleSignUp} />
           )}
         </div>
       </div>

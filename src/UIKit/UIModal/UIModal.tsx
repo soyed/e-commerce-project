@@ -1,12 +1,12 @@
 import React from 'react';
-import { VerifyUser } from '../../components/Accounts/utils';
+import { UserInformation, VerifyUser } from '../../components/Accounts/utils';
 import { createNewUser } from '../../services/Firebase/firebase-auth';
 
 import './UIModal.scss';
 
 interface UIModalProps {
   action?: VerifyUser;
-  onClickSubmit?: () => void;
+  onClickSubmit?: (userInfo: UserInformation) => void;
   onClickGoogle?: () => void;
   onClickFacebook?: () => void;
 }
@@ -14,17 +14,41 @@ interface UIModalProps {
 const UIModal: React.FC<UIModalProps> = (props) => {
   const { action, onClickSubmit, onClickGoogle, onClickFacebook } = props;
 
-  const emailRef = React.useRef<HTMLInputElement>();
-  const passwordRef = React.useRef<HTMLInputElement>();
+  const [email, setEmail] = React.useState<string>('');
+  const [firstName, setFirstName] = React.useState<string>('');
+  const [lastName, setLastName] = React.useState<string>('');
+  const [password, setPassword] = React.useState<string>('');
 
-  const handleSubmission = (event) => {
+  const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // validate the email
+    setEmail(event.target.value);
+  };
+  const handleFirstName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // validate the first name
+    setFirstName(event.target.value);
+  };
+  const handleLastName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // validate the last name
+    setLastName(event.target.value);
+  };
+  const handlePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // validate the password
+    setPassword(event.target.value);
+  };
+
+  const handleSubmission = (event: React.MouseEvent<HTMLButtonElement>) => {
     // prevent default
     event.preventDefault();
 
-    console.log(emailRef.current.value);
-    console.log(passwordRef.current.value);
+    // only allow this if all of the information is valid
+    const userInfo: UserInformation = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+    };
 
-    onClickSubmit?.();
+    onClickSubmit?.(userInfo);
   };
 
   return (
@@ -37,10 +61,10 @@ const UIModal: React.FC<UIModalProps> = (props) => {
           <div className='container--2__content-1'>
             <label className='modal__label'>Email Address:</label>
             <input
-              ref={emailRef}
               className='modal__input'
               type='email'
               placeholder='Email Address'
+              onChange={handleEmail}
             />
           </div>
           {action === VerifyUser.SIGN_UP && (
@@ -50,6 +74,7 @@ const UIModal: React.FC<UIModalProps> = (props) => {
                 className='modal__input'
                 type='text'
                 placeholder='First Name'
+                onChange={handleFirstName}
               />
             </div>
           )}
@@ -60,16 +85,17 @@ const UIModal: React.FC<UIModalProps> = (props) => {
                 className='modal__input'
                 type='text'
                 placeholder='Last Name'
+                onChange={handleLastName}
               />
             </div>
           )}
           <div className='container--2__content-4'>
             <label className='modal__label'>Password:</label>
             <input
-              ref={passwordRef}
               className='modal__input'
               type='password'
               placeholder='Password'
+              onChange={handlePassword}
             />
           </div>
           <div className='container--2__content-5'>

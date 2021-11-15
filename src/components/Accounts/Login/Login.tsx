@@ -1,10 +1,13 @@
 import UIModal from '../../../UIKit/UIModal/UIModal';
-import { VerifyUser } from '../utils';
+import { UserInformation, VerifyUser } from '../utils';
 
-interface LoginProps {}
+interface LoginProps {
+  onClickLogin?: (userInfo: UserInformation) => void;
+}
 
-const Login: React.FC<LoginProps> = () => {
-  return <UIModal action={VerifyUser.SIGN_IN} />;
+const Login: React.FC<LoginProps> = (props) => {
+  const { onClickLogin } = props;
+  return <UIModal action={VerifyUser.SIGN_IN} onClickSubmit={onClickLogin} />;
 };
 
 export default Login;

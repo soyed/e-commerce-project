@@ -1,4 +1,10 @@
-const initialState = {};
+import { STATUS } from '../Category/utils';
+
+const initialState = {
+  status: STATUS.IDLE,
+  message: '',
+  user: null,
+};
 
 const usersReducer = (state = initialState, action: any) => {
   switch (action) {

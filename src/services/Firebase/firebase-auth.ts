@@ -24,18 +24,23 @@ import {
 
 // In your apps, the recommended way to know the auth status of your user is to set an observer on the Auth object. You can then get the user's basic profile information from the User object.
 
-export const createNewUser = async (email: string, password: string) => {
-  try {
-    const userCredential = await createUserWithEmailAndPassword(
-      firebaseAuth,
-      email,
-      password
-    );
+export const createNewUser = (
+  email: string,
+  password: string
+): Promise<UserCredential> => {
+  // try {
+  //   const userCredential = await createUserWithEmailAndPassword(
+  //     firebaseAuth,
+  //     email,
+  //     password
+  //   );
 
-    console.log(userCredential.user);
-  } catch (error) {
-    console.log(error);
-  }
+  //   console.log(userCredential.user);
+  // } catch (error) {
+  //   console.log(error);
+  // }
+
+  return createUserWithEmailAndPassword(firebaseAuth, email, password);
 };
 
 export const getCurrentUser = () => {
@@ -49,14 +54,16 @@ export const getCurrentUser = () => {
 export const authenticateWithPasswordAndEmail = (
   email: string,
   password: string
-) => {
-  signInWithEmailAndPassword(firebaseAuth, email, password)
-    .then((userCredential) => {
-      console.log(userCredential.user);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+): Promise<UserCredential> => {
+  // signInWithEmailAndPassword(firebaseAuth, email, password)
+  //   .then((userCredential) => {
+  //     console.log(userCredential.user);
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+
+  return signInWithEmailAndPassword(firebaseAuth, email, password);
 };
 
 export const signOutUser = async () => {
@@ -72,7 +79,7 @@ export const signOutUser = async () => {
 // managing users with firebase
 
 // sign-in with third party authentication providers
-export const thirdPartySignUp = async (providerType: ProviderType) => {
+export const authenticateWithThirdParty = (providerType: ProviderType) => {
   // try {
   //   const provider =
   //     providerType === ProviderType.GOOGLE ? googleProvider : facebookProvider;
@@ -81,7 +88,7 @@ export const thirdPartySignUp = async (providerType: ProviderType) => {
   const provider =
     providerType === ProviderType.GOOGLE ? googleProvider : facebookProvider;
 
-  return linkWithRedirect(firebaseAuth.currentUser, provider);
+  return linkWithPopup(firebaseAuth.currentUser, provider);
 };
 
 export const getThirdPartyRedirectResult = async (provider: ProviderType) => {
@@ -98,6 +105,8 @@ export const getThirdPartyRedirectResult = async (provider: ProviderType) => {
   } catch (error) {
     console.log(error);
   }
+
+  // return getRedirectResult(firebaseAuth);
 };
 
 // checking for existing user accounting with sign-in credentials
@@ -112,16 +121,19 @@ const getEmailCredentials = (
   return EmailAuthProvider.credential(email, password);
 };
 
-export const linkUserCredentials = async (email: string, password: string) => {
-  try {
-    const credential = getEmailCredentials(email, password);
-    const userCredential = await linkWithCredential(
-      firebaseAuth.currentUser,
-      credential
-    );
-    console.log(userCredential);
-    // Validation message
-  } catch (error) {
-    console.log(error);
-  }
+export const linkUserCredentials = (email: string, password: string) => {
+  // try {
+  //   const credential = getEmailCredentials(email, password);
+  //   const userCredential = await linkWithCredential(
+  //     firebaseAuth.currentUser,
+  //     credential
+  //   );
+  //   console.log(userCredential);
+  //   // Validation message
+  // } catch (error) {
+  //   console.log(error);
+  // }
+
+  const credential = getEmailCredentials(email, password);
+  return linkWithCredential(firebaseAuth.currentUser, credential);
 };
