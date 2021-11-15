@@ -82,8 +82,8 @@ const temp = {
 const initialState = {
   status: STATUS.IDLE,
   errorMessage: '',
-  //   product: {},
-  product: temp,
+  product: {},
+  // product: temp,
 };
 
 const productReducer = (state = initialState, action: any) => {

@@ -31,7 +31,7 @@ const ProductPage = () => {
   console.log(categoryId, productId);
 
   React.useEffect(() => {
-    // dispatch(fetchProduct(productId, categoryId));
+    dispatch(fetchProduct(productId, categoryId));
   }, [categoryId, productId]);
   return (
     <>

@@ -39,7 +39,7 @@ const ProductsPage: React.FC<ProductsPageProps> = () => {
 
   // fetching products
   React.useEffect(() => {
-    // dispatch(fetchProductsByCategories(categoryId));
+    dispatch(fetchProductsByCategories(categoryId));
   }, [categoryId]);
 
   // methods
