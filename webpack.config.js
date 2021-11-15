@@ -47,10 +47,15 @@ module.exports = {
     ],
   },
   plugins: [
+    new Dotenv({
+      path: './.env',
+      systemvars: true,
+      safe: true,
+      allowEmptyValues: true,
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
     }),
-    new Dotenv({ path: './.env', systemvars: true, safe: true }),
   ].concat(
     mode === 'development'
       ? []
