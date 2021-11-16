@@ -57,7 +57,6 @@ const cartReducer = (state = initialState, action: any) => {
       const total = state.totalPrice - existingProduct.product.price;
 
       let updatedProducts;
-      debugger;
       // check the quantity for the item
       if (existingProduct.quantity === 1) {
         updatedProducts = state.products.filter(
@@ -73,8 +72,6 @@ const cartReducer = (state = initialState, action: any) => {
         updatedProducts = [...state.products];
         updatedProducts[existingProductId] = updateProduct;
       }
-
-      debugger;
 
       // update the total amount and item count for the cart
       return { ...state, itemCount: itemCount, totalPrice: total };
