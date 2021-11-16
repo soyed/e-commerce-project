@@ -53,8 +53,6 @@ module.exports = {
     new Dotenv({
       path: './.env',
       systemvars: true,
-      safe: true,
-      allowEmptyValues: true,
     }),
   ].concat(
     mode === 'development'

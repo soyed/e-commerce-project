@@ -11,6 +11,12 @@ import jewelryImage from '../../../assets/watches-and-jewelry.jpg';
 import bagsAndShoesImage from '../../../assets/bags-and-shoes.jpg';
 import beautyImage from '../../../assets/beauty.jpg';
 import kidsImage from '../../../assets/kids.jpg';
+import petsImage from '../../../assets/pets.jpg';
+import outdoorImage from '../../../assets/explore-market-place.jpg';
+import homeImprovementImage from '../../../assets/home-improvement.jpg';
+import consumerElectronicsImage from '../../../assets/consumer-electronics.jpg';
+import officeImage from '../../../assets/office.jpg';
+import phoneImage from '../../../assets/phones.jpg';
 import { CategoryType } from '../../../redux/Category/utils';
 
 interface ProductCategoryProps {
@@ -38,19 +44,19 @@ const ProductCategory: React.FC<ProductCategoryProps> = (props) => {
       case CategoryType.BEAUTY:
         return beautyImage;
       case CategoryType.ELECTRONICS:
-        return;
+        return consumerElectronicsImage;
       case CategoryType.HOME_IMPROVEMENT:
-        return;
+        return homeImprovementImage;
       case CategoryType.OFFICE:
-        return;
+        return officeImage;
       case CategoryType.KIDS:
         return kidsImage;
       case CategoryType.PHONES:
-        return;
+        return phoneImage;
       case CategoryType.PETS:
-        return;
+        return petsImage;
       case CategoryType.OUTDOOR:
-        return;
+        return outdoorImage;
     }
   };
 

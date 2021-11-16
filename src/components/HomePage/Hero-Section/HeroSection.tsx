@@ -14,8 +14,8 @@ const HeroSection: React.FC<HeroSectionProps> = (props) => {
   // Fetch the men and female category
   // HACKY: A change in the category id from the endpoint would break the page
   // TODO: Refactor this logic
-  const FEMALE_ROUTE = `/shop/WomensFashion/products`;
-  const MALE_ROUTE = `/shop/MensFashion/products`;
+  const FEMALE_ROUTE = `/shop/${CategoryType.WOMEN}/products`;
+  const MALE_ROUTE = `/shop/${CategoryType.MEN}/products`;
 
   const dispatch = useDispatch();
 
@@ -23,17 +23,17 @@ const HeroSection: React.FC<HeroSectionProps> = (props) => {
   //   dispatch(fetchCategories);
   // }, []);
 
-  const Categories: Category[] = useSelector(categoryCommerce);
-  const female_route: Category[] = Categories.filter((category) =>
-    category.categoryId.includes(CategoryType.WOMEN)
-  );
+  // const Categories: Category[] = useSelector(categoryCommerce);
+  // const female_route: Category[] = Categories.filter((category) =>
+  //   category.categoryId.includes(CategoryType.WOMEN)
+  // );
 
-  const male_route: Category[] = Categories.filter((category) =>
-    category.categoryId.includes(CategoryType.MEN)
-  );
+  // const male_route: Category[] = Categories.filter((category) =>
+  //   category.categoryId.includes(CategoryType.MEN)
+  // );
 
-  console.log(female_route[0].categoryId);
-  console.log(male_route[0].categoryId);
+  // console.log(female_route[0].categoryId);
+  // console.log(male_route[0].categoryId);
 
   const {} = props;
   return (
