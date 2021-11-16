@@ -183,10 +183,8 @@ const marketplace = [
 const initialState = {
   status: STATUS.IDLE,
   message: '',
-  // caetgories: [],
-  commerce: commerce,
-  marketPlace: MarketPlace,
-  // categories: tem,
+  commerce: [],
+  marketPlace: [],
   categoriesLength: 0,
 };
 

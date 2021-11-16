@@ -11,6 +11,7 @@ const Stripe: React.FC = (props) => {
   const { children } = props;
 
   const options = {
+    // TODO: send client secret from backend
     clientSecret: 'CLIENT_SECRET',
   };
   return <Elements stripe={stripePromise}>{children}</Elements>;

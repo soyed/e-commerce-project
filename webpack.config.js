@@ -51,7 +51,7 @@ module.exports = {
       template: path.resolve(__dirname, './public/index.html'),
     }),
     new Dotenv({
-      path: path.resolve(__dirname, './.env'),
+      path: './.env',
       systemvars: true,
       safe: true,
       allowEmptyValues: true,

@@ -10,6 +10,7 @@ const persistConfig = {
   key: 'persistedStore',
   storage,
   // blacklist and whitelist a reducer
+  whitelist: ['cart', 'wishlist'],
 };
 
 // enhancers and middleware

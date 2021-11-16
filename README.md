@@ -58,7 +58,7 @@ Not sure what to call it yet... or what to do yet.😭
 - Redux-Persist stores the redux-store in web browser's local storage => your reducer's can be ke upon revisiting a webpage
   - persistStore => is a hook that store the state of your redux store
   - persistReducer =>  is a hook that store the state of reducers 
-  - persistGate => is a hook that delays rendering of your react app while your redux-store states are being rehydrated (i.e your persistedState is being retrieved and updated with your current redux-store)
+  - persistGate => is a hook that delays rendering of your react app while your redux-store states are being re-hydrated (i.e your persistedState is being retrieved and updated with your current redux-store)
   - Persisted State can be configured to match different use cases
     - You can Blacklist or Whitelist a reducer.
       -   A blacklisted reducer => does not get store in local storage
@@ -73,6 +73,7 @@ Not sure what to call it yet... or what to do yet.😭
   - A custom built react app with webpack does not support ```process.env``` out of the box.
   - The package ```dotenv-webpack``` helps resolve this issue by simply adding the plugin for this package in webpack.config.js you can inject | export the content of .env into your project and ```process.env``` can now be recognized across all tsx?|jsx? files you have created.
   - Source => https://github.com/mrsteele/dotenv-webpack
+  - ```.env``` not found in the specified path bug
 
 
 

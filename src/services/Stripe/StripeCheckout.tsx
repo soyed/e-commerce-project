@@ -13,7 +13,7 @@ interface StripeCheckoutProps {
 }
 
 const StripeCheckout: React.FC<StripeCheckoutProps> = (props) => {
-  const { children, btnText, onClickSubmit, onSubmitError, redirectTo } = props;
+  const { btnText, onClickSubmit, onSubmitError, redirectTo } = props;
 
   const handleSubmitPayment = async (
     event: React.MouseEvent<HTMLButtonElement>
@@ -36,7 +36,7 @@ const StripeCheckout: React.FC<StripeCheckoutProps> = (props) => {
     const result = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: 'https://my-site.com/order/123/complete',
+        return_url: redirectTo,
       },
     });
 
@@ -46,7 +46,7 @@ const StripeCheckout: React.FC<StripeCheckoutProps> = (props) => {
       // send confirmation message back to the client
       onSubmitError?.('Error');
     } else {
-      // if not errors are caught
+      // if no errors are caught
       // run the onSubmit methods
       onClickSubmit?.();
     }

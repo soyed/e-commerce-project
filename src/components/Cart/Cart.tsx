@@ -30,9 +30,9 @@ const Cart: React.FC<CartProps> = (props) => {
     dispatch(addToWishList(item));
   };
 
-  React.useEffect(() => {
-    dispatch(clearCartItems());
-  }, []);
+  // React.useEffect(() => {
+  //   dispatch(clearCartItems());
+  // }, []);
 
   const handleDeleteProduct = (productId: string) => {
     dispatch(deleteItemFromCart(productId));
@@ -103,10 +103,6 @@ const Cart: React.FC<CartProps> = (props) => {
               <div className='checkout__container-3'>
                 <div className='checkout__container-3__btn--container'>
                   <button className='checkout-btn'>Checkout</button>
-
-                  <Stripe>
-                    <StripeCheckout btnText={'submit'} />
-                  </Stripe>
                 </div>
               </div>
             </div>

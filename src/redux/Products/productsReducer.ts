@@ -104,7 +104,8 @@ const temp = [
 const initialState = {
   status: STATUS.IDLE,
   errorMessage: '',
-  products: temp,
+  // products: temp,
+  products: [],
   pageNumber: 0,
 };
 const productsReducer = (state = initialState, action: any) => {

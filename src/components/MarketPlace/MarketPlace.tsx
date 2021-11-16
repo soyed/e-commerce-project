@@ -29,15 +29,6 @@ const MarketPlace = () => {
   const status: STATUS = useSelector(getMarketplaceStatus);
   const errorMessage: string = useSelector(getMarketplaceError);
 
-  const handleLikeProduct = (product: Product) => {
-    const item: CartItem = {
-      product: product,
-      quantity: DEFAULT_QUANTITY,
-    };
-    // Add to wishlist
-    dispatch(addToWishList(item));
-  };
-
   return (
     <CategoriesPages platform={Platform.MARKETPLACE} linkTo={LinkPath.MARKET} />
   );
