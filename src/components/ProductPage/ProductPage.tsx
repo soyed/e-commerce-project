@@ -46,7 +46,7 @@ const ProductPage = () => {
           )}
         </div>
 
-        <div className='product-page__container-2'>
+        {/* <div className='product-page__container-2'>
           {status === STATUS.LOADING ? (
             <div className='spinner__container'>
               <UILoadingSpinner />
@@ -54,7 +54,7 @@ const ProductPage = () => {
           ) : (
             <SimilarProducts products={product.similarProducts} />
           )}
-        </div>
+        </div> */}
 
         {/* <ProductViewed className='product-page__container-3'/> */}
       </div>

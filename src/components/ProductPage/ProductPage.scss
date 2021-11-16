@@ -12,17 +12,14 @@
     width: 100%;
   }
   &__container-1 {
-    height: 50vh;
-    background-color: rgb(219, 146, 219);
+    flex: 1;
   }
 
   &__container-2 {
-    height: 50vh;
-    background-color: rgb(246, 181, 246);
+    height: 20vh;
   }
 
   &__container-3 {
-    // height: 50vh;
   }
 
   .spinner__container {

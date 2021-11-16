@@ -59,6 +59,7 @@ const Favorites: React.FC<FavoritesProps> = (props) => {
               onClickIcon={() => {
                 handleRemoveFromWishlist(item.product.id);
               }}
+              showLike={false}
             />
           ))}
         </div>

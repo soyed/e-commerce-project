@@ -1,5 +1,5 @@
 import React from 'react';
-import UIImage from '../../../../UIKit/UIImage/UIImage';
+
 import './ProductView.scss';
 interface ProductViewProps {
   imageSrc?: string;

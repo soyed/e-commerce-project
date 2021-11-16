@@ -14,7 +14,7 @@ const ProductSection: React.FC<ProductSectionProp> = (props) => {
   return (
     <div className='product-section'>
       <div className='product-section__container'>
-        <div className='product-section__container-1 '>
+        <div className='product-section__container-1'>
           <div className='product-section__gallery'>
             <ProductView
               imageAlt={`${product.name}-img`}
@@ -25,12 +25,9 @@ const ProductSection: React.FC<ProductSectionProp> = (props) => {
             <ProductCheckout product={product} />
           </div>
         </div>
+
         <div className='product-section__container-2'>
-          <ProductInformation
-            productId={product.id}
-            productDescription={product.description}
-            productCategory={product.category}
-          />
+          <ProductInformation product={product} />
         </div>
       </div>
     </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import UIButton from '../../../../UIKit/UIButton/UIButton';
 import UIIcon from '../../../../UIKit/UIIcon/UIIcon';
 import { IconType } from '../../../../utils/icons';
-import { ProductType } from '../../utils';
 
 import { useDispatch } from 'react-redux';
 
@@ -96,7 +95,9 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
         <div className='product-checkout__container-5 '>
           <div className='checkout__buttons'>
             <div className='checkout__buttons--1'>
-              <UIButton text={'Add To Cart'} onClickButton={handleAddToCart} />
+              <button onClick={handleAddToCart} className='add-to-cart__btn'>
+                Add To Cart
+              </button>
             </div>
             <div className='checkout__buttons--2'>
               <UIIcon
@@ -105,6 +106,9 @@ const ProductCheckout: React.FC<ProductCheckoutProps> = (props) => {
                 onClickIcon={() => {
                   handleLikeProduct(product);
                 }}
+                iconClassName='product-like__icon'
+                iconTextClassName='product-like__icon--text'
+                containerClassName='product-like_icon--container'
               />
             </div>
           </div>
